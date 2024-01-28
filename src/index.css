@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-margin-collapse: collapse;
+}
+
+.fontStyle {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.textStyle {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+nav .active{
+    opacity: 0.5;
+}
+
+.full-height{
+    height: 100vh !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+}
+
+.hoverd{
+    transition: all .5s ease;
+}
+
+.hoverd:hover{
+    background: #E70A32;
+    color: white;
+    border-color: #E70A32;
+}
+
+.anime{
+    animation: anime 1 1s ease;
+}
+
+@keyframes anime {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
