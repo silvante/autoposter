@@ -38,6 +38,18 @@ const CarModels = () => {
 
   const years = setYearsToArr(found);
 
+  function setkrosoverToArr(arr) {
+    let krosovers = new Set();
+    arr.forEach((item) => {
+      let krosover = item.krosover;
+      krosovers.add(krosover);
+    });
+    let krosoverArr = Array.from(krosovers);
+    return krosoverArr;
+  }
+
+  const krosovers = setkrosoverToArr(found);
+
   // adding a lenth of models
 
   const modelsArray = models.map((item, index) => {
@@ -63,7 +75,17 @@ const CarModels = () => {
   const elems = another.slice(0, sixSlice);
   const [btn, setbtn] = useState(true);
 
-  console.log(years);
+  // siling
+
+  const [modelSelect, setModel] = useState("");
+  const [yearSelect, setYear] = useState("");
+  const [krosSelect, setkros] = useState("");
+
+  const useModel = (e) => {
+    setModel(e.target.value);
+  };
+
+  console.log(modelSelect);
 
   return (
     <>
@@ -112,25 +134,59 @@ const CarModels = () => {
 
       <div className="w-full flex justify-center">
         <div className="w-[96%] mb-10 xl:w-[1300px]">
-          <div className="grid grid-cols-4 shadow-xl rounded-lg p-5 border space-x-5">
-            <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none">
-              {
-                Sliced.map((filter) =>{
-                  return(
-                    <option key={filter.model} value={filter.model}>{filter.model}</option>
-                  )
-                })
-              }
-            </select>
-            <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none">
-              {
-                years.map((filter) =>{
-                  return(
-                    <option key={filter} value={filter}>{filter}</option>
-                  )
-                })
-              }
-            </select>
+          <div className="grid grid-cols-1 shadow-xl rounded-lg p-5 border gap-5 md:grid-cols-3">
+            <div className="text-center space-y-2">
+              <p className="fontStyle font-bold">Model</p>
+              <select
+                className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+                onChange={useModel}
+              >
+                {Sliced.map((filter) => {
+                  return (
+                    <option key={filter.model} value={filter.model}>
+                      {filter.model}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+            <div className="text-center space-y-2">
+              <p className="fontStyle font-bold">Mashina yili</p>
+              <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full">
+                {years.map((filter) => {
+                  return (
+                    <option key={filter} value={filter}>
+                      {filter}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+            <div className="text-center space-y-2">
+              <p className="fontStyle font-bold">Krosoveri</p>
+              <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full">
+                {krosovers.map((filter) => {
+                  return (
+                    <option key={filter} value={filter}>
+                      {filter}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+            <input
+              type="number"
+              className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
+              placeholder="Max Bujet $"
+            />
+            <input
+              type="number"
+              className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
+              placeholder="Min Bujet $"
+            />
+            <button className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white">
+              Automabil topish
+            </button>
           </div>
         </div>
       </div>
