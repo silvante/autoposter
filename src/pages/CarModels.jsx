@@ -80,12 +80,28 @@ const CarModels = () => {
   const [modelSelect, setModel] = useState("");
   const [yearSelect, setYear] = useState("");
   const [krosSelect, setkros] = useState("");
+  const [min, setMin] = useState("");
+  const [max, setmax] = useState("");
 
   const useModel = (e) => {
     setModel(e.target.value);
   };
 
-  console.log(modelSelect);
+  const useYear = (e) => {
+    setYear(e.target.value);
+  };
+
+  const useKros = (e) => {
+    setkros(e.target.value);
+  };
+
+  const minPay = (e) => {
+    setMin(e.target.value);
+  };
+
+  const maxPay = (e) => {
+    setmax(e.target.value);
+  };
 
   return (
     <>
@@ -152,7 +168,10 @@ const CarModels = () => {
             </div>
             <div className="text-center space-y-2">
               <p className="fontStyle font-bold">Mashina yili</p>
-              <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full">
+              <select
+                className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+                onChange={useYear}
+              >
                 {years.map((filter) => {
                   return (
                     <option key={filter} value={filter}>
@@ -164,7 +183,10 @@ const CarModels = () => {
             </div>
             <div className="text-center space-y-2">
               <p className="fontStyle font-bold">Krosoveri</p>
-              <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full">
+              <select
+                className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+                onChange={useKros}
+              >
                 {krosovers.map((filter) => {
                   return (
                     <option key={filter} value={filter}>
@@ -178,11 +200,13 @@ const CarModels = () => {
               type="number"
               className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
               placeholder="Max Bujet $"
+              onChange={maxPay}
             />
             <input
               type="number"
               className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
               placeholder="Min Bujet $"
+              onChange={minPay}
             />
             <button className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white">
               Automabil topish
@@ -196,6 +220,83 @@ const CarModels = () => {
           <h3>
             Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span>{" "}
             automobillar.
+          </h3>
+        </div>
+        <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
+          {elems.map((car) => {
+            return (
+              <Link
+                to={`/mark/model/sotib-olish/${car.id.toString()}`}
+                key={car.id}
+                className="rounded space-y-3 relative"
+              >
+                <div className="image_div relative">
+                  <div className="absolute flex space-x-3 top-3 left-3 z-10">
+                    <p className="bg-white text-[12px] py-[3px] px-[7px] fontStyle font-bold rounded-full">
+                      {car.numberOfusers} foidalanuvchi
+                    </p>
+                    <p className="bg-white text-[12px] py-[3px] px-[7px] fontStyle font-bold rounded-full">
+                      {car.year} yil
+                    </p>
+                  </div>
+                  <img
+                    src={car.image}
+                    alt={car.name}
+                    className="w-full transition-all hover:scale-110"
+                  />
+                </div>
+                <div className="space-y-5">
+                  <p className="fontSyle text-gray-500 text-[22px]">
+                    <span className="text-black font-bold">{car.name}</span> •{" "}
+                    {car.year}
+                  </p>
+                  <p className="text-gray-500 fontStyle text-[18px] font-bold">
+                    {car.year} yil , {car.probeg} km, Krosoveri {car.krosover}{" "}
+                    l, benzini {car.benzin} l.s
+                  </p>
+                  <div className="bg-gray-200 rounded p-3 hoverd">
+                    <div className="cost flex space-x-3 items-end">
+                      <p className="text-[26px] font-bold fontStyle">
+                        {car.reCost}$
+                      </p>
+                      <p className="text-[18px] font-bold fontStyle lineThrov">
+                        {car.cost}$
+                      </p>
+                    </div>
+                    <p className="fontStyle font-bold">
+                      Kredit:{" "}
+                      {car.kredit ? `${car.kredit}$` : "kredit ga Tolov yo'q"}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+        <div className="w-full flex justify-center">
+          {btn && (
+            <button
+              className="bg-[#E70A32] text-white px-10 py-3 rounded-md mx-auto"
+              onClick={() => setSixSlice(Infinity) || setbtn(false)}
+            >
+              Barcha Automobillar
+            </button>
+          )}
+          {!btn && (
+            <button
+              className="bg-[#E70A32] text-white px-10 py-3 rounded-md mx-auto"
+              onClick={() => setSixSlice(6) || setbtn(true)}
+            >
+              barchasini Yopish
+            </button>
+          )}
+        </div>
+      </div>
+
+      <div className="w-[96%] xl:w-[1300px] mx-auto space-y-10 mb-10 hidden">
+        <div className="textStyle text-[20px] flex md:text-[25px] items-center">
+          <h3>
+            filter boyicha <span className="text-[#E70A32]">automobillar.</span>
           </h3>
         </div>
         <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
