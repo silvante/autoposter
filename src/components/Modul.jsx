@@ -6,11 +6,11 @@ const Modul = (shows) => {
   return (
     <div className="w-full full-height fixed bg-black/50 z-50 backdrop-blur-sm flex justify-center items-center">
       <div
-        className="bg-white rounded-[12px] flex space-x-5"
+        className="bg-white rounded-[12px] flex flex-col space-x-5 justify-center"
         data-aos="zoom-in"
       >
-        <img src={ADimg} className="w-[360px]" alt="adverticement image" />
-        <div className="px-5 py-10 w-[380px]">
+        <img src={ADimg} className="w-[260px]" alt="adverticement image" />
+        <div className="w-[260px]">
           <div className="mb-5">
             <p className="text-[32px] font-900 textStyle">
               Ushbu event da qatnashish!

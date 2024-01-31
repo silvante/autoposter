@@ -41,7 +41,7 @@ const Header = () => {
             </div>
             <button onClick={showModul} className="text-[26px] lg:hidden">
               {showAside ? (
-                <i class="bx bx-x"></i>
+                <i className="bx bx-x"></i>
               ) : (
                 <i className="bx bx-menu"></i>
               )}
@@ -49,61 +49,53 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      {showAside && (
-        <div
-          className="w-full absolute h-full top-[60px] z-50 bg-white flex justify-center lg:hidden"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="10000"
-          data-aos-offset="0"
-        >
-          <div className="flex-col w-[96%] space-y-5">
-            <div>
-              <NavLink
-                onClick={() => setShowAside(false)}
-                className={
-                  "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
-                }
-              >
-                Katalog
-              </NavLink>
-              <NavLink
-                onClick={() => setShowAside(false)}
-                to={"/aksiyalar"}
-                className={
-                  "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
-                }
-              >
-                Aksiyalar
-              </NavLink>
-              <NavLink
-                onClick={() => setShowAside(false)}
-                to={"/kredit"}
-                className={
-                  "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
-                }
-              >
-                Kredit
-              </NavLink>
-              <NavLink
-                onClick={() => setShowAside(false)}
-                to={"/kontactlar"}
-                className={
-                  "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
-                }
-              >
-                Kantaktlar
-              </NavLink>
-            </div>
-            <div className="text-start">
-              <p className="font-bold text-[20px]">
-                <i className="bx bx-phone"></i> 8 33 303 82 82
-              </p>
-              <p className="text-[14px]">eleckton gmail PF tekin</p>
-            </div>
+      <div className={`w-full absolute top-[60px] z-50 bg-white flex justify-center lg:hidden shadow-lg py-5  transition-all ${showAside ? `translate-x-0` : `translate-x-full` }`}>
+        <div className="flex-col w-[96%] space-y-5">
+          <div>
+            <NavLink
+              onClick={() => setShowAside(false)}
+              className={
+                "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
+              }
+            >
+              Katalog
+            </NavLink>
+            <NavLink
+              onClick={() => setShowAside(false)}
+              to={"/aksiyalar"}
+              className={
+                "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
+              }
+            >
+              Aksiyalar
+            </NavLink>
+            <NavLink
+              onClick={() => setShowAside(false)}
+              to={"/kredit"}
+              className={
+                "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
+              }
+            >
+              Kredit
+            </NavLink>
+            <NavLink
+              onClick={() => setShowAside(false)}
+              to={"/kontactlar"}
+              className={
+                "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
+              }
+            >
+              Kantaktlar
+            </NavLink>
+          </div>
+          <div className="text-start">
+            <p className="font-bold text-[20px]">
+              <i className="bx bx-phone"></i> 8 33 303 82 82
+            </p>
+            <p className="text-[14px]">eleckton gmail PF tekin</p>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 };

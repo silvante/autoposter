@@ -7,25 +7,17 @@ import bank1 from "../assets/images/bank1.png";
 import bank2 from "../assets/images/bank2.png";
 import bank3 from "../assets/images/bank3.png";
 import bank4 from "../assets/images/bank4.png";
-import { carsData } from "../autoPosterData";
+import { carsData, marks } from "../autoPosterData";
 import Modul from "../components/Modul";
 
 const Kredit = () => {
-  const options = carsData.map((elem) => {
-    let returned = {
-      option: elem.name,
-    };
-    return returned;
-  });
-
-  console.log(options);
 
   const [shows, setShows] = useState(false);
 
   return (
     <div className="w-full flex justify-center mb-10">
-      <div className="w-[1300px] flex justify-between items-start">
-        <div className="w-[68%] space-y-5">
+      <div className="w-[96%] xl:w-[1300px] flex flex-col justify-between items-start lg:flex-row">
+        <div className="w-full space-y-5 lg:w-[68%]">
           <div className="space-y-5">
             <img src={bgPng} alt="bg image" className="w-full" />
             <p className="fontStyle font-bold text-[18px]">
@@ -37,14 +29,17 @@ const Kredit = () => {
               har bir ishtirokchini rivojlanish modeli bo'yicha o'z qarorlarini
               qabul qilish qobiliyatini aniq belgilaydi.
             </p>
-            <button className="bg-[#E70A32] text-white py-3 px-10 rounded" onClick={() => setShows(true)}>
+            <button
+              className="bg-[#E70A32] text-white py-3 px-10 rounded"
+              onClick={() => setShows(true)}
+            >
               Qatnashish →
             </button>
           </div>
           <div className="space-y-5">
             <h3 className="textStyle text-[30px]">Bizning afzalliklarimiz</h3>
-            <div className="grid grid-cols-3 gap-10">
-              <div className="p-8 space-y-7 shadow-lg rounded-md">
+            <div className="flex justify-center flex-wrap gap-10">
+              <div className="p-8 space-y-7 shadow-lg rounded-md w-[250px]">
                 <img src={pro3} alt="property one" />
                 <p className="textStyle text-[20px]">birinch tolov 0% dan</p>
                 <p className="fontStyle">
@@ -52,7 +47,7 @@ const Kredit = () => {
                   foydalanuvchilar ifodalaydi.
                 </p>
               </div>
-              <div className="p-8 space-y-7 shadow-lg rounded-md">
+              <div className="p-8 space-y-7 shadow-lg rounded-md w-[250px]">
                 <img src={pro2} alt="property two" />
                 <p className="textStyle text-[20px]">Kam siyosiy document</p>
                 <p className="fontStyle">
@@ -60,7 +55,7 @@ const Kredit = () => {
                   foydalanuvchilar ifodalaydi.
                 </p>
               </div>
-              <div className="p-8 space-y-7 shadow-lg rounded-md">
+              <div className="p-8 space-y-7 shadow-lg rounded-md w-[250px]">
                 <img src={pro1} alt="property three" />
                 <p className="textStyle text-[20px]">
                   Automobil garantiyasi 1 yil
@@ -74,26 +69,29 @@ const Kredit = () => {
           </div>
           <div className="space-y-5">
             <h3 className="textStyle text-[30px]">Xamkor banklar</h3>
-            <div className="grid grid-cols-4 gap-10">
-              <img src={bank1} alt="Sber bank" />
-              <img src={bank2} alt="tinkoff" />
-              <img src={bank3} alt="Alfa bank" />
-              <img src={bank4} alt="gazpro bank" />
+            <div className="flex justify-center flex-wrap gap-10">
+              <img src={bank1} alt="Sber bank" className="w-[190px]"/>
+              <img src={bank2} alt="tinkoff" className="w-[190px]"/>
+              <img src={bank3} alt="Alfa bank" className="w-[190px]"/>
+              <img src={bank4} alt="gazpro bank" className="w-[190px]"/>
             </div>
           </div>
         </div>
-        <div className="p-8 w-[28%] shadov rounded-lg text-center stick">
+        <div className="p-8 w-full shadov rounded-lg text-center stick lg:w-[30%]">
           <h3 className="textStyle text-[24px]">Automobilga kredit olish</h3>
           <form className="space-y-3">
-            <select className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100">
-              <option selected value="Model">
-                Marka
-              </option>
-              {carsData.map((car) => {
-                <option value={car.mark}>{car.mark}</option>;
+            <select
+              defaultValue={"marka"}
+              className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+            >
+              {marks.map((car) => {
+                return <option value={car}>{car}</option>;
               })}
             </select>
-            <select className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100">
+            <select
+              defaultValue={"model"}
+              className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+            >
               <option selected value="Model">
                 Model
               </option>
@@ -131,7 +129,7 @@ const Kredit = () => {
           </p>
         </div>
       </div>
-      {shows && <Modul shows={shows}/>}
+      {shows && <Modul shows={shows} />}
     </div>
   );
 };

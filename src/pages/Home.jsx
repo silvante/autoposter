@@ -30,7 +30,9 @@ const Home = () => {
     if (inputValue.trim() === "") {
       return true;
     }
-    return carsData.name.toLowerCase().includes(inputValue.trim().toLowerCase());
+    return carsData.name
+      .toLowerCase()
+      .includes(inputValue.trim().toLowerCase());
   };
   const filteredCars = carsData.filter(filterCarsBySearch);
 
@@ -50,10 +52,7 @@ const Home = () => {
               placeholder="Nomi boyicha automobil qidirish..."
               className="w-[80%] md:w-[90%] h-full px-5 outline-none "
             />
-            <button
-              onClick={() => setSearchPunk(true)}
-              className="w-[20%] md:w-[10%] h-full bg-[#E70A32] text-white text-[18px] rounded-md"
-            >
+            <button className="w-[20%] md:w-[10%] h-full bg-[#E70A32] text-white text-[18px] rounded-md">
               <i className="bx bx-search"></i>
             </button>
           </div>

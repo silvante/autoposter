@@ -103,6 +103,18 @@ const CarModels = () => {
     setmax(e.target.value);
   };
 
+  const filtered = found.filter((e) => e.name == modelSelect);
+  const filtered2 = filtered.filter((e) => e.year == yearSelect);
+  const filtered3 = filtered2.filter((e) => e.krosover == krosSelect);
+
+  const dolt = () => {
+    const filterPlease = found.filter((e) => {
+      e.name.toString() == modelSelect.toString() ||
+        e.year.toString() == +yearSelect.toString() ||
+        e.krosover.toString() == +krosSelect.toString();
+    });
+  };
+
   return (
     <>
       <div className="w-full flex justify-center">
@@ -208,7 +220,10 @@ const CarModels = () => {
               placeholder="Min Bujet $"
               onChange={minPay}
             />
-            <button className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white">
+            <button
+              onClick={dolt}
+              className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white"
+            >
               Automabil topish
             </button>
           </div>
@@ -300,7 +315,7 @@ const CarModels = () => {
           </h3>
         </div>
         <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
-          {elems.map((car) => {
+          {filtered3.map((car) => {
             return (
               <Link
                 to={`/mark/model/sotib-olish/${car.id.toString()}`}

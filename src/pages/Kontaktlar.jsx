@@ -3,9 +3,9 @@ import React from "react";
 const Kontaktlar = () => {
   return (
     <div className="w-full flex justify-center">
-      <div className="w-[1300px] space-y-10 mb-10">
+      <div className="w-[96%] space-y-10 mb-10 xl:w-[1300px]">
         <h1 className="textStyle text-[30px] text-black">Kontaktlar</h1>
-        <div className="w-full p-10 border flex justify-between">
+        <div className="w-full p-10 border flex justify-between flex-wrap space-y-5 md:space-y-0">
           <div className="flex items-center">
             <div>
               <i></i>
@@ -40,8 +40,8 @@ const Kontaktlar = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-between">
-          <div className="w-[50%] space-y-5">
+        <div className="w-full flex justify-between flex-col space-y-5 md:space-y-0 md:flex-row">
+          <div className="w-full space-y-5">
             <p className="font-bold text-[20px]">Yuridik malumotlar:</p>
             <div className=" space-y-3">
               <div>
@@ -76,7 +76,7 @@ const Kontaktlar = () => {
               </div>
             </div>
           </div>
-          <div className="w-[50%] bg-slate-300 rounded-lg">
+          <div className="w-full h-44 md:h-[350px] bg-slate-300 rounded-lg">
 
           </div>
         </div>

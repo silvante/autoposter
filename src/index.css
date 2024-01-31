@@ -9,6 +9,14 @@
     -webkit-margin-collapse: collapse;
 }
 
+body{
+    overflow-x: hidden;
+}
+
+header{
+    z-index: 999;
+}
+
 .fontStyle {
     font-family: 'Montserrat', sans-serif;
 }
@@ -52,5 +60,19 @@ nav .active{
     }
     to{
         opacity: 1;
+    }
+}
+
+.motion{
+    animation: motion 1 .5s ease;
+    z-index: 20;
+}
+
+@keyframes motion {
+    from{
+        transform: translate(100%);
+    }
+    to{
+        transform: translate(0%);
     }
 }
