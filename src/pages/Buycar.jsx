@@ -96,7 +96,7 @@ const Buycar = () => {
             <h3 className="text-[18px] textStyle">
               Kredit shartlarini kriting
             </h3>
-            <form className="space-y-3">
+            <div className="space-y-3">
               <div>
                 <label className="text-gray-700 font-bold fontStyle">
                   Kredit muddati
@@ -157,7 +157,7 @@ const Buycar = () => {
                   ishlashga rozilik bildirasiz
                 </p>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
