@@ -252,7 +252,7 @@ const CarModels = () => {
       {/* pagination */}
 
       <div className="w-full flex justify-center py-5">
-        <div className="w-[1300px] space-y-10">
+        <div className="w-[96%] space-y-10 xl:w-[1300px]">
           <h3 className="textStyle text-[20px] flex md:text-[25px] items-center">
             Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span>{" "}
             automobillari
