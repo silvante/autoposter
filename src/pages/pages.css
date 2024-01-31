@@ -33,3 +33,8 @@
     position: sticky !important;
     top: 20px !important;
 }
+
+.myPadding{
+    padding: 5px 13px;
+    transition: all .3s ease;
+}

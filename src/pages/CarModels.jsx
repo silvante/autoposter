@@ -112,6 +112,8 @@ const CarModels = () => {
     });
   };
 
+  // functions of pagination
+
   const [firstindex, setfirstindex] = useState(1);
   const [lastindex, setlastindex] = useState(6);
 
@@ -119,6 +121,14 @@ const CarModels = () => {
   const firstPost = lastPost - lastindex;
 
   const slicedCards = found.slice(firstPost, lastPost);
+
+  const NumberOfPages = [];
+
+  for (let i = 0; i <= Math.ceil(found.length / lastindex); i++) {
+    NumberOfPages.push(i);
+  }
+
+  const paginationArr = NumberOfPages.filter((prev) => prev !== 0);
 
   return (
     <>
@@ -242,18 +252,18 @@ const CarModels = () => {
       {/* pagination */}
 
       <div className="w-full flex justify-center py-5">
-        <div className="w-[1300px] space-y-5">
+        <div className="w-[1300px] space-y-10">
           <h3 className="textStyle text-[20px] flex md:text-[25px] items-center">
             Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span>{" "}
             automobillari
           </h3>
-          <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2 anime">
+          <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
             {slicedCards.map((car) => {
               return (
                 <Link
                   to={`/mark/model/sotib-olish/${car.id}`}
                   key={car.id}
-                  className="rounded space-y-3 relative"
+                  className="rounded space-y-3 relative anime"
                 >
                   <div className="image_div relative">
                     <div className="absolute flex space-x-3 top-3 left-3 z-10">
@@ -301,7 +311,22 @@ const CarModels = () => {
 
           {/* pagination navigate */}
 
-          <div></div>
+          <div className="space-x-2 flex justify-center">
+            {paginationArr.map((page, index) => {
+              return (
+                <button
+                  key={page}
+                  className={`myPadding hover:bg-[#E70A32] hover:border-[#E70A32] hover:text-white border-2 border-gray-500 rounded-full ${
+                    page === firstindex &&
+                    "bg-[#E70A32] border-[#E70A32] text-white px-10"
+                  }`}
+                  onClick={() => setfirstindex(page)}
+                >
+                  {page}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
       <Aksiyalar />
