@@ -19,6 +19,7 @@ import BuyLayOut from "./layouts/BuyLayOut";
 import Buycar from "./pages/Buycar";
 import OtherLayout from "./layouts/OtherLayout";
 import Kontaktlar from "./pages/Kontaktlar";
+import Filter from "./pages/Filter";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -33,6 +34,7 @@ const App = () => {
         </Route>
         <Route path="/mark" element={<AftermarksLay />}>
           <Route path="/mark/:model" element={<SelectedCars />} />
+          <Route path="/mark/model/filter" element={<Filter/>}/>
           <Route path="/mark/model/sotib-olish" element={<OtherLayout />}>
             <Route path="/mark/model/sotib-olish/:id" element={<Buycar />} />
           </Route>

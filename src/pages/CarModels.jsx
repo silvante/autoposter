@@ -239,12 +239,13 @@ const CarModels = () => {
               placeholder="Min Bujet $"
               onChange={minPay}
             />
-            <button
+            <Link
+            to={'/mark/model/filter'}
               onClick={dolt}
-              className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white"
+              className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
             >
               Automabil topish
-            </button>
+            </Link>
           </div>
         </div>
       </div>

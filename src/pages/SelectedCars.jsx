@@ -9,7 +9,7 @@ const SelectedCars = () => {
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] space-y-10 mb-10 xl:w-[1300px]">
-        <h2 className="font-bold textStyle text-[30px]">
+        <h2 className="font-bold textStyle text-[20px] md:text-[30px]">
           Jami {modelsArr.length} ta <span className="text-[#E70A32]">{model}</span> topildi 
         </h2>
         <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">

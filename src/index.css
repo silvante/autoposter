@@ -9,10 +9,6 @@
     -webkit-margin-collapse: collapse;
 }
 
-body{
-    overflow-x: hidden;
-}
-
 header{
     z-index: 999;
 }
@@ -47,7 +43,7 @@ nav .active{
 .hoverd:hover{
     background: #E70A32;
     color: white;
-    border-color: #be0023;
+    border-color: #E70A32;
 }
 
 .anime{

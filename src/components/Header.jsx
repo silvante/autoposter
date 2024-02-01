@@ -49,7 +49,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      <div className={`w-full absolute top-[60px] z-50 bg-white flex justify-center lg:hidden shadow-lg py-5  transition-all ${showAside ? `translate-x-0` : `translate-x-full` }`}>
+      <div className={`w-full absolute top-[60px] z-50 bg-white flex justify-center lg:hidden shadow-lg py-5  transition-all ${showAside ? `translate-x-0` : `translate-x-[-100%]` }`}>
         <div className="flex-col w-[96%] space-y-5">
           <div>
             <NavLink
