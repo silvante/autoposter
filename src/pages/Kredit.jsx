@@ -11,7 +11,6 @@ import { carsData, marks } from "../autoPosterData";
 import Modul from "../components/Modul";
 
 const Kredit = () => {
-
   const [shows, setShows] = useState(false);
 
   return (
@@ -70,10 +69,10 @@ const Kredit = () => {
           <div className="space-y-5">
             <h3 className="textStyle text-[30px]">Xamkor banklar</h3>
             <div className="flex justify-center flex-wrap gap-10">
-              <img src={bank1} alt="Sber bank" className="w-[190px]"/>
-              <img src={bank2} alt="tinkoff" className="w-[190px]"/>
-              <img src={bank3} alt="Alfa bank" className="w-[190px]"/>
-              <img src={bank4} alt="gazpro bank" className="w-[190px]"/>
+              <img src={bank1} alt="Sber bank" className="w-[190px]" />
+              <img src={bank2} alt="tinkoff" className="w-[190px]" />
+              <img src={bank3} alt="Alfa bank" className="w-[190px]" />
+              <img src={bank4} alt="gazpro bank" className="w-[190px]" />
             </div>
           </div>
         </div>
@@ -85,19 +84,19 @@ const Kredit = () => {
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
             >
               {marks.map((car) => {
-                return <option value={car}>{car}</option>;
+                return (
+                  <option key={car} value={car}>
+                    {car}
+                  </option>
+                );
               })}
             </select>
             <select
-              defaultValue={"model"}
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
             >
-              <option selected value="Model">
+              <option value="Model">
                 Model
               </option>
-              {carsData.map((car) => {
-                <option value={car.name}>{car.name}</option>;
-              })}
             </select>
             <textarea
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 appearance-none resize-none"
