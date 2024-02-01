@@ -316,9 +316,9 @@ const CarModels = () => {
               return (
                 <button
                   key={page}
-                  className={`myPadding hover:bg-[#E70A32] hover:border-[#E70A32] hover:text-white border-2 border-gray-500 rounded-full ${
+                  className={`myPadding bg-[#E70A32] border-[#E70A32] text-white border-2 rounded-full ${
                     page === firstindex &&
-                    "bg-[#E70A32] border-[#E70A32] text-white px-10"
+                    "px-8"
                   }`}
                   onClick={() => setfirstindex(page)}
                 >

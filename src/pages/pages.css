@@ -35,6 +35,7 @@
 }
 
 .myPadding{
-    padding: 5px 13px;
+    padding: 5px 11px;
+    font-size: 13px;
     transition: all .3s ease;
 }
