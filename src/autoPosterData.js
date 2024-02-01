@@ -577,9 +577,9 @@ export const carsData = [
   {
     id: 31,
     name: "Coupe A3",
-    mark: "audi",
+    mark: "opel",
     year: 2000,
-    icon: audi,
+    icon: opel,
     image: audi31,
     numberOfusers: 1,
     probeg: 65478,
