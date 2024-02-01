@@ -30,7 +30,7 @@ body::-webkit-scrollbar{
 }
 
 nav .active{
-    opacity: 0.5;
+    color: #E70A32;
 }
 
 .full-height{
@@ -47,7 +47,7 @@ nav .active{
 .hoverd:hover{
     background: #E70A32;
     color: white;
-    border-color: #E70A32;
+    border-color: #be0023;
 }
 
 .anime{
