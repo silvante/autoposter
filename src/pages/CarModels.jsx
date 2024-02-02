@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { marksIcon } from "../autoPosterData";
 
 import { v4 as uuidv4 } from "uuid";
@@ -113,6 +113,12 @@ const CarModels = () => {
   // console.log(filtered3);
   // console.log(filtered4);
   // console.log(filtered5);
+
+  const navigate = useNavigate();
+
+  const handleClick = () =>{
+    navigate('/mark/model/filter', { state: { filtered5 } });
+  }
 
   // functions of pagination
 
@@ -244,12 +250,12 @@ const CarModels = () => {
               placeholder="Min Bujet $"
               onChange={minPay}
             />
-            <Link
-              to={"/mark/model/filter"}
+            <button
+            onClick={handleClick}
               className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
             >
               Automabil topish
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -262,7 +268,7 @@ const CarModels = () => {
           Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span> aotomobillari 
         </h2>
           <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
-            {filtered3.map((car) => {
+            {slicedCards.map((car) => {
               return (
                 <Link
                   to={`/mark/model/sotib-olish/${car.id}`}
