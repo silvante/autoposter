@@ -22,7 +22,7 @@ const Modul = (shows) => {
             </p>
           </div>
           <Link
-          onClick={() => setShows(false)}
+            onClick={() => setShows(false)}
             to={"/"}
             className="text-white py-3 w-full bg-[#E70A32] rounded inline-block text-center"
           >

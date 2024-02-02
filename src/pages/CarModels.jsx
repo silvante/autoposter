@@ -103,14 +103,16 @@ const CarModels = () => {
   const filtered = found.filter((e) => e.name == modelSelect);
   const filtered2 = filtered.filter((e) => e.year == yearSelect);
   const filtered3 = filtered2.filter((e) => e.krosover == krosSelect);
+  const filtered4 = filtered3.filter((e) => e.reCost <= max);
+  const filtered5 = filtered4.filter((e) => e.reCost >= min);
 
-  const dolt = () => {
-    const filterPlease = found.filter((e) => {
-      e.name.toString() == modelSelect.toString() ||
-        e.year.toString() == +yearSelect.toString() ||
-        e.krosover.toString() == +krosSelect.toString();
-    });
-  };
+  console.log(krosSelect);
+
+  // console.log(filtered);
+  // console.log(filtered2);
+  // console.log(filtered3);
+  // console.log(filtered4);
+  // console.log(filtered5);
 
   // functions of pagination
 
@@ -188,6 +190,7 @@ const CarModels = () => {
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                 onChange={useModel}
               >
+                <option value="model">Model</option>
                 {Sliced.map((filter) => {
                   return (
                     <option key={filter.model} value={filter.model}>
@@ -203,6 +206,7 @@ const CarModels = () => {
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                 onChange={useYear}
               >
+                <option value="year">year</option>
                 {years.map((filter) => {
                   return (
                     <option key={filter} value={filter}>
@@ -218,6 +222,7 @@ const CarModels = () => {
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                 onChange={useKros}
               >
+                <option value="krosover">krosover</option>
                 {krosovers.map((filter) => {
                   return (
                     <option key={filter} value={filter}>
@@ -240,8 +245,7 @@ const CarModels = () => {
               onChange={minPay}
             />
             <Link
-            to={'/mark/model/filter'}
-              onClick={dolt}
+              to={"/mark/model/filter"}
               className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
             >
               Automabil topish
@@ -254,12 +258,11 @@ const CarModels = () => {
 
       <div className="w-full flex justify-center py-5">
         <div className="w-[96%] space-y-10 xl:w-[1300px]">
-          <h3 className="textStyle text-[20px] flex md:text-[25px] items-center">
-            Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span>{" "}
-            automobillari
-          </h3>
+        <h2 className="font-bold textStyle text-[20px] md:text-[30px]">
+          Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span> aotomobillari 
+        </h2>
           <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
-            {slicedCards.map((car) => {
+            {filtered3.map((car) => {
               return (
                 <Link
                   to={`/mark/model/sotib-olish/${car.id}`}
@@ -318,8 +321,7 @@ const CarModels = () => {
                 <button
                   key={page}
                   className={`myPadding bg-[#E70A32] border-[#E70A32] text-white border-2 rounded-full ${
-                    page === firstindex &&
-                    "px-8"
+                    page === firstindex && "px-8"
                   }`}
                   onClick={() => setfirstindex(page)}
                 >
