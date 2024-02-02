@@ -20,7 +20,7 @@ const Header = () => {
               />
             </Link>
             <div className="space-x-10 hidden lg:flex">
-              <NavLink className={"fontStyle font-bold"}>Katalog</NavLink>
+              <NavLink to={'/katalog'} className={"fontStyle font-bold"}>Katalog</NavLink>
               <NavLink to={"/aksiyalar"} className={"fontStyle font-bold"}>
                 Aksiyalar
               </NavLink>

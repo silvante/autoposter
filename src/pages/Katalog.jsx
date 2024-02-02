@@ -2,7 +2,7 @@ import React from 'react'
 
 const Katalog = () => {
   return (
-    <div></div>
+    <div>Katalog</div>
   )
 }
 

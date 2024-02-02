@@ -20,6 +20,7 @@ import Buycar from "./pages/Buycar";
 import OtherLayout from "./layouts/OtherLayout";
 import Kontaktlar from "./pages/Kontaktlar";
 import Filter from "./pages/Filter";
+import Katalog from "./pages/Katalog";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/sotib-olish/:id" element={<Buycar />} />
         </Route>
         <Route path="/kontactlar" element={<Kontaktlar/>}/>
+        <Route path="/katalog" element={<Katalog/>}/>
       </Route>
     )
   );
