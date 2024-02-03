@@ -39,3 +39,7 @@
     font-size: 13px;
     transition: all .3s ease;
 }
+
+.myTransition{
+    transition: all .5s ease;
+}
