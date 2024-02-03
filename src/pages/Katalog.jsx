@@ -12,13 +12,16 @@ const Katalog = () => {
   const [first, setfirst] = useState(1);
   const [last, setlast] = useState(8);
 
-  const lastIndex = first * last
-  const firstIndex = lastIndex - last
+  const lastIndex = first * last;
+  const firstIndex = lastIndex - last;
 
   const carsSlicedArr = carsData.slice(firstIndex, lastIndex);
 
   const pages = [];
 
+  for (let i = 0; i <= Math.ceil(carsData.length / last); i++) {
+    pages.push(i);
+  }
 
   return (
     <div className="w-full flex justify-center">
@@ -122,9 +125,17 @@ const Katalog = () => {
                           {car.numberOfusers} foidalanuvchi • {car.year} yil
                         </p>
                         <p className="fontStyle font-bold">info:</p>
-                        <p className="fontStyle">probeg: {car.probeg} km, yili {car.year} , benzin {car.benzin} l.c , krosover {car.krosover}</p>
-                        <h2 className="textStyle text-2xl">{car.reCost}$ <span className="text-xl text-gray-500 line-through">{car.reCost}$</span></h2>
-                      </div> 
+                        <p className="fontStyle">
+                          probeg: {car.probeg} km, yili {car.year} , benzin{" "}
+                          {car.benzin} l.c , krosover {car.krosover}
+                        </p>
+                        <h2 className="textStyle text-2xl">
+                          {car.reCost}${" "}
+                          <span className="text-xl text-gray-500 line-through">
+                            {car.reCost}$
+                          </span>
+                        </h2>
+                      </div>
                     </Link>
                   );
                 })}
