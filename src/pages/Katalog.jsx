@@ -23,6 +23,8 @@ const Katalog = () => {
     pages.push(i);
   }
 
+  const numberOfPages = pages.filter((e) => e !== 0);
+
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] xl:w-[1300px] mb-20 space-y-5">
@@ -107,7 +109,7 @@ const Katalog = () => {
                   return (
                     <Link
                       key={car.id}
-                      className="w-full rounded-lg border p-3 flex gap-5 myTransition hover:shadow-xl hover:scale-105"
+                      className="w-full rounded-lg border p-3 flex gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
                     >
                       <div className="overflow-hidden w-56 h-36 flex items-center justify-center rounded-md">
                         <img
@@ -139,6 +141,23 @@ const Katalog = () => {
                     </Link>
                   );
                 })}
+              </div>
+              <div className="flex space-x-5 justify-center items-center">
+                <button
+                  onClick={() => setfirst(first - 1)}
+                  className=" h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
+                >
+                  prev
+                </button>
+                <p>
+                  {first}/{numberOfPages.length}
+                </p>
+                <button
+                  onClick={() => setfirst(first + 1)}
+                  className=" h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
+                >
+                  next
+                </button>
               </div>
             </div>
           </div>
