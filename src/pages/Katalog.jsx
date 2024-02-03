@@ -183,6 +183,7 @@ const Katalog = () => {
                 {carsSlicedArr.map((car) => {
                   return (
                     <Link
+                      to={`/katalog/${car.id}`}
                       key={car.id}
                       className="w-full rounded-lg border p-3 flex gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
                     >

@@ -35,7 +35,7 @@ const App = () => {
         </Route>
         <Route path="/mark" element={<AftermarksLay />}>
           <Route path="/mark/:model" element={<SelectedCars />} />
-          <Route path="/mark/model/filter" element={<Filter/>}/>
+          <Route path="/mark/model/filter" element={<Filter />} />
           <Route path="/mark/model/sotib-olish" element={<OtherLayout />}>
             <Route path="/mark/model/sotib-olish/:id" element={<Buycar />} />
           </Route>
@@ -44,8 +44,11 @@ const App = () => {
         <Route path="/sotib-olish" element={<BuyLayOut />}>
           <Route path="/sotib-olish/:id" element={<Buycar />} />
         </Route>
-        <Route path="/kontactlar" element={<Kontaktlar/>}/>
-        <Route path="/katalog" element={<Katalog/>}/>
+        <Route path="/kontactlar" element={<Kontaktlar />} />
+        <Route path="/katalog" element={<Katalog />} />
+        <Route path="/katalog">
+          <Route path="/katalog/:id" element={<Buycar />} />
+        </Route>
       </Route>
     )
   );
