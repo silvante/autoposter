@@ -106,8 +106,6 @@ const CarModels = () => {
   const filtered4 = filtered3.filter((e) => e.reCost <= max);
   const filtered5 = filtered4.filter((e) => e.reCost >= min);
 
-  console.log(krosSelect);
-
   // console.log(filtered);
   // console.log(filtered2);
   // console.log(filtered3);
@@ -116,9 +114,9 @@ const CarModels = () => {
 
   const navigate = useNavigate();
 
-  const handleClick = () =>{
-    navigate('/mark/model/filter', { state: { filtered5 } });
-  }
+  const handleClick = () => {
+    navigate("/mark/model/filter", { state: { filtered5 } });
+  };
 
   // functions of pagination
 
@@ -251,7 +249,7 @@ const CarModels = () => {
               onChange={minPay}
             />
             <button
-            onClick={handleClick}
+              onClick={handleClick}
               className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
             >
               Automabil topish
@@ -264,9 +262,10 @@ const CarModels = () => {
 
       <div className="w-full flex justify-center py-5">
         <div className="w-[96%] space-y-10 xl:w-[1300px]">
-        <h2 className="font-bold textStyle text-[20px] md:text-[30px]">
-          Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span> aotomobillari 
-        </h2>
+          <h2 className="font-bold textStyle text-[20px] md:text-[30px]">
+            Barcha <span className="text-[#E70A32]">{modelsArr.mark}</span>{" "}
+            aotomobillari
+          </h2>
           <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
             {slicedCards.map((car) => {
               return (

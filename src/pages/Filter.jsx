@@ -8,9 +8,6 @@ const Filter = () => {
   const location = useLocation();
   const filter = location.state && location.state.filtered5;
   // setArr(filter);
-  console.log(location);
-
-  console.log(filter);
   return (
     <div className="w-full justify-center flex">
       <div className="w-[96%] xl:w-[1300px] space-y-5">
