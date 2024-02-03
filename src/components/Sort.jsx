@@ -14,7 +14,7 @@ const Sort = () => {
           {marksIcon.map((mark) => {
             return (
               <Link
-                key={mark.id}
+                key={mark.mark}
                 className="grey-border flex items-center justify-between p-3 rounded cursor-pointer shrink-0 hoverd"
                 to={`/${mark.mark}`}
               >

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 import { carsData } from "../autoPosterData";
 import "../autoPosterData";
+import { marks } from "../autoPosterData";
 
 const Katalog = () => {
   const [first, setfirst] = useState(1);
@@ -32,6 +33,38 @@ const Katalog = () => {
     setfirst(1);
   }
 
+  const [mark, setmark] = useState("");
+
+  const useMark = (e) => {
+    setmark(e.target.value);
+  };
+
+  const filter = carsData.filter((e) => e.mark === mark);
+
+  function setModulToArr(arr) {
+    let models = new Set();
+    arr.forEach((item) => {
+      let model = item.name;
+      models.add(model);
+    });
+    let modellar = Array.from(models);
+    return modellar;
+  }
+
+  const models = setModulToArr(filter);
+
+  const [model, setmodel] = useState("");
+
+  const useModel = (e) => {
+    setmodel(e.target.value);
+  };
+
+  const filter2 = filter.filter((e) => e.model === model);
+
+  console.log(filter2);
+
+  // filter funktion
+
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] xl:w-[1300px] mb-20 space-y-5">
@@ -45,28 +78,34 @@ const Katalog = () => {
             <div className="grid grid-cols-1 shadow-xl rounded-lg p-5 border gap-5 md:grid-cols-3">
               <div className="text-center space-y-2">
                 <p className="fontStyle font-bold">marka</p>
-                <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full">
+                <select
+                  className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+                  onChange={useMark}
+                >
                   <option value="model">marka</option>
-                  {/* {Sliced.map((filter) => {
-                        return (
-                          <option key={filter.model} value={filter.model}>
-                            {filter.model}
-                          </option>
-                        );
-                      })} */}
+                  {marks.map((filter) => {
+                    return (
+                      <option key={filter} value={filter}>
+                        {filter}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
               <div className="text-center space-y-2">
                 <p className="fontStyle font-bold">Model</p>
-                <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full">
+                <select
+                  className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+                  onChange={useModel}
+                >
                   <option value="year">model</option>
-                  {/* {years.map((filter) => {
-                        return (
-                          <option key={filter} value={filter}>
-                            {filter}
-                          </option>
-                        );
-                      })} */}
+                  {models.map((filter) => {
+                    return (
+                      <option key={filter} value={filter}>
+                        {filter}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
               <div className="text-center space-y-2">
