@@ -33,13 +33,16 @@ const Katalog = () => {
     setfirst(1);
   }
 
+  // filter by mark
+
   const [mark, setmark] = useState("");
 
   const useMark = (e) => {
     setmark(e.target.value);
   };
-
   const filter = carsData.filter((e) => e.mark === mark);
+
+  // filter by model
 
   function setModulToArr(arr) {
     let models = new Set();
@@ -59,9 +62,32 @@ const Katalog = () => {
     setmodel(e.target.value);
   };
 
-  const filter2 = filter.filter((e) => e.model === model);
+  const filter2 = filter.filter((e) => e.name === model);
 
-  console.log(filter2);
+  // filter by year
+
+  const [year, setyear] = useState();
+
+  const useYear = (e) => {
+    setyear(e.target.value);
+  };
+
+  function setyearToArr(arr) {
+    let years = new Set();
+    arr.forEach((item) => {
+      let year = item.year;
+      years.add(year);
+    });
+    let yillar = Array.from(years);
+    return yillar;
+  }
+
+  const years = setyearToArr(filter2);
+  const filter3 = filter2.filter((e) => e.year === +year);
+
+  // console.log(filter);
+  // console.log(filter2);
+  // console.log(filter3);
 
   // filter funktion
 
@@ -110,15 +136,18 @@ const Katalog = () => {
               </div>
               <div className="text-center space-y-2">
                 <p className="fontStyle font-bold">Auto yili</p>
-                <select className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full">
-                  <option value="krosover">2024</option>
-                  {/* {krosovers.map((filter) => {
-                        return (
-                          <option key={filter} value={filter}>
-                            {filter}
-                          </option>
-                        );
-                      })} */}
+                <select
+                  className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+                  onChange={useYear}
+                >
+                  <option value="krosover">yil</option>
+                  {years.map((filter) => {
+                    return (
+                      <option key={filter} value={filter}>
+                        {filter}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
               <input
