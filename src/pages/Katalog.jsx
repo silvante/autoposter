@@ -7,6 +7,7 @@ import card3 from "../assets/images/card3.png";
 import { Link } from "react-router-dom";
 
 import { carsData } from "../autoPosterData";
+import "../autoPosterData";
 
 const Katalog = () => {
   const [first, setfirst] = useState(1);
@@ -24,6 +25,12 @@ const Katalog = () => {
   }
 
   const numberOfPages = pages.filter((e) => e !== 0);
+
+  if (first < 1) {
+    setfirst(numberOfPages.length);
+  } else if (first > numberOfPages.length) {
+    setfirst(1);
+  }
 
   return (
     <div className="w-full flex justify-center">
@@ -145,16 +152,16 @@ const Katalog = () => {
               <div className="flex space-x-5 justify-center items-center">
                 <button
                   onClick={() => setfirst(first - 1)}
-                  className=" h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
+                  className="prev h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
                 >
                   prev
                 </button>
-                <p>
-                  {first}/{numberOfPages.length}
+                <p className="fontStyle font-bold">
+                  {first} / {numberOfPages.length}
                 </p>
                 <button
                   onClick={() => setfirst(first + 1)}
-                  className=" h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
+                  className="next h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
                 >
                   next
                 </button>
