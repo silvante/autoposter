@@ -40,6 +40,7 @@ const Katalog = () => {
   const useMark = (e) => {
     setmark(e.target.value);
   };
+
   const filter = carsData.filter((e) => e.mark === mark);
 
   // filter by model
@@ -83,13 +84,38 @@ const Katalog = () => {
   }
 
   const years = setyearToArr(filter2);
+
   const filter3 = filter2.filter((e) => e.year === +year);
 
-  // console.log(filter);
-  // console.log(filter2);
-  // console.log(filter3);
+  // filter by maxPay
 
-  // filter funktion
+  const [max, setmax] = useState();
+
+  const maxPay = (e) => {
+    setmax(e.target.value);
+  };
+
+  const filter4 = filter3.filter((e) => e.reCost <= max);
+
+  // filter my minPay
+
+  const [min, setmin] = useState();
+
+  const minPay = (e) => {
+    setmin(e.target.value);
+  };
+
+  const filter5 = filter4.filter((e) => e.reCost >= min);
+
+  console.log(filter);
+  console.log(filter2);
+  console.log(filter3);
+  console.log(filter4);
+  console.log(filter5);
+
+  // result play
+
+  const [show, setshow] = useState(false);
 
   return (
     <div className="w-full flex justify-center">
@@ -99,8 +125,10 @@ const Katalog = () => {
             Katalog
           </h3>
         </div>
-        <div className="w-full flex justify-between items-start">
-          <div className="w-[68%] space-y-10">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start space-y-10 lg:space-y-0">
+          <div className="w-full lg:w-[68%] space-y-10">
+            {/* filter */}
+
             <div className="grid grid-cols-1 shadow-xl rounded-lg p-5 border gap-5 md:grid-cols-3">
               <div className="text-center space-y-2">
                 <p className="fontStyle font-bold">marka</p>
@@ -154,91 +182,151 @@ const Katalog = () => {
                 type="number"
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
                 placeholder="Max Bujet $"
-                // onChange={maxPay}
+                onChange={maxPay}
               />
               <input
                 type="number"
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
                 placeholder="Min Bujet $"
-                // onChange={minPay}
+                onChange={minPay}
               />
               <button
-                // onClick={handleClick}
+                onClick={() => setshow(true)}
                 className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
               >
                 Automabil topish
               </button>
             </div>
-            <div className="w-full space-y-5">
-              <div className="w-full flex justify-between items-center">
-                <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
-                  Automobillar
-                </h3>
-                <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
-                  jami <span className="text-[#e70a32]">{carsData.length}</span>{" "}
-                  ta
-                </h3>
-              </div>
+
+            {/* Auto show and pagination */}
+
+            {!show && (
               <div className="w-full space-y-5">
-                {carsSlicedArr.map((car) => {
-                  return (
-                    <Link
-                      to={`/katalog/${car.id}`}
-                      key={car.id}
-                      className="w-full rounded-lg border p-3 flex gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
-                    >
-                      <div className="overflow-hidden w-56 h-36 flex items-center justify-center rounded-md">
-                        <img
-                          src={car.image}
-                          alt={car.name}
-                          className="w-full h-full"
-                        />
-                      </div>
-                      <div>
-                        <h2 className="textStyle font-bold text-xl">
-                          <span className="text-[#e70a32]">{car.mark}</span>{" "}
-                          {car.name}
-                        </h2>
-                        <p className="fontStyle font-bold">
-                          {car.numberOfusers} foidalanuvchi • {car.year} yil
-                        </p>
-                        <p className="fontStyle font-bold">info:</p>
-                        <p className="fontStyle">
-                          probeg: {car.probeg} km, yili {car.year} , benzin{" "}
-                          {car.benzin} l.c , krosover {car.krosover}
-                        </p>
-                        <h2 className="textStyle text-2xl">
-                          {car.reCost}${" "}
-                          <span className="text-xl text-gray-500 line-through">
-                            {car.reCost}$
-                          </span>
-                        </h2>
-                      </div>
-                    </Link>
-                  );
-                })}
+                <div className="w-full flex justify-between items-center">
+                  <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
+                    Automobillar
+                  </h3>
+                  <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
+                    jami{" "}
+                    <span className="text-[#e70a32]">{carsData.length}</span> ta
+                  </h3>
+                </div>
+                <div className="w-full space-y-5">
+                  {carsSlicedArr.map((car) => {
+                    return (
+                      <Link
+                        to={`/katalog/${car.id}`}
+                        key={car.id}
+                        className="w-full rounded-lg border p-3 flex flex-col sm:flex-row gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
+                      >
+                        <div className="overflow-hidden w-full h-48 sm:h-36 sm:w-56 flex items-center justify-center rounded-md">
+                          <img
+                            src={car.image}
+                            alt={car.name}
+                            className="w-full"
+                          />
+                        </div>
+                        <div>
+                          <h2 className="textStyle font-bold text-xl">
+                            <span className="text-[#e70a32]">{car.mark}</span>{" "}
+                            {car.name}
+                          </h2>
+                          <p className="fontStyle font-bold">
+                            {car.numberOfusers} foidalanuvchi • {car.year} yil
+                          </p>
+                          <p className="fontStyle font-bold">info:</p>
+                          <p className="fontStyle">
+                            probeg: {car.probeg} km, yili {car.year} , benzin{" "}
+                            {car.benzin} l.c , krosover {car.krosover}
+                          </p>
+                          <h2 className="textStyle text-2xl">
+                            {car.reCost}${" "}
+                            <span className="text-xl text-gray-500 line-through">
+                              {car.cost}$
+                            </span>
+                          </h2>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+                <div className="flex space-x-5 justify-center items-center">
+                  <button
+                    onClick={() => setfirst(first - 1)}
+                    className="prev h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
+                  >
+                    prev
+                  </button>
+                  <p className="fontStyle font-bold">
+                    {first} / {numberOfPages.length}
+                  </p>
+                  <button
+                    onClick={() => setfirst(first + 1)}
+                    className="next h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
+                  >
+                    next
+                  </button>
+                </div>
               </div>
-              <div className="flex space-x-5 justify-center items-center">
-                <button
-                  onClick={() => setfirst(first - 1)}
-                  className="prev h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
-                >
-                  prev
-                </button>
-                <p className="fontStyle font-bold">
-                  {first} / {numberOfPages.length}
-                </p>
-                <button
-                  onClick={() => setfirst(first + 1)}
-                  className="next h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
-                >
-                  next
-                </button>
+            )}
+
+            {/* filter results */}
+
+            {show && (
+              <div className="w-full space-y-5">
+                <div className="w-full flex justify-between items-center">
+                  <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
+                    Filter natijasi
+                  </h3>
+                  <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
+                    jami{" "}
+                    <span className="text-[#e70a32]">{filter5.length}</span> ta
+                  </h3>
+                </div>
+                <div className="w-full space-y-5">
+                  {filter5.map((car) => {
+                    return (
+                      <Link
+                        to={`/katalog/${car.id}`}
+                        key={car.id}
+                        className="w-full rounded-lg border p-3 flex flex-col sm:flex-row gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
+                      >
+                        <div className="overflow-hidden w-full h-44 sm:w-56 sm:h-36 flex items-center justify-center rounded-md">
+                          <img
+                            src={car.image}
+                            alt={car.name}
+                            className="w-full h-full"
+                          />
+                        </div>
+                        <div>
+                          <h2 className="textStyle font-bold text-xl">
+                            <span className="text-[#e70a32]">{car.mark}</span>{" "}
+                            {car.name}
+                          </h2>
+                          <p className="fontStyle font-bold">
+                            {car.numberOfusers} foidalanuvchi • {car.year} yil
+                          </p>
+                          <p className="fontStyle font-bold">info:</p>
+                          <p className="fontStyle">
+                            probeg: {car.probeg} km, yili {car.year} , benzin{" "}
+                            {car.benzin} l.c , krosover {car.krosover}
+                          </p>
+                          <h2 className="textStyle text-2xl">
+                            {car.reCost}${" "}
+                            <span className="text-xl text-gray-500 line-through">
+                              {car.cost}$
+                            </span>
+                          </h2>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
-          <div className="w-[30%] stick">
+          <div className="w-full lg:w-[30%] stick">
             <div className="w-full flex items-center justify-center flex-wrap space-y-5 lg:justify-between">
               <div className="p-6 relative w-[400px] bg-white rounded-md h-[200px] shadow-md">
                 <img

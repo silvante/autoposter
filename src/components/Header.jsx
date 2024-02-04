@@ -20,7 +20,9 @@ const Header = () => {
               />
             </Link>
             <div className="space-x-10 hidden lg:flex">
-              <NavLink to={'/katalog'} className={"fontStyle font-bold"}>Katalog</NavLink>
+              <NavLink to={"/katalog"} className={"fontStyle font-bold"}>
+                Katalog
+              </NavLink>
               <NavLink to={"/aksiyalar"} className={"fontStyle font-bold"}>
                 Aksiyalar
               </NavLink>
@@ -49,10 +51,15 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      <div className={`w-full absolute top-[60px] z-50 bg-white flex justify-center lg:hidden shadow-lg py-5  transition-all ${showAside ? `translate-x-0` : `translate-x-[-100%]` }`}>
+      <div
+        className={`w-full absolute top-[60px] z-50 bg-white flex justify-center lg:hidden shadow-lg py-5  transition-all ${
+          showAside ? `translate-x-0` : `translate-x-[-100%]`
+        }`}
+      >
         <div className="flex-col w-[96%] space-y-5">
           <div>
             <NavLink
+              to={"/katalog"}
               onClick={() => setShowAside(false)}
               className={
                 "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
