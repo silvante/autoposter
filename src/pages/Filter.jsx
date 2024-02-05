@@ -6,7 +6,7 @@ const Filter = () => {
   // const [arr, setArr] = useState([]);
 
   const location = useLocation();
-  const filter = location.state && location.state.filtered5;
+  const filter = location.state && location.state.resulted;
   // setArr(filter);
   return (
     <div className="w-full justify-center flex">

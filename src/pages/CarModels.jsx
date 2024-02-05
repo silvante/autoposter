@@ -13,6 +13,7 @@ const CarModels = () => {
   const found = modelsArr.elems;
 
   // filtering arr models
+  const [modelSelect, setModel] = useState("");
 
   function setModulToArr(arr) {
     let models = new Set();
@@ -23,8 +24,20 @@ const CarModels = () => {
     let modellar = Array.from(models);
     return modellar;
   }
-
   const models = setModulToArr(found);
+
+  const useModel = (e) => {
+    setModel(e.target.value);
+  };
+
+  const filtered = found.filter((e) => e.name == modelSelect);
+
+  // filtering by years
+  const [yearSelect, setYear] = useState("");
+
+  const useYear = (e) => {
+    setYear(e.target.value);
+  };
 
   function setYearsToArr(arr) {
     let years = new Set();
@@ -36,7 +49,16 @@ const CarModels = () => {
     return yearsArr;
   }
 
-  const years = setYearsToArr(found);
+  const years = setYearsToArr(filtered);
+
+  const filtered2 = filtered.filter((e) => e.year == yearSelect);
+
+  // filter by krosover
+  const [krosSelect, setkros] = useState("");
+
+  const useKros = (e) => {
+    setkros(e.target.value);
+  };
 
   function setkrosoverToArr(arr) {
     let krosovers = new Set();
@@ -48,7 +70,9 @@ const CarModels = () => {
     return krosoverArr;
   }
 
-  const krosovers = setkrosoverToArr(found);
+  const krosovers = setkrosoverToArr(filtered2);
+
+  const filtered3 = filtered2.filter((e) => e.krosover == krosSelect);
 
   // adding a lenth of models
 
@@ -74,23 +98,8 @@ const CarModels = () => {
 
   // siling
 
-  const [modelSelect, setModel] = useState("");
-  const [yearSelect, setYear] = useState("");
-  const [krosSelect, setkros] = useState("");
   const [min, setMin] = useState("");
   const [max, setmax] = useState("");
-
-  const useModel = (e) => {
-    setModel(e.target.value);
-  };
-
-  const useYear = (e) => {
-    setYear(e.target.value);
-  };
-
-  const useKros = (e) => {
-    setkros(e.target.value);
-  };
 
   const minPay = (e) => {
     setMin(e.target.value);
@@ -100,9 +109,6 @@ const CarModels = () => {
     setmax(e.target.value);
   };
 
-  const filtered = found.filter((e) => e.name == modelSelect);
-  const filtered2 = filtered.filter((e) => e.year == yearSelect);
-  const filtered3 = filtered2.filter((e) => e.krosover == krosSelect);
   const filtered4 = filtered3.filter((e) => e.reCost <= max);
   const filtered5 = filtered4.filter((e) => e.reCost >= min);
 
@@ -112,10 +118,22 @@ const CarModels = () => {
   // console.log(filtered4);
   // console.log(filtered5);
 
+  const [main, setmain] = useState([]);
+
+  const result = main.concat(
+    filtered2.length === 0 && filtered,
+    filtered3.length === 0 && filtered2,
+    filtered4.length === 0 && filtered3,
+    filtered5.length === 0 && filtered4,
+    filtered5
+  );
+
+  const resulted = result.filter((e) => e !== false);
+
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/mark/model/filter", { state: { filtered5 } });
+    navigate("/mark/model/filter", { state: { resulted } });
   };
 
   // functions of pagination
