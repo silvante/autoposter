@@ -73,7 +73,7 @@ const Filter = () => {
           <div className="w-full text-center py-24 space-y-5 anime">
             <h1 className="text-gray-500 text-[70px]">(┬┬﹏┬┬)</h1>
             <p className="text-gray-500 text-[20px] md:text-[28px]">
-              Filter toliq toldirilmagan yoki filter malumoti boyicha automobil
+              Filter malumoti boyicha automobil
               yoq!
             </p>
           </div>
