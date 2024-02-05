@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Advises from "../components/Advises";
 
 import card1 from "../assets/images/card1.png";
@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { carsData } from "../autoPosterData";
 import "../autoPosterData";
 import { marks } from "../autoPosterData";
+import { Result } from "postcss";
 
 const Katalog = () => {
   const [first, setfirst] = useState(1);
@@ -106,16 +107,17 @@ const Katalog = () => {
   };
 
   const filter5 = filter4.filter((e) => e.reCost >= min);
+  const [main, setmain] = useState([]);
 
-  const [openArr, setopenArr] = useState([]);
+  const result = main.concat(
+    filter2.length === 0 && filter,
+    filter3.length === 0 && filter2,
+    filter4.length === 0 && filter3,
+    filter5.length === 0 && filter4,
+    filter5
+  );
 
-  useEffect((e) => {
-    if (filter.length !== 0) {
-      setopenArr(filter);
-    }
-  }, []);
-
-  console.log(openArr);
+  const resulted = result.filter((e) => e !== false);
 
   // result play
 
@@ -216,7 +218,7 @@ const Katalog = () => {
                   </h3>
                 </div>
                 <div className="w-full space-y-5">
-                  {carsSlicedArr.map((car) => {
+                  {carsData.map((car) => {
                     return (
                       <Link
                         to={`/katalog/${car.id}`}
@@ -283,12 +285,12 @@ const Katalog = () => {
                     Filter natijasi
                   </h3>
                   <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
-                    jami{" "}
-                    <span className="text-[#e70a32]">{filter5.length}</span> ta
+                    jami <span className="text-[#e70a32]">{result.length}</span>{" "}
+                    ta
                   </h3>
                 </div>
                 <div className="w-full space-y-5">
-                  {filter5.map((car) => {
+                  {result.map((car) => {
                     return (
                       <Link
                         to={`/katalog/${car.id}`}
