@@ -12,28 +12,6 @@ import { marks } from "../autoPosterData";
 import { Result } from "postcss";
 
 const Katalog = () => {
-  const [first, setfirst] = useState(1);
-  const [last, setlast] = useState(8);
-
-  const lastIndex = first * last;
-  const firstIndex = lastIndex - last;
-
-  const carsSlicedArr = carsData.slice(firstIndex, lastIndex);
-
-  const pages = [];
-
-  for (let i = 0; i <= Math.ceil(carsData.length / last); i++) {
-    pages.push(i);
-  }
-
-  const numberOfPages = pages.filter((e) => e !== 0);
-
-  if (first < 1) {
-    setfirst(numberOfPages.length);
-  } else if (first > numberOfPages.length) {
-    setfirst(1);
-  }
-
   // filter by mark
 
   const [mark, setmark] = useState("");
@@ -123,6 +101,29 @@ const Katalog = () => {
 
   const [show, setshow] = useState(false);
 
+  // pagination of cars
+
+  const [first, setfirst] = useState(1);
+  const [last, setlast] = useState(8);
+
+  const lastIndex = first * last;
+  const firstIndex = lastIndex - last;
+
+  const carsSlicedArr = carsData.slice(firstIndex, lastIndex);
+
+  const pages = [];
+
+  for (let i = 0; i <= Math.ceil(carsData.length / last); i++) {
+    pages.push(i);
+  }
+
+  const numberOfPages = pages.filter((e) => e !== 0);
+
+  if (first < 1) {
+    setfirst(numberOfPages.length);
+  } else if (first > numberOfPages.length) {
+    setfirst(1);
+  }
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] xl:w-[1300px] mb-20 space-y-5">
@@ -218,7 +219,7 @@ const Katalog = () => {
                   </h3>
                 </div>
                 <div className="w-full space-y-5">
-                  {carsData.map((car) => {
+                  {carsSlicedArr.map((car) => {
                     return (
                       <Link
                         to={`/katalog/${car.id}`}
@@ -285,12 +286,12 @@ const Katalog = () => {
                     Filter natijasi
                   </h3>
                   <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
-                    jami <span className="text-[#e70a32]">{result.length}</span>{" "}
+                    jami <span className="text-[#e70a32]">{resulted.length}</span>{" "}
                     ta
                   </h3>
                 </div>
                 <div className="w-full space-y-5">
-                  {result.map((car) => {
+                  {resulted.map((car) => {
                     return (
                       <Link
                         to={`/katalog/${car.id}`}
