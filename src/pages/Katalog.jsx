@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Advises from "../components/Advises";
 
 import card1 from "../assets/images/card1.png";
@@ -107,11 +107,15 @@ const Katalog = () => {
 
   const filter5 = filter4.filter((e) => e.reCost >= min);
 
-  console.log(filter);
-  console.log(filter2);
-  console.log(filter3);
-  console.log(filter4);
-  console.log(filter5);
+  const [openArr, setopenArr] = useState([]);
+
+  useEffect((e) => {
+    if (filter.length !== 0) {
+      setopenArr(filter);
+    }
+  }, []);
+
+  console.log(openArr);
 
   // result play
 
