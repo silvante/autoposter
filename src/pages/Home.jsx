@@ -30,11 +30,14 @@ const Home = () => {
     if (inputValue.trim() === "") {
       return true;
     }
-    return carsData.name
-      .toLowerCase()
-      .includes(inputValue.trim().toLowerCase());
+    return (
+      carsData.name ||
+      carsData.mark.toLowerCase().includes(inputValue.trim().toLowerCase())
+    );
   };
   const filteredCars = carsData.filter(filterCarsBySearch);
+
+  const [main, setmain] = useState([]);
 
   return (
     <Fragment>
@@ -133,7 +136,7 @@ const Home = () => {
             Sorov boyicha <span className="text-[#E70A32]">automobillar</span>
           </h3>
           <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
-            {filteredCars.map((car) => {
+            {filterCars.map((car) => {
               return (
                 <Link
                   to={`sotib-olish/${car.id.toString()}`}
