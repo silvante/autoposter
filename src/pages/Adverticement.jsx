@@ -34,7 +34,7 @@ const Adverticement = (setShowAD) => {
           </div>
           <Link
             onClick={() => setShowAD(false)}
-            to={"/kredit"}
+            // to={"/kredit"}
             className="text-white py-3 w-full bg-[#E70A32] rounded inline-block text-center"
           >
             Avtoni snab korish
