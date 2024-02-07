@@ -13,6 +13,10 @@ const Adverticement = (setShowAD) => {
   const navigate = useNavigate();
   return (
     <div className="w-full h-full fixed bg-black/50 z-50 backdrop-blur-sm flex justify-center items-center">
+      <Link
+        className="w-full h-full absolute cursor-default"
+        onClick={() => setShowAD(false)}
+      ></Link>
       <div
         className="bg-white rounded-[10px] flex space-x-5"
         data-aos="zoom-in"
