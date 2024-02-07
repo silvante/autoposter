@@ -50,7 +50,7 @@ const MainLayOut = () => {
         data-aos-offset="300"
         data-aos-duration="3000"
         onClick={() => setShowAD(true)}
-        className="bg-[#E70A32] fixed bottom-5 right-5 rounded-full shadow-md shadow-gray-400 p-3 text-white hidden lg:block text-[22px]"
+        className="bg-[#E70A32] fixed bottom-5 right-5 rounded-full shadow-md shadow-black/25 p-3 text-white hidden lg:block text-[22px]"
       >
         📃
       </button>
