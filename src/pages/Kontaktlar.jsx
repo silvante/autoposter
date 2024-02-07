@@ -76,10 +76,16 @@ const Kontaktlar = () => {
               </div>
             </div>
           </div>
-          <div className="w-full h-44 md:h-[350px] bg-slate-300 rounded-lg">
+          <div className="w-full h-44 md:h-[350px] bg-slate-300 rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/search/auto+poster/@47.754058,44.7793767,5z/data=!3m1!4b1?entry=ttu"
-              frameborder="0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9192217.943579994!2d18.06482405000001!3d55.77250529999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a25c969ae4b%3A0xf2913b514c469d27!2sAvto-Poster!5e0!3m2!1suz!2s!4v1707325328123!5m2!1suz!2s"
+              width="600"
+              height="450"
+              // style="border:0;"
+              className="w-full h-full"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
