@@ -16,16 +16,21 @@ const AksiyaDatails = () => {
           <h3 className="text-black fontStyle text-[20px] font-bold mb-5 md:text-[30px]">
             {aksiya.title}
           </h3>
-          <div className="rounded-lg shadow-md  p-2 w-full space-y-5 lg:w-[70%] lg:p-7">
+          <div className="rounded-lg shadow-md  p-2 w-full space-y-5">
             <img
               src={aksiya.image}
               alt={aksiya.title}
               className="rounded-lg transition-all hover:shadow-xl"
             />
-            <p className="fontStyle">{aksiya.info}</p>
-            <button className="bg-[#E70A32] py-3 px-5 rounded-md text-white" onClick={() => setShows(true)}>
-              Aksiyada Ishtrok etish
-            </button>
+            <div className="p-5">
+              <p className="fontStyle">{aksiya.info}</p>
+              <button
+                className="bg-[#E70A32] py-3 px-5 rounded-md text-white"
+                onClick={() => setShows(true)}
+              >
+                Aksiyada Ishtrok etish
+              </button>
+            </div>
           </div>
         </div>
       </div>
