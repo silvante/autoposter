@@ -4,10 +4,9 @@ import audi from "../src/assets/images/Audi.png";
 import opel from "../src/assets/images/Opel.png";
 import lexus from "../src/assets/images/Lexus.png";
 import mazda from "../src/assets/images/Mazda.png";
-import ferrari from '../src/assets/images/ferrari.png'
-import ford from '../src/assets/images/ford.jpg'
-import kia from '../src/assets/images/kia.png'
-
+import ferrari from "../src/assets/images/ferrari.png";
+import ford from "../src/assets/images/Ford.png";
+import kia from "../src/assets/images/kia.png";
 
 // import audi images
 
@@ -47,103 +46,103 @@ import uuid4 from "uuid4";
 
 // opel
 
-import opel1 from '../src/assets/images/opel1.jpg'
-import opel2 from '../src/assets/images/opel2.jpg'
+import opel1 from "../src/assets/images/opel1.jpg";
+import opel2 from "../src/assets/images/opel2.jpg";
 // import opel3 from '../src/assets/images/opel3.jpg'
-import opel4 from '../src/assets/images/opel4.jpg'
-import opel5 from '../src/assets/images/opel5.jpg'
-import opel6 from '../src/assets/images/opel6.jpg'
+import opel4 from "../src/assets/images/opel4.jpg";
+import opel5 from "../src/assets/images/opel5.jpg";
+import opel6 from "../src/assets/images/opel6.jpg";
 // import opel7 from '../src/assets/images/opel7.jpg'
-import opel8 from '../src/assets/images/opel8.jpg'
-import opel9 from '../src/assets/images/opel9.jpg'
+import opel8 from "../src/assets/images/opel8.jpg";
+import opel9 from "../src/assets/images/opel9.jpg";
 // import opel10 from '../src/assets/images/opel10.jpg'
-import opel11 from '../src/assets/images/opel11.jpg'
+import opel11 from "../src/assets/images/opel11.jpg";
 // import opel12 from '../src/assets/images/opel12.jpg'
-import opel13 from '../src/assets/images/opel13.jpg'
-import opel14 from '../src/assets/images/opel14.jpg'
-import opel15 from '../src/assets/images/opel15.jpg'
-import opel16 from '../src/assets/images/opel16.jpg'
+import opel13 from "../src/assets/images/opel13.jpg";
+import opel14 from "../src/assets/images/opel14.jpg";
+import opel15 from "../src/assets/images/opel15.jpg";
+import opel16 from "../src/assets/images/opel16.jpg";
 
 // madza
 
-import mazda1 from '../src/assets/images/mazda1.jpg'
-import mazda2 from '../src/assets/images/mazda2.jpg'
-import mazda3 from '../src/assets/images/mazda3.jpg'
-import mazda4 from '../src/assets/images/mazda4.jpg'
-import mazda5 from '../src/assets/images/mazda5.jpg'
-import mazda6 from '../src/assets/images/mazda6.jpg'
-import mazda7 from '../src/assets/images/mazda7.jpg'
-import mazda9 from '../src/assets/images/mazda9.jpg'
-import mazda10 from '../src/assets/images/mazda10.jpg'
+import mazda1 from "../src/assets/images/mazda1.jpg";
+import mazda2 from "../src/assets/images/mazda2.jpg";
+import mazda3 from "../src/assets/images/mazda3.jpg";
+import mazda4 from "../src/assets/images/mazda4.jpg";
+import mazda5 from "../src/assets/images/mazda5.jpg";
+import mazda6 from "../src/assets/images/mazda6.jpg";
+import mazda7 from "../src/assets/images/mazda7.jpg";
+import mazda9 from "../src/assets/images/mazda9.jpg";
+import mazda10 from "../src/assets/images/mazda10.jpg";
 
 // ferrari
 
-import ferrari1 from '../src/assets/images/ferrari1.jpg'
-import ferrari2 from '../src/assets/images/ferrari2.jpg'
-import ferrari3 from '../src/assets/images/ferrari3.jpg'
-import ferrari4 from '../src/assets/images/ferrari4.jpg'
-import ferrari5 from '../src/assets/images/ferrari5.jpg'
-import ferrari6 from '../src/assets/images/ferrari6.jpg'
-import ferrari7 from '../src/assets/images/ferrari7.jpg'
-import ferrari8 from '../src/assets/images/ferrari8.jpg'
-import ferrari9 from '../src/assets/images/ferrari9.jpg'
-import ferrari10 from '../src/assets/images/ferrari10.jpg'
+import ferrari1 from "../src/assets/images/ferrari1.jpg";
+import ferrari2 from "../src/assets/images/ferrari2.jpg";
+import ferrari3 from "../src/assets/images/ferrari3.jpg";
+import ferrari4 from "../src/assets/images/ferrari4.jpg";
+import ferrari5 from "../src/assets/images/ferrari5.jpg";
+import ferrari6 from "../src/assets/images/ferrari6.jpg";
+import ferrari7 from "../src/assets/images/ferrari7.jpg";
+import ferrari8 from "../src/assets/images/ferrari8.jpg";
+import ferrari9 from "../src/assets/images/ferrari9.jpg";
+import ferrari10 from "../src/assets/images/ferrari10.jpg";
 
 // ford
 
-import ford1 from '../src/assets/images/ford1.jpg'
-import ford2 from '../src/assets/images/ford2.jpg'
-import ford3 from '../src/assets/images/ford3.jpg'
-import ford4 from '../src/assets/images/ford4.jpg'
-import ford5 from '../src/assets/images/ford5.jpg'
-import ford6 from '../src/assets/images/ford6.jpg'
-import ford7 from '../src/assets/images/ford7.jpg'
-import ford8 from '../src/assets/images/ford8.jpg'
-import ford9 from '../src/assets/images/ford9.jpg'
-import ford10 from '../src/assets/images/ford10.jpg'
-import ford12 from '../src/assets/images/ford12.jpg'
-import ford13 from '../src/assets/images/ford13.jpg'
-import ford14 from '../src/assets/images/ford14.jpg'
-import ford15 from '../src/assets/images/ford15.jpg'
+import ford1 from "../src/assets/images/ford1.jpg";
+import ford2 from "../src/assets/images/ford2.jpg";
+import ford3 from "../src/assets/images/ford3.jpg";
+import ford4 from "../src/assets/images/ford4.jpg";
+import ford5 from "../src/assets/images/ford5.jpg";
+import ford6 from "../src/assets/images/ford6.jpg";
+import ford7 from "../src/assets/images/ford7.jpg";
+import ford8 from "../src/assets/images/ford8.jpg";
+import ford9 from "../src/assets/images/ford9.jpg";
+import ford10 from "../src/assets/images/ford10.jpg";
+import ford12 from "../src/assets/images/ford12.jpg";
+import ford13 from "../src/assets/images/ford13.jpg";
+import ford14 from "../src/assets/images/ford14.jpg";
+import ford15 from "../src/assets/images/ford15.jpg";
 
 // kia
 
-import kia1 from '../src/assets/images/kia1.jpg'
-import kia2 from '../src/assets/images/kia2.jpg'
-import kia3 from '../src/assets/images/kia3.jpg'
-import kia4 from '../src/assets/images/kia4.jpg'
-import kia5 from '../src/assets/images/kia5.jpg'
-import kia6 from '../src/assets/images/kia6.jpg'
-import kia7 from '../src/assets/images/kia7.jpg'
-import kia8 from '../src/assets/images/kia8.jpg'
-import kia9 from '../src/assets/images/kia9.jpg'
-import kia10 from '../src/assets/images/kia10.jpg'
-import kia11 from '../src/assets/images/kia11.jpg'
-import kia12 from '../src/assets/images/kia12.jpg'
-import kia13 from '../src/assets/images/kia13.jpg'
-import kia14 from '../src/assets/images/kia14.jpg'
-import kia15 from '../src/assets/images/kia15.jpg'
-import kia16 from '../src/assets/images/kia16.jpg'
-import kia17 from '../src/assets/images/kia17.jpg'
-import kia18 from '../src/assets/images/kia18.jpg'
+import kia1 from "../src/assets/images/kia1.jpg";
+import kia2 from "../src/assets/images/kia2.jpg";
+import kia3 from "../src/assets/images/kia3.jpg";
+import kia4 from "../src/assets/images/kia4.jpg";
+import kia5 from "../src/assets/images/kia5.jpg";
+import kia6 from "../src/assets/images/kia6.jpg";
+import kia7 from "../src/assets/images/kia7.jpg";
+import kia8 from "../src/assets/images/kia8.jpg";
+import kia9 from "../src/assets/images/kia9.jpg";
+import kia10 from "../src/assets/images/kia10.jpg";
+import kia11 from "../src/assets/images/kia11.jpg";
+import kia12 from "../src/assets/images/kia12.jpg";
+import kia13 from "../src/assets/images/kia13.jpg";
+import kia14 from "../src/assets/images/kia14.jpg";
+import kia15 from "../src/assets/images/kia15.jpg";
+import kia16 from "../src/assets/images/kia16.jpg";
+import kia17 from "../src/assets/images/kia17.jpg";
+import kia18 from "../src/assets/images/kia18.jpg";
 
 // lexus
 
-import lexus1 from '../src/assets/images/lexus1.jpg'
-import lexus2 from '../src/assets/images/lexus2.jpg'
-import lexus3 from '../src/assets/images/lexus3.jpg'
-import lexus4 from '../src/assets/images/lexus4.jpg'
-import lexus5 from '../src/assets/images/lexus5.jpg'
-import lexus6 from '../src/assets/images/lexus6.jpg'
-import lexus7 from '../src/assets/images/lexus7.jpg'
-import lexus8 from '../src/assets/images/lexus8.jpg'
-import lexus9 from '../src/assets/images/lexus9.jpg'
+import lexus1 from "../src/assets/images/lexus1.jpg";
+import lexus2 from "../src/assets/images/lexus2.jpg";
+import lexus3 from "../src/assets/images/lexus3.jpg";
+import lexus4 from "../src/assets/images/lexus4.jpg";
+import lexus5 from "../src/assets/images/lexus5.jpg";
+import lexus6 from "../src/assets/images/lexus6.jpg";
+import lexus7 from "../src/assets/images/lexus7.jpg";
+import lexus8 from "../src/assets/images/lexus8.jpg";
+import lexus9 from "../src/assets/images/lexus9.jpg";
 import lexus10 from "../src/assets/images/lexus10.jpg";
 import lexus11 from "../src/assets/images/lexus11.jpg";
 import lexus12 from "../src/assets/images/lexus12.jpg";
 import lexus13 from "../src/assets/images/lexus13.jpg";
 import lexus14 from "../src/assets/images/lexus14.jpg";
-import lexus15 from '../src/assets/images/lexus15.jpg'
+import lexus15 from "../src/assets/images/lexus15.jpg";
 import lexus16 from "../src/assets/images/lexus16.jpg";
 import lexus17 from "../src/assets/images/lexus17.jpg";
 import lexus18 from "../src/assets/images/lexus18.jpg";
@@ -1909,27 +1908,26 @@ export const marksIcon = marks.map((item, index) => {
 
 // console.log(marksIcon);
 
-
 export const aksiyalar = [
   {
     id: uuid4(),
     image: audi20,
     title: "Yozgi rezinani bepulga qolga kiriting",
-    date: '15 fevral',
-    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui corrupti quaerat obcaecati illo doloribus voluptas repudiandae iusto aliquid sint minima, perspiciatis quas sapiente iste suscipit beatae dolore facere nostrum! Esse veniam beatae repellat voluptates officia ex quidem veritatis pariatur ducimus similique dolores quisquam doloremque corrupti fuga, placeat eveniet. Error atque tenetur fugit ab debitis explicabo non hic veritatis sequi. Deleniti facilis et amet magni commodi, eius nulla nihil necessitatibus sit dolore illum soluta placeat numquam rerum minima fugit officia optio. Nulla corporis ducimus tempora ullam aspernatur. Est optio fuga, sint deleniti dicta nobis officia pariatur voluptatem distinctio doloremque molestiae omnis, saepe voluptas earum. Delectus sint officiis perspiciatis id quo quod veniam similique suscipit facere non expedita nulla eaque quia unde asperiores, ipsum sit ratione debitis tempora harum quam odio soluta placeat eos? Excepturi, id aperiam consequatur voluptas expedita explicabo ut suscipit. Consequatur sunt accusamus corrupti possimus impedit suscipit dolorum blanditiis."
+    date: "15 fevral",
+    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui corrupti quaerat obcaecati illo doloribus voluptas repudiandae iusto aliquid sint minima, perspiciatis quas sapiente iste suscipit beatae dolore facere nostrum! Esse veniam beatae repellat voluptates officia ex quidem veritatis pariatur ducimus similique dolores quisquam doloremque corrupti fuga, placeat eveniet. Error atque tenetur fugit ab debitis explicabo non hic veritatis sequi. Deleniti facilis et amet magni commodi, eius nulla nihil necessitatibus sit dolore illum soluta placeat numquam rerum minima fugit officia optio. Nulla corporis ducimus tempora ullam aspernatur. Est optio fuga, sint deleniti dicta nobis officia pariatur voluptatem distinctio doloremque molestiae omnis, saepe voluptas earum. Delectus sint officiis perspiciatis id quo quod veniam similique suscipit facere non expedita nulla eaque quia unde asperiores, ipsum sit ratione debitis tempora harum quam odio soluta placeat eos? Excepturi, id aperiam consequatur voluptas expedita explicabo ut suscipit. Consequatur sunt accusamus corrupti possimus impedit suscipit dolorum blanditiis.",
   },
   {
     id: uuid4(),
     image: audi24,
     title: "qishgi rezinani bepulga qolga kiriting",
-    date: '31 dekabr',
-    info: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maiores iste veniam cumque. Itaque nemo sequi tempora ipsa ad sapiente repellat accusamus consequatur quis quidem ipsam praesentium impedit ullam odit, pariatur animi a quibusdam voluptates aliquam voluptatibus aspernatur officia sed minus! Ratione quae repudiandae totam nam perspiciatis? Numquam consequuntur accusamus harum pariatur recusandae, perspiciatis fuga quae? In totam qui illo dolorum? Dolorem debitis dolorum fuga veniam sit nesciunt autem impedit expedita eaque in ea odio consequatur sint, temporibus dolor, ipsam ut. Molestiae esse nobis vel eum, ea veritatis saepe quam error atque neque laudantium consequuntur. Est optio perspiciatis dolores fugiat eum commodi quas, maiores alias odio officiis eligendi, ut quia iusto inventore amet quos tempore porro hic corrupti aspernatur harum numquam deleniti laborum! Repellendus obcaecati magnam similique accusantium libero iste! Rem voluptate autem illum dignissimos distinctio nobis recusandae aliquam officiis blanditiis, odio provident inventore facilis a magnam, maxime est iusto!"
+    date: "31 dekabr",
+    info: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maiores iste veniam cumque. Itaque nemo sequi tempora ipsa ad sapiente repellat accusamus consequatur quis quidem ipsam praesentium impedit ullam odit, pariatur animi a quibusdam voluptates aliquam voluptatibus aspernatur officia sed minus! Ratione quae repudiandae totam nam perspiciatis? Numquam consequuntur accusamus harum pariatur recusandae, perspiciatis fuga quae? In totam qui illo dolorum? Dolorem debitis dolorum fuga veniam sit nesciunt autem impedit expedita eaque in ea odio consequatur sint, temporibus dolor, ipsam ut. Molestiae esse nobis vel eum, ea veritatis saepe quam error atque neque laudantium consequuntur. Est optio perspiciatis dolores fugiat eum commodi quas, maiores alias odio officiis eligendi, ut quia iusto inventore amet quos tempore porro hic corrupti aspernatur harum numquam deleniti laborum! Repellendus obcaecati magnam similique accusantium libero iste! Rem voluptate autem illum dignissimos distinctio nobis recusandae aliquam officiis blanditiis, odio provident inventore facilis a magnam, maxime est iusto!",
   },
   {
     id: uuid4(),
     image: audi18,
     title: "kuzgi rezinani bepulga qolga kiriting",
-    date: '15 sentyabr',
-    info: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora obcaecati nemo qui aperiam minima molestias esse quam perspiciatis enim doloremque saepe debitis culpa exercitationem inventore, odit pariatur. Delectus tempore illum exercitationem velit nam nesciunt aperiam impedit, eveniet deserunt voluptate perferendis eligendi. Magni voluptatum ab vero hic dolore reprehenderit nostrum eveniet sequi deserunt eaque perferendis, fugiat enim delectus assumenda voluptatem dicta maxime dignissimos! Quae voluptate quos aperiam ullam esse accusamus ipsam dolor eos, cum blanditiis atque. Alias, odio veritatis, voluptatum vel tempora, rem perferendis repudiandae harum repellat asperiores dolorum accusantium quos possimus facilis. Quisquam, ex unde, repellat molestiae consequuntur aspernatur provident veritatis iure ab porro veniam dolore voluptas excepturi illo repellendus eaque! Illum dolorum officia ducimus vero. Maxime praesentium doloremque quo, beatae aperiam, quasi velit, ut sunt ea rem adipisci! Hic ea placeat quos eaque fuga voluptate eligendi a, cupiditate quo. Aliquid fugiat cumque provident perspiciatis itaque voluptate consequatur, reprehenderit at."
+    date: "15 sentyabr",
+    info: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora obcaecati nemo qui aperiam minima molestias esse quam perspiciatis enim doloremque saepe debitis culpa exercitationem inventore, odit pariatur. Delectus tempore illum exercitationem velit nam nesciunt aperiam impedit, eveniet deserunt voluptate perferendis eligendi. Magni voluptatum ab vero hic dolore reprehenderit nostrum eveniet sequi deserunt eaque perferendis, fugiat enim delectus assumenda voluptatem dicta maxime dignissimos! Quae voluptate quos aperiam ullam esse accusamus ipsam dolor eos, cum blanditiis atque. Alias, odio veritatis, voluptatum vel tempora, rem perferendis repudiandae harum repellat asperiores dolorum accusantium quos possimus facilis. Quisquam, ex unde, repellat molestiae consequuntur aspernatur provident veritatis iure ab porro veniam dolore voluptas excepturi illo repellendus eaque! Illum dolorum officia ducimus vero. Maxime praesentium doloremque quo, beatae aperiam, quasi velit, ut sunt ea rem adipisci! Hic ea placeat quos eaque fuga voluptate eligendi a, cupiditate quo. Aliquid fugiat cumque provident perspiciatis itaque voluptate consequatur, reprehenderit at.",
   },
-]
+];
