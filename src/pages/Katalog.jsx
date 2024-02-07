@@ -143,7 +143,9 @@ const Katalog = () => {
                   className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                   onChange={useMark}
                 >
-                  <option value="model">marka</option>
+                  <option disabled selected value={"marka"}>
+                    marka
+                  </option>
                   {marks.map((filter) => {
                     return (
                       <option key={filter} value={filter}>
@@ -159,7 +161,9 @@ const Katalog = () => {
                   className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                   onChange={useModel}
                 >
-                  <option value="year">model</option>
+                  <option value="year" disabled selected>
+                    model
+                  </option>
                   {models.map((filter) => {
                     return (
                       <option key={filter} value={filter}>
@@ -175,7 +179,9 @@ const Katalog = () => {
                   className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                   onChange={useYear}
                 >
-                  <option value="krosover">yil</option>
+                  <option value="krosover" disabled selected>
+                    yil
+                  </option>
                   {years.map((filter) => {
                     return (
                       <option key={filter} value={filter}>
@@ -286,8 +292,8 @@ const Katalog = () => {
                     Filter natijasi
                   </h3>
                   <h3 className="text-black textStyle text-[20px] lg:text-[25px]">
-                    jami <span className="text-[#e70a32]">{resulted.length}</span>{" "}
-                    ta
+                    jami{" "}
+                    <span className="text-[#e70a32]">{resulted.length}</span> ta
                   </h3>
                 </div>
                 <div className="w-full space-y-5">
