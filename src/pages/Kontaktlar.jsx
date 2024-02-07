@@ -77,7 +77,10 @@ const Kontaktlar = () => {
             </div>
           </div>
           <div className="w-full h-44 md:h-[350px] bg-slate-300 rounded-lg">
-
+            <iframe
+              src="https://www.google.com/maps/search/auto+poster/@47.754058,44.7793767,5z/data=!3m1!4b1?entry=ttu"
+              frameborder="0"
+            ></iframe>
           </div>
         </div>
       </div>

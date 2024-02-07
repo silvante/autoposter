@@ -16,7 +16,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="space-y-3 lg:space-y-0 lg:flex lg:gap-7 xl:gap-16">
-            <Link to={'/katalog'} className="text-[18px] fontStyle flex">Katalog</Link>
+            <Link to={"/katalog"} className="text-[18px] fontStyle flex">
+              Katalog
+            </Link>
             <Link to={"/aksiyalar"} className="text-[18px] fontStyle flex">
               Aksiyalar
             </Link>
@@ -24,7 +26,7 @@ const Footer = () => {
               Kredit
             </Link>
             <Link to={"./kontactlar"} className="text-[18px] fontStyle flex">
-              Kantactlar
+              Kantaktlar
             </Link>
           </div>
           <div className="">
