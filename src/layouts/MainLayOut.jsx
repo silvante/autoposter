@@ -28,7 +28,7 @@ const MainLayOut = () => {
 
   return (
     <div>
-      {showAD && <Adverticement />}
+      {showAD && <Adverticement setShowAD={setShowAD} />}
       {/* <div className="w-full py-5">Mardonbek Xamidov</div> */}
       <Header />
       {location.pathname !== "/" && <Breadcrumps />}
