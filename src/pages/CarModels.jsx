@@ -212,7 +212,9 @@ const CarModels = () => {
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                 onChange={useModel}
               >
-                <option value="model">Model</option>
+                <option value="model" disabled selected>
+                  Model
+                </option>
                 {Sliced.map((filter) => {
                   return (
                     <option key={filter.model} value={filter.model}>
@@ -228,7 +230,9 @@ const CarModels = () => {
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                 onChange={useYear}
               >
-                <option value="year">year</option>
+                <option value="year" disabled selected>
+                  year
+                </option>
                 {years.map((filter) => {
                   return (
                     <option key={filter} value={filter}>
@@ -244,7 +248,9 @@ const CarModels = () => {
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
                 onChange={useKros}
               >
-                <option value="krosover">krosover</option>
+                <option value="krosover" disabled selected>
+                  krosover
+                </option>
                 {krosovers.map((filter) => {
                   return (
                     <option key={filter} value={filter}>
