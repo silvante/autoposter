@@ -1864,6 +1864,10 @@ export const carsData = [
   },
 ];
 
+carsData.forEach(obj => {
+  obj.query = `${obj.mark} ${obj.name}`;
+});
+
 function setMarkToArray(arr) {
   let marks = new Set();
   arr.forEach((item) => {

@@ -8,6 +8,8 @@ import { Result } from "postcss";
 // import {inpValue}
 
 const Home = () => {
+  console.log(carsData);
+
   const newArray = carsData.sort((a, b) => b.year - a.year);
 
   const sortArr = newArray.slice(0, 6);
@@ -18,24 +20,16 @@ const Home = () => {
     setValue(e.target.value);
   };
 
-  const filterCarsByMark = (carsData) => {
-    if (inputValue.trim() === "") {
-      return true;
-    }
-    return carsData.mark.toLowerCase().includes(inputValue.toLowerCase());
-  };
-  const filterCars = carsData.filter(filterCarsByMark);
-
   const filterCarsBySearch = (carsData) => {
     if (inputValue.trim() === "") {
       return true;
     }
-    return (
-      carsData.name ||
-      carsData.mark.toLowerCase().includes(inputValue.trim().toLowerCase())
-    );
+    return carsData.query
+      .toLowerCase()
+      .includes(inputValue.trim().toLowerCase());
   };
-  const filteredCars = carsData.filter(filterCarsBySearch);
+
+  const SearchQuery = carsData.filter(filterCarsBySearch);
 
   const [main, setmain] = useState([]);
 
@@ -130,13 +124,13 @@ const Home = () => {
           <Advises />
         </div>
       )}
-      {inputValue != "" && filteredCars.length > 0 && (
+      {inputValue != "" && SearchQuery.length > 0 && (
         <div className="w-[96%] mx-auto xl:w-[1300px] py-16 space-y-10 anime">
           <h3 className="font-bold textStyle text-[30px]">
             Sorov boyicha <span className="text-[#E70A32]">automobillar</span>
           </h3>
           <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
-            {filterCars.map((car) => {
+            {SearchQuery.map((car) => {
               return (
                 <Link
                   to={`sotib-olish/${car.id.toString()}`}
@@ -188,7 +182,7 @@ const Home = () => {
           </div>
         </div>
       )}
-      {filteredCars.length === 0 && (
+      {SearchQuery.length === 0 && (
         <div className="w-full text-center py-24 space-y-5 anime">
           <h1 className="text-gray-500 text-[70px]">(┬┬﹏┬┬)</h1>
           <p className="text-gray-500 text-[28px]">
