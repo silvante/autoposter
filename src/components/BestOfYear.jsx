@@ -14,6 +14,13 @@ import { Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 const BestOfYear = () => {
+  const [costom, setcostom] = useState({});
+  const next = () => {
+    costom.slideNext();
+  };
+  const prev = () => {
+    costom.slidePrev();
+  };
   const carsOfyear = carsData.filter((car) => car.year >= 2024);
   return (
     <div className="w-full bg-gray-200 items-center justify-center py-16 hidden lg:flex">
@@ -24,13 +31,22 @@ const BestOfYear = () => {
             automobillari
           </h3>
           <Swiper
-            pagination={{
-              type: "fraction",
+            // pagination={{
+            //   type: "fraction",
+            // }}
+            onInit={(ev) => {
+              setcostom(ev);
             }}
-            navigation={true}
+            navigation={false}
             modules={[Pagination, Navigation]}
-            className="mySwiper rounded-lg p-10 space-x-10"
+            className="rounded-lg p-10 space-x-10 flex items-center mx-auto"
           >
+            <button
+              className="bg-[#E70A32] text-white rounded-full py-2 px-3 absolute left-0 z-20"
+              onClick={prev}
+            >
+              <i className="bx bx-chevron-left"></i>
+            </button>
             {carsOfyear.map((newCar) => {
               return (
                 <SwiperSlide className="flex space-x-10 swipe" key={newCar.id}>
@@ -76,11 +92,24 @@ const BestOfYear = () => {
                           : "kredit ga Tolov yo'q"}
                       </p>
                     </div>
-                    <Link to={`sotib-olish/${newCar.id.toString()}`} className={"bg-[#E70A32] py-3 px-7 text-white rounded inline-block"}>Sotib olish</Link>
+                    <Link
+                      to={`sotib-olish/${newCar.id.toString()}`}
+                      className={
+                        "bg-[#E70A32] py-3 px-7 text-white rounded inline-block"
+                      }
+                    >
+                      Sotib olish
+                    </Link>
                   </div>
                 </SwiperSlide>
               );
             })}
+            <button
+              className="bg-[#E70A32] text-white rounded-full py-2 px-3 absolute right-0 z-20"
+              onClick={next}
+            >
+              <i className="bx bx-chevron-right"></i>
+            </button>
           </Swiper>
         </div>
       </div>
