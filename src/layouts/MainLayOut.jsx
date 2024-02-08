@@ -16,11 +16,12 @@ import Modul from "../components/Modul";
 import "../autoPosterData";
 
 const MainLayOut = () => {
+  const [showAD, setShowAD] = useState(false);
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
-  const [showAD, setShowAD] = useState(false);
 
   // closeModul
 
@@ -28,7 +29,7 @@ const MainLayOut = () => {
 
   return (
     <div>
-      {showAD && <Adverticement setShowAD={setShowAD} />}
+      {showAD && <Adverticement />}
       {/* <div className="w-full py-5">Mardonbek Xamidov</div> */}
       <Header />
       {location.pathname !== "/" && <Breadcrumps />}
@@ -38,13 +39,13 @@ const MainLayOut = () => {
       {showAD && (
         <button
           data-aos="fade-left"
-          className="text-[35px] z-50 text-white fixed top-5 right-5"
-          onClick={() => setShowAD(false)}
+          className="text-2xl w-12 h-12 border-white border-2 rounded-full z-50 text-white fixed top-5 right-5"
+          // onClick={() => setShowAD(false)}
         >
-          <i class="bx bx-x"></i>
+          <i className="bx bx-x"></i>
         </button>
       )}
-      <button
+      {/* <button
         data-aos="fade-left"
         data-aos-anchor="#example-anchor"
         data-aos-offset="300"
@@ -53,7 +54,7 @@ const MainLayOut = () => {
         className="bg-[#E70A32] fixed bottom-5 right-5 rounded-full shadow-md shadow-black/25 p-3 text-white hidden lg:block text-[22px]"
       >
         📃
-      </button>
+      </button> */}
       <Footer />
     </div>
   );
