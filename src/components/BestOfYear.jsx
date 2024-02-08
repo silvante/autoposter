@@ -39,7 +39,7 @@ const BestOfYear = () => {
             }}
             navigation={false}
             modules={[Pagination, Navigation]}
-            className="rounded-lg p-10 space-x-10 flex items-center mx-auto"
+            className="rounded-lg p-10 space-x-10 flex items-center"
           >
             <button
               className="bg-[#E70A32] text-white rounded-full py-2 px-3 absolute left-0 z-20"
