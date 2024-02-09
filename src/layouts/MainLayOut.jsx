@@ -3,7 +3,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import "../pages/pages.css";
 import "../components/components.css";
-import Adverticement from "../pages/Adverticement";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -29,32 +28,11 @@ const MainLayOut = () => {
 
   return (
     <div>
-      {showAD && <Adverticement />}
-      {/* <div className="w-full py-5">Mardonbek Xamidov</div> */}
       <Header />
       {location.pathname !== "/" && <Breadcrumps />}
       <main>
         <Outlet />
       </main>
-      {showAD && (
-        <button
-          data-aos="fade-left"
-          className="text-2xl w-12 h-12 border-white border-2 rounded-full z-50 text-white fixed top-5 right-5"
-          // onClick={() => setShowAD(false)}
-        >
-          <i className="bx bx-x"></i>
-        </button>
-      )}
-      {/* <button
-        data-aos="fade-left"
-        data-aos-anchor="#example-anchor"
-        data-aos-offset="300"
-        data-aos-duration="3000"
-        onClick={() => setShowAD(true)}
-        className="bg-[#E70A32] fixed bottom-5 right-5 rounded-full shadow-md shadow-black/25 p-3 text-white hidden lg:block text-[22px]"
-      >
-        📃
-      </button> */}
       <Footer />
     </div>
   );

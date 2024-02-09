@@ -8,7 +8,7 @@ import { Result } from "postcss";
 // import {inpValue}
 
 const Home = () => {
-  console.log(carsData);
+  // console.log(carsData);
 
   const newArray = carsData.sort((a, b) => b.year - a.year);
 
