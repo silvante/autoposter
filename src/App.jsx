@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/aksiyalar" element={<Aksiyalar />} />
         <Route path="/:mark" element={<CarModels />} />
         <Route path="/aksiyalar" element={<DatailLayout />}>
-          <Route path="/aksiyalar/:title" element={<AksiyaDatails />} />
+          <Route path="/aksiyalar/:id" element={<AksiyaDatails />} />
         </Route>
         <Route path="/mark" element={<AftermarksLay />}>
           <Route path="/mark/:model" element={<SelectedCars />} />

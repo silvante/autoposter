@@ -4,11 +4,12 @@ import { aksiyalar } from "../autoPosterData";
 import Modul from "../components/Modul";
 
 const AksiyaDatails = () => {
-  const { title } = useParams();
+  const { id } = useParams();
 
   const [shows, setShows] = useState(false);
 
-  const aksiya = aksiyalar.find((aksiya) => aksiya.title === title);
+  const aksiya = aksiyalar.find((aksiya) => aksiya.id === id);
+
   return (
     <>
       <div className="w-full flex justify-center mb-10">
@@ -57,7 +58,7 @@ const AksiyaDatails = () => {
                   <div>
                     <button
                       className="text-[20px] text-[#E70A32] transition-all fontStyle hover:text-[blue]"
-                      to={`/aksiyalar/${aksiya.title}`}
+                      to={`/aksiyalar/${aksiya.id}`}
                     >
                       ishtrok etish →
                     </button>

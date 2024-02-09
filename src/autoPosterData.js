@@ -1914,21 +1914,21 @@ export const marksIcon = marks.map((item, index) => {
 
 export const aksiyalar = [
   {
-    id: uuid4(),
+    id: 'yozgi-rezina',
     image: audi20,
     title: "Yozgi rezinani bepulga qolga kiriting",
     date: "15 fevral",
     info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui corrupti quaerat obcaecati illo doloribus voluptas repudiandae iusto aliquid sint minima, perspiciatis quas sapiente iste suscipit beatae dolore facere nostrum! Esse veniam beatae repellat voluptates officia ex quidem veritatis pariatur ducimus similique dolores quisquam doloremque corrupti fuga, placeat eveniet. Error atque tenetur fugit ab debitis explicabo non hic veritatis sequi. Deleniti facilis et amet magni commodi, eius nulla nihil necessitatibus sit dolore illum soluta placeat numquam rerum minima fugit officia optio. Nulla corporis ducimus tempora ullam aspernatur. Est optio fuga, sint deleniti dicta nobis officia pariatur voluptatem distinctio doloremque molestiae omnis, saepe voluptas earum. Delectus sint officiis perspiciatis id quo quod veniam similique suscipit facere non expedita nulla eaque quia unde asperiores, ipsum sit ratione debitis tempora harum quam odio soluta placeat eos? Excepturi, id aperiam consequatur voluptas expedita explicabo ut suscipit. Consequatur sunt accusamus corrupti possimus impedit suscipit dolorum blanditiis.",
   },
   {
-    id: uuid4(),
+    id: 'qishgi-rezina',
     image: audi24,
     title: "qishgi rezinani bepulga qolga kiriting",
     date: "31 dekabr",
     info: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore maiores iste veniam cumque. Itaque nemo sequi tempora ipsa ad sapiente repellat accusamus consequatur quis quidem ipsam praesentium impedit ullam odit, pariatur animi a quibusdam voluptates aliquam voluptatibus aspernatur officia sed minus! Ratione quae repudiandae totam nam perspiciatis? Numquam consequuntur accusamus harum pariatur recusandae, perspiciatis fuga quae? In totam qui illo dolorum? Dolorem debitis dolorum fuga veniam sit nesciunt autem impedit expedita eaque in ea odio consequatur sint, temporibus dolor, ipsam ut. Molestiae esse nobis vel eum, ea veritatis saepe quam error atque neque laudantium consequuntur. Est optio perspiciatis dolores fugiat eum commodi quas, maiores alias odio officiis eligendi, ut quia iusto inventore amet quos tempore porro hic corrupti aspernatur harum numquam deleniti laborum! Repellendus obcaecati magnam similique accusantium libero iste! Rem voluptate autem illum dignissimos distinctio nobis recusandae aliquam officiis blanditiis, odio provident inventore facilis a magnam, maxime est iusto!",
   },
   {
-    id: uuid4(),
+    id: 'kuzgi-rezina',
     image: audi18,
     title: "kuzgi rezinani bepulga qolga kiriting",
     date: "15 sentyabr",
