@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const Breadcrumps = () => {
   const location = useLocation();
-  const pathe = location.pathname.replaceAll("%20", " ");
-  location.pathname = pathe;
+  // const pathe = location.pathname.replaceAll("%20", " ");
+  // location.pathname = pathe;
   const path = location.pathname.split("/");
   // console.log(path);
   const filterArr = path.filter((path) => path !== "");
