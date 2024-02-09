@@ -62,7 +62,7 @@ const BestOfYear = () => {
                     <img
                       src={newCar.image}
                       alt={newCar.name}
-                      className="h-full transition-all scale-110 hover:scale-125"
+                      className="transition-all h-full w-full hover:scale-105"
                     />
                   </div>
                   <div className="space-y-3 text-left">
