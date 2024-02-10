@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Error = () => {
+const NotFound = () => {
   return (
     <div className='w-full h-full flex items-center justify-center'>
         <div className='error'>
@@ -11,4 +11,4 @@ const Error = () => {
   )
 }
 
-export default Error
+export default NotFound

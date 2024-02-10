@@ -21,12 +21,13 @@ import OtherLayout from "./layouts/OtherLayout";
 import Kontaktlar from "./pages/Kontaktlar";
 import Filter from "./pages/Filter";
 import Katalog from "./pages/Katalog";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<MainLayOut />}>
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/" index element={<Home />} />
         <Route path="/aksiyalar" element={<Aksiyalar />} />
         <Route path="/:mark" element={<CarModels />} />
