@@ -49,7 +49,7 @@ const Home = () => {
               placeholder="Nomi boyicha automobil qidirish..."
               className="w-[80%] md:w-[90%] h-full px-5 outline-none "
             />
-            <button className="w-[20%] md:w-[10%] h-full bg-[#E70A32] text-white text-[18px] rounded-md">
+            <button className="w-[20%] md:w-[10%] h-full bg-[#E70A32] text-white text-[18px] rounded-md" accessKey="search" name="search">
               <i className="bx bx-search"></i>
             </button>
           </div>

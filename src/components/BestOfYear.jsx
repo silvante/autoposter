@@ -44,6 +44,7 @@ const BestOfYear = () => {
             <button
               className="bg-[#E70A32] text-white rounded-full py-2 px-3 absolute left-0 z-20"
               onClick={prev}
+              name="prev"
             >
               <i className="bx bx-chevron-left"></i>
             </button>
@@ -107,6 +108,7 @@ const BestOfYear = () => {
             <button
               className="bg-[#E70A32] text-white rounded-full py-2 px-3 absolute right-0 z-20"
               onClick={next}
+              name="next"
             >
               <i className="bx bx-chevron-right"></i>
             </button>
