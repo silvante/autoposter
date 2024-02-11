@@ -1,7 +1,7 @@
 import React from "react";
-import card1 from "../assets/images/card1.png";
-import card2 from "../assets/images/card2.png";
-import card3 from "../assets/images/card3.png";
+import card1 from "../assets/images/card1.avif";
+import card2 from "../assets/images/card2.avif";
+import card3 from "../assets/images/card3.avif";
 
 import { Link } from "react-router-dom";
 
