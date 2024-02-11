@@ -9,6 +9,7 @@ import bank3 from "../assets/images/bank3.png";
 import bank4 from "../assets/images/bank4.png";
 import { carsData, marks } from "../autoPosterData";
 import Modul from "../components/Modul";
+import "../pages/send.js";
 
 const Kredit = () => {
   const [shows, setShows] = useState(false);
@@ -91,12 +92,8 @@ const Kredit = () => {
                 );
               })}
             </select>
-            <select
-              className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
-            >
-              <option value="Model">
-                Model
-              </option>
+            <select className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100">
+              <option value="Model">Model</option>
             </select>
             <textarea
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 appearance-none resize-none"
@@ -120,11 +117,14 @@ const Kredit = () => {
               placeholder="ism@email.com..."
               id="email"
             />
+            <button
+              className="w-full bg-[#E70A32] text-white py-3 rounded mb-3 "
+              type="submit"
+            >
+              Arizangizni yuboring
+            </button>
           </form>
           <br />
-          <button className="w-full bg-[#E70A32] text-white py-3 rounded mb-3 " type="submit">
-            Arizangizni yuboring
-          </button>
           <p className="fontStyle text-[12px] text-gray-500">
             Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta ishlashga
             rozilik bildirasiz
