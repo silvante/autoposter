@@ -5,7 +5,7 @@ import opel from "../src/assets/images/Opel.png";
 import lexus from "../src/assets/images/Lexus.png";
 import mazda from "../src/assets/images/Mazda.png";
 import ferrari from "../src/assets/images/ferrari.png";
-import ford from "../src/assets/images/ford.webp";
+import ford from "../src/assets/images/ford.png";
 import kia from "../src/assets/images/kia.png";
 
 // import audi images
