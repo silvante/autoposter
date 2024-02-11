@@ -41,7 +41,7 @@ const Header = () => {
               </p>
               <p className="text-[14px]">eleckton gmail PF tekin</p>
             </div>
-            <button onClick={showModul} className="text-[26px] lg:hidden">
+            <button aria-label="menu" onClick={showModul} className="text-[26px] lg:hidden">
               {showAside ? (
                 <i className="bx bx-x"></i>
               ) : (
