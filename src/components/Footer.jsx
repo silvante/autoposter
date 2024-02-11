@@ -41,10 +41,10 @@ const Footer = () => {
       </footer>
       <div className="w-full bg-gray-800 flex justify-center py-3">
         <div className="w-[96%] flex flex-col lg:flex-row justify-between lg:flex lg:w-[1300px]">
-          <p className="text-[14px] fontStyle text-gray-500">
+          <p className="text-[14px] fontStyle text-white">
             ©2024 - autoposter, barcha huquqlar himoyalangan
           </p>
-          <p className="text-[14px] fontStyle text-gray-500">
+          <p className="text-[14px] fontStyle text-white">
             Maxfiylik politikasi
           </p>
         </div>
