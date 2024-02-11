@@ -112,14 +112,17 @@ const Kredit = () => {
               type="text"
               placeholder="Ismingiz..."
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+              id="name"
             />
             <input
-              type="number"
+              type="email"
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+              placeholder="ism@email.com..."
+              id="email"
             />
           </form>
           <br />
-          <button className="w-full bg-[#E70A32] text-white py-3 rounded mb-3 ">
+          <button className="w-full bg-[#E70A32] text-white py-3 rounded mb-3 " type="submit">
             Arizangizni yuboring
           </button>
           <p className="fontStyle text-[12px] text-gray-500">
