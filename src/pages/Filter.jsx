@@ -8,6 +8,8 @@ const Filter = () => {
   const location = useLocation();
   const filter = location.state && location.state.resulted;
   // setArr(filter);
+
+  console.log(filter);
   return (
     <div className="w-full justify-center flex">
       <div className="w-[96%] xl:w-[1300px] space-y-5">
@@ -21,7 +23,7 @@ const Filter = () => {
             {filter.map((car) => {
               return (
                 <Link
-                  to={`/mark/model/sotib-olish/${car.id}`}
+                  to={`/sale/${car.mark}/sotib-olish/${car.id}`}
                   key={car.id}
                   className="rounded space-y-3 relative anime"
                 >

@@ -34,12 +34,12 @@ const App = () => {
         <Route path="/aksiyalar" element={<DatailLayout />}>
           <Route path="/aksiyalar/:id" element={<AksiyaDatails />} />
         </Route>
-        <Route path="/mark" element={<AftermarksLay />}>
-          <Route path="/mark/:model" element={<SelectedCars />} />
-          <Route path="/mark/model/filter" element={<Filter />} />
-          <Route path="/mark/model/sotib-olish" element={<OtherLayout />}>
-            <Route path="/mark/model/sotib-olish/:id" element={<Buycar />} />
-          </Route>
+        <Route path="/sale" element={<AftermarksLay />}>
+          <Route path="/sale/:mark/car/:model" element={<SelectedCars />} />
+          <Route path="/sale/:mark/filter" element={<Filter />} />
+          {/* <Route path="/in" element={<OtherLayout />}> */}
+          <Route path="/sale/:mark/sotib-olish/:id" element={<Buycar />} />
+          {/* </Route> */}
         </Route>
         <Route path="/kredit" element={<Kredit />} />
         <Route path="/sotib-olish" element={<BuyLayOut />}>

@@ -133,7 +133,7 @@ const CarModels = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/mark/model/filter", { state: { resulted } });
+    navigate(`/sale/${modelsArr.mark}/filter`, { state: { resulted } });
   };
 
   // functions of pagination
@@ -180,7 +180,7 @@ const CarModels = () => {
                 <Link
                   key={model.id}
                   className="grey-border flex items-center justify-between p-3 rounded cursor-pointer shrink-0 hoverd"
-                  to={`/mark/${model.model}`}
+                  to={`/sale/${modelsArr.mark}/car/${model.model}`}
                 >
                   <p>{model.model}</p>
                   <p>{model.array.length}</p>
