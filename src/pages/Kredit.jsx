@@ -10,9 +10,94 @@ import bank4 from "../assets/images/bank4.png";
 import { carsData, marks } from "../autoPosterData";
 import Modul from "../components/Modul";
 import "../pages/send.js";
+import axios from "axios";
 
 const Kredit = () => {
   const [shows, setShows] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const [inputValue, setInputValue] = useState("");
+  const [nameSend, setNameSend] = useState("");
+  const [emailSend, setEmailSend] = useState("");
+  const [messageSend, setMessageSend] = useState("");
+  const [contextSend, setcontextSend] = useState("");
+  const [SubjectSend, setSubjectSend] = useState("");
+  const [subject, setSubject] = useState(false);
+  // const [subjecttwo, setSubjectTwo] = useState()
+  //   email
+  const handleChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmitInput = (event) => {
+    event.preventDefault();
+    // setNameSend('');
+    // setEmailSend('');
+    // setMessageSend('');
+    // setcontextSend('');
+    // setSubjectSend('')
+    if (
+      contextSend == "" ||
+      SubjectSend == "" ||
+      nameSend == "" ||
+      emailSend == ""
+    ) {
+      setSubject(true);
+    } else {
+      setSubject(false);
+      const telegram_bot_id = "6385516963:AAFFX6rdrEn75OwlNSCR4Gkus-L3mVX0S5o";
+      const chat_id = "6940337371";
+
+      const telegramMessage = `Ismi: ${nameSend}\nEmail: ${emailSend}\nProvide context: ${contextSend}\nSelect Subject: ${SubjectSend}\nMessage: ${messageSend}`;
+
+      axios
+        .post(`https://api.telegram.org/bot${telegram_bot_id}/sendMessage`, {
+          chat_id,
+          text: telegramMessage,
+        })
+        .then((response) => {
+          setInputValue("");
+          setEmail("");
+          setMessageSend("");
+          setcontextSend("");
+          setSubjectSend("");
+        });
+      alert("Malumot yuborildi");
+    }
+    if (!validateEmail(email)) {
+      setError("Hatolik! Malumot email formatida emas");
+      return;
+    }
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // name
+  const handleChangeName = (event) => {
+    const value = event.target.value;
+    setInputValue(value);
+
+    if (value.length > 40) {
+      setErrorName("Hatolik! Malumot 40 ta harfdan oshib ketdi");
+    } else {
+      setErrorName("");
+    }
+  };
+
+  const handleSubmitName = (event) => {
+    event.preventDefault();
+
+    if (inputValue.length > 40) {
+      setError("Hatolik! Malumot 40 ta harfdan oshib ketdi");
+      return;
+    }
+    // Malumotni yuborish yoki qo'shimcha ishlarni bajarish
+  };
+
+  // input
 
   return (
     <div className="w-full flex justify-center mb-10">
@@ -104,18 +189,22 @@ const Kredit = () => {
           <h3 className="textStyle text-[18px] text-left">
             malumotingizni kiriting
           </h3>
-          <form className="space-y-3">
-            <input
-              type="text"
-              placeholder="Ismingiz..."
-              className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
-              id="name"
-            />
+          <form className="space-y-3" onSubmit={handleSubmitInput}>
+            <div>
+              <input
+                type="text"
+                placeholder="Ismingiz..."
+                className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+                id="name"
+                value={inputValue}
+              />
+            </div>
             <input
               type="email"
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
               placeholder="ism@email.com..."
               id="email"
+              value={email}
             />
             <button
               className="w-full bg-[#E70A32] text-white py-3 rounded mb-3 "
