@@ -5,6 +5,7 @@ import { carsData } from "../autoPosterData";
 const SelectedCars = () => {
   const { model } = useParams();
   const modelsArr = carsData.filter((info)=> info.name === model);
+  console.log(modelsArr);
 
   return (
     <div className="w-full flex justify-center">
@@ -15,7 +16,7 @@ const SelectedCars = () => {
         <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
           {modelsArr.map((car) => {
             return (
-              <Link to={`/mark/model/sotib-olish/${car.id.toString()}`} key={car.id} className="rounded space-y-3 relative">
+              <Link to={`/sale/${car.mark}/car/${model}/sotib-olish/${car.id}`} key={car.id} className="rounded space-y-3 relative">
                 <div className="image_div relative">
                   <div className="absolute flex space-x-3 top-3 left-3 z-10">
                     <p className="bg-white text-[12px] py-[3px] px-[7px] fontStyle font-bold rounded-full">

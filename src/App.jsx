@@ -37,9 +37,8 @@ const App = () => {
         <Route path="/sale" element={<AftermarksLay />}>
           <Route path="/sale/:mark/car/:model" element={<SelectedCars />} />
           <Route path="/sale/:mark/filter" element={<Filter />} />
-          {/* <Route path="/in" element={<OtherLayout />}> */}
           <Route path="/sale/:mark/sotib-olish/:id" element={<Buycar />} />
-          {/* </Route> */}
+          <Route path="/sale/:mark/car/:model/sotib-olish/:id" element={<Buycar />} />
         </Route>
         <Route path="/kredit" element={<Kredit />} />
         <Route path="/sotib-olish" element={<BuyLayOut />}>
