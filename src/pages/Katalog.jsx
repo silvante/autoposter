@@ -66,6 +66,14 @@ const Katalog = () => {
 
   const filter3 = filter2.filter((e) => e.year === +year);
 
+  const [main, setmain] = useState([]);
+
+  const result = main.concat(
+    filter2.length === 0 && filter,
+    filter3.length === 0 && filter2,
+    filter3
+  );
+
   // filter by maxPay
 
   const [max, setmax] = useState();
@@ -74,7 +82,7 @@ const Katalog = () => {
     setmax(e.target.value);
   };
 
-  const filter4 = filter3.filter((e) => e.reCost <= max);
+  const filter4 = result.filter((e) => e.reCost <= max);
 
   // filter my minPay
 
@@ -85,18 +93,15 @@ const Katalog = () => {
   };
 
   const filter5 = filter4.filter((e) => e.reCost >= min);
-  const [main, setmain] = useState([]);
 
-  const result = main.concat(
-    filter2.length === 0 && filter,
-    filter3.length === 0 && filter2,
-    filter4.length === 0 && filter3,
-    filter5.length === 0 && filter4,
+  const [index, setindex] = useState([]);
+
+  const result2 = index.concat(
+    filter4.length === 0 && result,
     filter5
   );
 
-  const resulted = result.filter((e) => e !== false);
-
+  const resulted = result2.filter((e) => e !== false);
   // result play
 
   const [show, setshow] = useState(false);
@@ -124,6 +129,8 @@ const Katalog = () => {
   } else if (first > numberOfPages.length) {
     setfirst(1);
   }
+  console.log(resulted);
+
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] xl:w-[1300px] mb-20 space-y-5">
