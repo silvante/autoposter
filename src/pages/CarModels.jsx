@@ -96,6 +96,14 @@ const CarModels = () => {
   const [showbtn, setShowBtn] = useState(true);
   const another = modelsArr.elems;
 
+  const [main, setmain] = useState([]);
+
+  const result = main.concat(
+    filtered2.length === 0 && filtered,
+    filtered3.length === 0 && filtered2,
+    filtered3
+  );
+
   // siling
 
   const [min, setMin] = useState("");
@@ -109,26 +117,14 @@ const CarModels = () => {
     setmax(e.target.value);
   };
 
-  const filtered4 = filtered3.filter((e) => e.reCost <= max);
+  const filtered4 = result.filter((e) => e.reCost <= max);
   const filtered5 = filtered4.filter((e) => e.reCost >= min);
 
-  // console.log(filtered);
-  // console.log(filtered2);
-  // console.log(filtered3);
-  // console.log(filtered4);
-  // console.log(filtered5);
+  const [main2, setmain2] = useState([]);
 
-  const [main, setmain] = useState([]);
+  const result2 = main2.concat(filtered4.length === 0 && result, filtered5);
 
-  const result = main.concat(
-    filtered2.length === 0 && filtered,
-    filtered3.length === 0 && filtered2,
-    filtered4.length === 0 && filtered3,
-    filtered5.length === 0 && filtered4,
-    filtered5
-  );
-
-  const resulted = result.filter((e) => e !== false);
+  const resulted = result2.filter((e) => e !== false);
 
   const navigate = useNavigate();
 

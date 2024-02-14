@@ -15,6 +15,72 @@ import axios from "axios";
 const Kredit = () => {
   const [shows, setShows] = useState(false);
 
+  const [open, setOpen] = React.useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mark, setmark] = useState("");
+  const [model, setmodel] = useState("");
+  const [massange, setmassange] = useState("");
+  const [error, setError] = useState("");
+
+  const modelArr = carsData.filter((e) => e.mark === mark);
+
+  function setModelToArray(arr) {
+    let models = new Set();
+    arr.forEach((item) => {
+      let model = item.name;
+      models.add(model);
+    });
+    let ModelsArr = Array.from(models);
+    return ModelsArr;
+  }
+
+  const models = setModelToArray(modelArr);
+
+  console.log(models);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      name === "" ||
+      email === "" ||
+      mark === "" ||
+      model === "" ||
+      massange === ""
+    ) {
+      alert("Iltimos malumotni to'ldiring");
+    } else {
+      alert("Malumot yuborildi");
+      const telegram_bot_id = "6385516963:AAFFX6rdrEn75OwlNSCR4Gkus-L3mVX0S5o";
+      const chat_id = "6940337371";
+
+      const telegramMessage = `
+      Auto Poster rasmiy saytiga "${mark} ${model}" nomi automobil uchun kredit xujjatlashtirish uchun yangi foidalanuvchi sorov yubordi 📌\n\n foidalanuvchi Ismi: ${name}\n foidalanuvchi Email: ${email}\n\n foidalanuvhi izohi boyicha:\n ${massange}\n\n foidalanuvchini 👤 sorovini korib chiqish talab qilinadi ✅
+      `;
+
+      axios
+        .post(`https://api.telegram.org/bot${telegram_bot_id}/sendMessage`, {
+          chat_id,
+          text: telegramMessage,
+        })
+        .then((response) => {
+          console.log(response.data);
+          setName("");
+          setEmail("");
+          setmark("");
+          setmodel("");
+          setmassange("");
+        });
+      // .catch((error) => {
+      //   console.error(error);
+      // });
+    }
+    if (!validateEmail(email)) {
+      setError("Hatolik! Malumot email formatida emas");
+      return;
+    }
+  };
+
   return (
     <div className="w-full flex justify-center mb-10">
       <div className="w-[96%] xl:w-[1300px] flex flex-col justify-between items-start lg:flex-row">
@@ -80,11 +146,16 @@ const Kredit = () => {
         </div>
         <div className="p-8 w-full shadov rounded-lg text-center stick lg:w-[30%]">
           <h3 className="textStyle text-[24px]">Automobilga kredit olish</h3>
-          <form className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <select
               defaultValue={"marka"}
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+              onChange={(e) => setmark(e.target.value)}
+              value={mark}
             >
+              <option value={""} selected disabled>
+                mark
+              </option>
               {marks.map((car) => {
                 return (
                   <option key={car} value={car}>
@@ -93,36 +164,56 @@ const Kredit = () => {
                 );
               })}
             </select>
-            <select className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100">
-              <option value="Model">Model</option>
+            <select
+              defaultValue={"model"}
+              className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+              onChange={(e) => setmodel(e.target.value)}
+              value={model}
+            >
+              {models.length === 0 && <option value={""}>marka tanlang</option>}
+              {models.length !== 0 &&
+                models.map((e) => {
+                  return (
+                    <option key={e} value={e}>
+                      {e}
+                    </option>
+                  );
+                })}
             </select>
             <textarea
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 appearance-none resize-none"
-              placeholder="comment"
+              placeholder="izoxingiz..."
+              onChange={(e) => setmassange(e.target.value)}
+              value={massange}
             ></textarea>
-          </form>
-          <br />
-          <h3 className="textStyle text-[18px] text-left">
-            malumotingizni kiriting
-          </h3>
-          <form className="space-y-3">
+            <br />
+            <h3 className="textStyle text-[18px] text-left mb-4">
+              malumotingizni kiriting
+            </h3>
             <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
               type="text"
-              placeholder="Ismingiz..."
-              className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+              placeholder="Your Name"
             />
             <input
-              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
-              placeholder="ism@email.com..."
+              type="email"
+              placeholder="Email"
             />
+            {error}
+
             <button
-              className="w-full bg-[#E70A32] text-white py-3 rounded mb-3 "
               type="submit"
+              className="py-3 bg-[#e70a32] w-full rounded-md text-white"
             >
-              Arizangizni yuboring
+              sorovni jonatish
             </button>
           </form>
+
           <br />
           <p className="fontStyle text-[12px] text-gray-500">
             Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta ishlashga
