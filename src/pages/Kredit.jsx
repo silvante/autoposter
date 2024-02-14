@@ -16,6 +16,7 @@ const Kredit = () => {
   const [shows, setShows] = useState(false);
 
   const [open, setOpen] = React.useState(0);
+  const [link, setlink] = useState('https://auto-poster.netlify.app/')
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mark, setmark] = useState("");
@@ -55,7 +56,7 @@ const Kredit = () => {
       const chat_id = "6940337371";
 
       const telegramMessage = `
-      Auto Poster rasmiy saytiga "${mark} ${model}" nomi automobil uchun kredit xujjatlashtirish uchun yangi foidalanuvchi sorov yubordi 📌\n\n foidalanuvchi Ismi: ${name}\n foidalanuvchi Email: ${email}\n\n foidalanuvhi izohi boyicha:\n ${massange}\n\n foidalanuvchini 👤 sorovini korib chiqish talab qilinadi ✅
+      ${link} rasmiy saytiga "${mark} ${model}" nomi automobil uchun kredit xujjatlashtirish uchun yangi foidalanuvchi sorov yubordi 📌\n\n foidalanuvchi Ismi: ${name}\n foidalanuvchi Email: ${email}\n\n foidalanuvhi izohi boyicha:\n ${massange}\n\n foidalanuvchini 👤 sorovini korib chiqish talab qilinadi ✅
       `;
 
       axios
@@ -195,7 +196,7 @@ const Kredit = () => {
               onChange={(e) => setName(e.target.value)}
               className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
               type="text"
-              placeholder="Your Name"
+              placeholder="toliq ismingizni kiriting"
             />
             <input
               value={email}
