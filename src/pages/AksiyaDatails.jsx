@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { aksiyalar } from "../autoPosterData";
-import Modul from "../components/Modul";
+import ADimg from "../assets/images/ad.png";
 
 const AksiyaDatails = () => {
   const { id } = useParams();
@@ -9,6 +9,11 @@ const AksiyaDatails = () => {
   const [shows, setShows] = useState(false);
 
   const aksiya = aksiyalar.find((aksiya) => aksiya.id === id);
+
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/");
+  };
 
   return (
     <>
@@ -23,7 +28,7 @@ const AksiyaDatails = () => {
               alt={aksiya.title}
               className="rounded-lg transition-all hover:shadow-xl"
             />
-            <div className="p-5">
+            <div className="p-5 space-y-5">
               <p className="fontStyle">{aksiya.info}</p>
               <button
                 className="bg-[#E70A32] py-3 px-5 rounded-md text-white"
@@ -56,12 +61,12 @@ const AksiyaDatails = () => {
                     <p className="text-[20px] font-bold">{aksiya.date} gacha</p>
                   </div>
                   <div>
-                    <button
+                    <Link
                       className="text-[20px] text-[#E70A32] transition-all fontStyle hover:text-[blue]"
                       to={`/aksiyalar/${aksiya.id}`}
                     >
                       ishtrok etish →
-                    </button>
+                    </Link>
                   </div>
                 </div>
               );
@@ -69,7 +74,41 @@ const AksiyaDatails = () => {
           </div>
         </div>
       </div>
-      {shows && <Modul />}
+      {shows && (
+        <div className="w-full full-height fixed bg-black/50 z-50 backdrop-blur-sm flex justify-center items-center">
+          <div
+            className="bg-white rounded-[12px] flex flex-col space-x-5 justify-center sm:flex-row"
+            data-aos="zoom-in"
+          >
+            <img src={ADimg} className="w-[260px]" alt="adverticement image" />
+            <div className="w-[90%] py-5 sm:p-5 sm:w-[380px]">
+              <div className="mb-5">
+                <p className="text-[32px] font-900 textStyle">
+                  Ushbu event da qatnashish!
+                </p>
+                <p className="text-[18px] fontStyle">
+                  Ushbu eventda qatnashish uchun{" "}
+                  <span className="font-bold">Automobul </span> sotib olishingiz
+                  kerak.
+                </p>
+              </div>
+              <Link
+                onClick={handleClick}
+                to={"/"}
+                className="text-white py-3 w-full bg-[#E70A32] rounded inline-block text-center"
+              >
+                Bosh sahifaga qaytish
+              </Link>
+            </div>
+          </div>
+          <Link
+            onClick={() => setShows(false)}
+            className="text-white text-4xl fixed top-5 right-5"
+          >
+            <i class="bx bx-x"></i>
+          </Link>
+        </div>
+      )}
     </>
   );
 };
