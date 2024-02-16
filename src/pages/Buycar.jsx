@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { carsData } from "../autoPosterData";
+import Massange from "../components/Massange";
 
 const Buycar = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const Buycar = () => {
             </span>
           </h3>
         </div>
-        <div className="w-full flex flex-col justify-between items-start space-y-16 lg:flex-row lg:space-y-0">
+        <div className="w-full flex flex-col justify-between items-start space-y-16 lg:flex-row lg:space-y-0 space-x-5">
           <div className="w-full space-y-5 lg:w-[70%] ">
             <div className="w-full rounded-md shadow-xl overflow-hidden flex items-center justify-center">
               <img src={datail.image} alt={datail.name} className="w-full" />
@@ -86,79 +87,15 @@ const Buycar = () => {
                 <div className="space-y-2 text-[14px] lg:text-[16px]">
                   <p className="fontStyle font-bold text-gray-400">Ishlatga</p>
                   <p className="fontStyle font-bold text-black">
-                    {datail.numberOfusers ? `${datail.numberOfusers} foudalanuvchi` : "belgilanmagan"}
+                    {datail.numberOfusers
+                      ? `${datail.numberOfusers} foudalanuvchi`
+                      : "belgilanmagan"}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full rounded-md shadow-xl p-5 border space-y-3 stick lg:w-[28%] ">
-            <h3 className="text-[18px] textStyle">
-              Kredit shartlarini kriting
-            </h3>
-            <div className="space-y-3">
-              <div>
-                <label className="text-gray-700 font-bold fontStyle">
-                  Kredit muddati
-                </label>{" "}
-                <br />
-                <input
-                  type="number"
-                  min={"3"}
-                  max={"90"}
-                  placeholder="Karedit Oyga beriladi"
-                  className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
-                />
-              </div>
-              <div>
-                <label className="text-gray-700 font-bold fontStyle">
-                  Kredit tolovi
-                </label>{" "}
-                <br />
-                <input
-                  type="number"
-                  min={"3"}
-                  max={"90"}
-                  placeholder="Karedit Oyga beriladi"
-                  className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
-                />
-              </div>
-              <p className="text-gray-400 font-bold fontStyle">
-                Oylik tolov:{" "}
-                <span className="text-black">
-                  {datail.kredit ? datail.kredit : "Belgilanmanag"}
-                </span>
-              </p>
-              <p className="text-gray-400 font-bold fontStyle">
-                Oylik tolov: <span className="text-black">5.0 %</span>
-              </p>
-              <hr />
-              <div>
-                <h3 className="text-[18px] textStyle">
-                  Malumotlaringizni kiriting
-                </h3>
-                <form className="space-y-3">
-                  <input
-                    type="text"
-                    placeholder="Ismingiz..."
-                    className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
-                  />
-                  <input
-                    type="number"
-                    className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
-                  />
-                </form>
-                <br />
-                <button className="w-full bg-[#E70A32] text-white py-3 rounded mb-3 ">
-                  Arizangizni yuboring
-                </button>
-                <p className="fontStyle text-[12px] text-gray-500 text-center">
-                  Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta
-                  ishlashga rozilik bildirasiz
-                </p>
-              </div>
-            </div>
-          </div>
+          <Massange />
         </div>
       </div>
     </div>
