@@ -35,6 +35,7 @@ const Home = () => {
 
   return (
     <Fragment>
+      {/* hero */}
       <div className="bg-sans py-10 flex justify-center items-center xl:h-[350px]">
         <div className="w-full h-full bg-black opasity"></div>
         <div className="w-[96%] z-10 xl:w-[1300px] space-y-5">
@@ -60,6 +61,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* body */}
       {inputValue == "" && (
         <div className="bg-white anime">
           <Sort />
@@ -128,6 +130,7 @@ const Home = () => {
           <BestOfYear />
         </div>
       )}
+      {/* target */}
       {inputValue != "" && SearchQuery.length > 0 && (
         <div className="w-[96%] mx-auto xl:w-[1300px] py-16 space-y-10 anime">
           <h3 className="font-bold textStyle text-[30px]">
@@ -141,7 +144,7 @@ const Home = () => {
                   key={car.id}
                   className="rounded space-y-3 relative"
                 >
-                  <div className="image_div relative">
+                  <div className="image_div relative rounded-lg">
                     <div className="absolute flex space-x-3 top-3 left-3 z-10">
                       <p className="bg-white text-[12px] py-[3px] px-[7px] fontStyle font-bold rounded-full">
                         {car.numberOfusers} foidalanuvchi
@@ -165,7 +168,7 @@ const Home = () => {
                       {car.year} yil , {car.probeg} km, Krosoveri {car.krosover}{" "}
                       l, benzini {car.benzin} l.s
                     </p>
-                    <div className="bg-gray-200 rounded p-3 hoverd">
+                    <div className="bg-gray-200 rounded-lg p-3 hoverd">
                       <div className="cost flex space-x-3 items-end">
                         <p className="text-[26px] font-bold fontStyle">
                           {car.reCost}$

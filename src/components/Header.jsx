@@ -36,9 +36,12 @@ const Header = () => {
           </div>
           <div className="flex items-center justify-center space-x-5">
             <div className="text-end hidden lg:block">
-              <p className="font-bold text-[20px] cursor-pointer">
-                <i className="bx bx-phone"></i> 8 33 303 82 82
-              </p>
+              <Link
+                to={"/kontactlar"}
+                className="fontStyle text-md cursor-pointer px-4 py-3 bg-black rounded-md text-white"
+              >
+                <i className="bx bx-phone"></i> boglanish
+              </Link>
             </div>
             <button
               aria-label="menu"
@@ -60,7 +63,7 @@ const Header = () => {
         }`}
       >
         <div className="flex-col w-[96%] space-y-5">
-          <div>
+          <div className="responsiver_nav">
             <NavLink
               to={"/katalog"}
               onClick={() => setShowAside(false)}
@@ -98,12 +101,13 @@ const Header = () => {
               Kantaktlar
             </NavLink>
           </div>
-          <div className="text-start">
-            <p className="font-bold text-[20px]">
-              <i className="bx bx-phone"></i> 8 33 303 82 82
-            </p>
-            <p className="text-[14px]">eleckton gmail PF tekin</p>
-          </div>
+          <Link
+            to={"/kontactlar"}
+            onClick={() => setShowAside(false)}
+            className="fontStyle text-md cursor-pointer px-4 py-3 bg-black rounded-md text-white inline-block w-full text-center"
+          >
+            <i className="bx bx-phone"></i> boglanish
+          </Link>
         </div>
       </div>
     </>

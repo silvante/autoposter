@@ -27,7 +27,7 @@ const Filter = () => {
                   key={car.id}
                   className="rounded space-y-3 relative anime"
                 >
-                  <div className="image_div relative">
+                  <div className="image_div relative rounded-lg">
                     <div className="absolute flex space-x-3 top-3 left-3 z-10">
                       <p className="bg-white text-[12px] py-[3px] px-[7px] fontStyle font-bold rounded-full">
                         {car.numberOfusers} foidalanuvchi
@@ -51,7 +51,7 @@ const Filter = () => {
                       {car.year} yil , {car.probeg} km, Krosoveri {car.krosover}{" "}
                       l, benzini {car.benzin} l.s
                     </p>
-                    <div className="bg-gray-200 rounded p-3 hoverd">
+                    <div className="bg-gray-200 rounded-lg p-3 hoverd">
                       <div className="cost flex space-x-3 items-end">
                         <p className="text-[26px] font-bold fontStyle">
                           {car.reCost}$

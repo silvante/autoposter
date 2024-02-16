@@ -26,7 +26,7 @@ const AksiyaDatails = () => {
             <img
               src={aksiya.image}
               alt={aksiya.title}
-              className="rounded-lg transition-all hover:shadow-xl"
+              className="rounded-lg transition-all hover:shadow-xl w-full"
             />
             <div className="p-5 space-y-5">
               <p className="fontStyle">{aksiya.info}</p>

@@ -25,7 +25,10 @@ const Aksiyalar = () => {
                   <p className="text-[20px] font-bold">{aksiya.date} gacha</p>
                 </div>
                 <div>
-                  <Link className="text-[20px] text-[#E70A32] transition-all fontStyle hover:text-[blue]" to={`/aksiyalar/${aksiya.id}`}>
+                  <Link
+                    className="text-[20px] text-[#E70A32] transition-all fontStyle hover:text-[blue]"
+                    to={`/aksiyalar/${aksiya.id}`}
+                  >
                     ishtrok etish →
                   </Link>
                 </div>
