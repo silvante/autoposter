@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, EffectFade } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 const BestOfYear = () => {
@@ -25,7 +25,7 @@ const BestOfYear = () => {
   return (
     <div className="w-full bg-gray-200 items-center justify-center py-16 hidden lg:flex">
       <div className="w-[1300px]">
-        <div className="card text-center bg-white rounded-md p-5">
+        <div className="card text-center bg-white rounded-2xl p-5">
           <h3 className="font-bold textStyle text-[30px]">
             <span className="text-[#E70A32]">Yilning</span> eng sara
             automobillari
@@ -38,6 +38,7 @@ const BestOfYear = () => {
               setcostom(ev);
             }}
             navigation={false}
+            EffectFade={true}
             modules={[Pagination, Navigation]}
             className="rounded-lg p-10 space-x-10 flex items-center"
           >
@@ -51,7 +52,7 @@ const BestOfYear = () => {
             {carsOfyear.map((newCar) => {
               return (
                 <SwiperSlide className="flex space-x-10 swipe" key={newCar.id}>
-                  <div className="w-[60%] h-[350px] flex justify-center items-center overflow-hidden rounded-md hover:shadow-xl transition-all relative">
+                  <div className="w-[60%] h-[350px] flex justify-center items-center overflow-hidden rounded-xl hover:shadow-xl transition-all relative">
                     <div className="absolute flex space-x-3 top-3 left-3 z-10">
                       <p className="bg-white text-[14px] py-[3px] px-[10px] fontStyle font-bold rounded-full">
                         {newCar.numberOfusers} foidalanuvchi
@@ -77,7 +78,7 @@ const BestOfYear = () => {
                       {newCar.year} yil , {newCar.probeg} km, Krosoveri{" "}
                       {newCar.krosover} l, benzini {newCar.benzin} l.s
                     </p>
-                    <div className="bg-gray-200 rounded p-3">
+                    <div className="bg-gray-200 rounded-xl p-3">
                       <div className="cost flex space-x-3 items-end">
                         <p className="text-[34px] font-bold fontStyle">
                           {newCar.reCost}$
@@ -96,7 +97,7 @@ const BestOfYear = () => {
                     <Link
                       to={`sotib-olish/${newCar.id.toString()}`}
                       className={
-                        "bg-[#E70A32] py-3 px-7 text-white rounded inline-block"
+                        "bg-[#E70A32] py-3 px-7 text-white rounded-full inline-block"
                       }
                     >
                       Sotib olish

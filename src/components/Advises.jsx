@@ -5,7 +5,7 @@ import card3 from "../assets/images/card3.avif";
 
 import { Link } from "react-router-dom";
 
-const Advises = () => {
+const Advises = (clicked) => {
   return (
     <div className="w-full flex justify-center bg-gray-200 py-10">
       <div className="w-[96%] xl:w-[1300px]  flex items-center justify-center flex-wrap space-y-5 lg:justify-between lg:space-y-0 lg:space-x-0">

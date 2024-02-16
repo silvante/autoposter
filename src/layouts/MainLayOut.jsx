@@ -21,18 +21,26 @@ const MainLayOut = () => {
     AOS.refresh();
   }, []);
 
+  const clicked = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   // closeModul
 
   const location = useLocation();
 
   return (
     <div>
-      <Header />
+      <Header clicked={clicked} />
       {location.pathname !== "/" && <Breadcrumps />}
       <main>
-        <Outlet />
+        <Outlet clicked={clicked} />
       </main>
-      <Footer />
+      <Footer clicked={clicked} />
     </div>
   );
 };

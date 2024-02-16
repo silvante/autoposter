@@ -66,7 +66,7 @@ const Home = () => {
           <div className="w-full flex justify-center">
             <div className="w-[96%] space-y-10 mb-10 xl:w-[1300px]">
               <h2 className="font-bold textStyle text-[30px]">
-                Yangi Avlod Automobillari...
+                Yangi Avlod Automobillari
               </h2>
               <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
                 {sortArr.map((car) => {
@@ -76,7 +76,7 @@ const Home = () => {
                       key={car.id}
                       className="rounded space-y-3 relative"
                     >
-                      <div className="image_div relative">
+                      <div className="image_div rounded-lg relative">
                         <div className="absolute flex space-x-3 top-3 left-3 z-10">
                           <p className="bg-white text-[12px] py-[3px] px-[7px] fontStyle font-bold rounded-full">
                             {car.numberOfusers} foidalanuvchi
@@ -102,7 +102,7 @@ const Home = () => {
                           {car.year} yil , {car.probeg} km, Krosoveri{" "}
                           {car.krosover} l, benzini {car.benzin} l.s
                         </p>
-                        <div className="bg-gray-200 rounded p-3 hoverd">
+                        <div className="bg-gray-200 rounded-lg p-3 hoverd">
                           <div className="cost flex space-x-3 items-end">
                             <p className="text-[26px] font-bold fontStyle">
                               {car.reCost}$

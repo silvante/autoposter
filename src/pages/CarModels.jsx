@@ -272,7 +272,9 @@ const CarModels = () => {
               onClick={handleClick}
               className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
             >
-              Automabil topish
+              {resulted.length === 0
+                ? "Automabil topish"
+                : `${resulted.length} Auto topildi`}
             </button>
           </div>
         </div>
@@ -290,7 +292,7 @@ const CarModels = () => {
             {slicedCards.map((car) => {
               return (
                 <Link
-                  to={`/mark/model/sotib-olish/${car.id}`}
+                  to={`/sale/${car.mark}/sotib-olish/${car.id}`}
                   key={car.id}
                   className="rounded space-y-3 relative anime"
                 >

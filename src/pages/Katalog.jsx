@@ -96,10 +96,7 @@ const Katalog = () => {
 
   const [index, setindex] = useState([]);
 
-  const result2 = index.concat(
-    filter4.length === 0 && result,
-    filter5
-  );
+  const result2 = index.concat(filter4.length === 0 && result, filter5);
 
   const resulted = result2.filter((e) => e !== false);
   // result play
@@ -214,7 +211,9 @@ const Katalog = () => {
                 onClick={() => setshow(true)}
                 className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
               >
-                Automabil topish
+                {resulted.length === 0
+                  ? "Automabil topish"
+                  : `${resulted.length} Auto topildi`}
               </button>
             </div>
 

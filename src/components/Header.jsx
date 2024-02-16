@@ -36,12 +36,15 @@ const Header = () => {
           </div>
           <div className="flex items-center justify-center space-x-5">
             <div className="text-end hidden lg:block">
-              <p className="font-bold text-[20px]">
+              <p className="font-bold text-[20px] cursor-pointer">
                 <i className="bx bx-phone"></i> 8 33 303 82 82
               </p>
-              <p className="text-[14px]">eleckton gmail PF tekin</p>
             </div>
-            <button aria-label="menu" onClick={showModul} className="text-[26px] lg:hidden">
+            <button
+              aria-label="menu"
+              onClick={showModul}
+              className="text-[26px] lg:hidden"
+            >
               {showAside ? (
                 <i className="bx bx-x"></i>
               ) : (
