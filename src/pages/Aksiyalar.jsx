@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { aksiyalar } from "../autoPosterData";
 import { Link } from "react-router-dom";
 
 const Aksiyalar = () => {
-  const [loaded, setloaded] = useState(new Array(aksiyalar.length).fill(true));
-
-  const handleImageLoad = (index) => {
-    setloaded((prevStates) =>
-      prevStates.map((state, i) => (i === index ? false : state))
-    );
-  };
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] mb-16 xl:w-[1300px]">
@@ -17,22 +10,14 @@ const Aksiyalar = () => {
           Aksiyalar
         </h3>
         <div className="w-full grid grid-cols-1 gap-5 my-5 md:grid-cols-2 xl:grid-cols-3">
-          {aksiyalar.map((aksiya, index) => {
+          {aksiyalar.map((aksiya) => {
             return (
               <div key={aksiya.id} className="space-y-5">
-                <div
-                  className={`w-full h-[230px] flex justify-center items-center overflow-hidden rounded-lg ${
-                    loaded[index] ? "loader" : ""
-                  }`}
-                >
+                <div className="w-full h-[230px] flex justify-center items-center overflow-hidden rounded-lg loader">
                   <img
                     src={aksiya.image}
                     alt={aksiya.title}
-                    className={`flex transition-all hover:scale-110 ${
-                      !loaded[index] ? "block" : "hidden"
-                    }`}
-                    loading="lazy"
-                    onLoad={() => handleImageLoad(index)}
+                    className="flex transition-all hover:scale-110"
                   />
                 </div>
                 <div className="">

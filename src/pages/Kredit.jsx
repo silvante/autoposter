@@ -24,31 +24,18 @@ const Kredit = () => {
     navigate("/");
   };
 
-  const [loaded, setloaded] = useState(false);
-
-  const handleImageLoad = () => {
-    setloaded(true);
-  };
-
   return (
     <>
       <div className="w-full flex justify-center mb-10">
         <div className="w-[96%] xl:w-[1300px] flex flex-col justify-between items-start lg:flex-row">
           <div className="w-full space-y-5 lg:w-[68%]">
             <div className="space-y-5">
-              <LazyLoad
-                className={`${
-                  !loaded ? "bg-gray-200" : "bg-transparent"
-                } rounded-3xl`}
-              >
                 <img
                   src={bgPng}
                   alt="bg image"
-                  className={`w-full ${loaded ? "block" : "hidden"}`}
-                  loading="lazy"
-                  onLoad={handleImageLoad}
+                  className={`w-full`}
+                  height={500}
                 />
-              </LazyLoad>
               <p className="fontStyle font-bold text-[18px]">
                 Shuningdek, foydalanuvchi xatti-harakatlarining asosiy
                 stsenariylari marketingning aql ustidan g'alaba qozonishining
