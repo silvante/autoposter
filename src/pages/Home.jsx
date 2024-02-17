@@ -33,6 +33,15 @@ const Home = () => {
 
   const [main, setmain] = useState([]);
 
+  // loader
+
+  const [loaded, setloaded] = useState(new Array(sortArr.length).fill(true));
+
+  const handleImageLoad = (index) => {
+    setloaded((prevStates) =>
+      prevStates.map((state, i) => (i === index ? false : state))
+    );
+  };
   return (
     <Fragment>
       {/* hero */}
@@ -71,14 +80,18 @@ const Home = () => {
                 Yangi Avlod Automobillari
               </h2>
               <div className="grid grid-cols-1 gap-[40px] lg:gap-5 xl:gap-[50px] md:grid-cols-2 md:gap-6 lg:grid-cols-3 sm:grid-cols-2">
-                {sortArr.map((car) => {
+                {sortArr.map((car, index) => {
                   return (
                     <Link
                       to={`sotib-olish/${car.id.toString()}`}
                       key={car.id}
                       className="rounded space-y-3 relative"
                     >
-                      <div className="image_div rounded-lg relative">
+                      <div
+                        className={`image_div rounded-lg relative ${
+                          loaded[index] ? "loader" : ""
+                        }`}
+                      >
                         <div className="absolute flex space-x-3 top-3 left-3 z-10">
                           <p className="bg-white text-[12px] py-[3px] px-[7px] fontStyle font-bold rounded-full">
                             {car.numberOfusers} foidalanuvchi
@@ -90,7 +103,11 @@ const Home = () => {
                         <img
                           src={car.image}
                           alt={car.name}
-                          className="w-full transition-all hover:scale-110"
+                          className={`transition-all hover:scale-110 w-full ${
+                            !loaded[index] ? "block" : "hidden"
+                          }`}
+                          loading="lazy"
+                          onLoad={() => handleImageLoad(index)}
                         />
                       </div>
                       <div className="space-y-5">

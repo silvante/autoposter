@@ -92,3 +92,35 @@ nav .active {
 .responsiver_nav .active {
   @apply bg-gray-200;
 }
+
+.loading {
+  background-color: #f1f1f1;
+  animation: name alternate infinite 1s;
+}
+
+@keyframes name {
+  from {
+    background-color: #f1f1f1;
+  }
+  to {
+    background-color: #c4c4c4;
+  }
+}
+
+.loader {
+  border: 2px solid #e0e0e0;
+  width: 100%;
+  background: linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(#ddd, #ddd);
+  background-color: #fff;
+  background-position: center;
+  background-size: 315px 200px, 315px 130px, 100px 100px, 225px 30px;
+  background-position: -315px 0, 0 0, 15px 140px, 65px 145px;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position: 315px 0, 0 0, 15px 140px, 65px 145px;
+  }
+}
