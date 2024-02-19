@@ -70,7 +70,7 @@ const Massange = () => {
     }
   };
   return (
-    <div className="p-8 shadov rounded-lg text-center stick lg:w-[30%]">
+    <div className=" w-full p-8 shadov rounded-lg text-center stick lg:w-[30%]">
       <h3 className="textStyle text-[24px]">Automobilga kredit olish</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <select
