@@ -69,6 +69,7 @@ const Katalog = () => {
   const [main, setmain] = useState([]);
 
   const result = main.concat(
+    filter.length === 0 && carsData,
     filter2.length === 0 && filter,
     filter3.length === 0 && filter2,
     filter3
@@ -211,7 +212,7 @@ const Katalog = () => {
                 onClick={() => setshow(true)}
                 className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
               >
-                {resulted.length === 0
+                {mark === "" && max === undefined
                   ? "Automabil topish"
                   : `${resulted.length} Auto topildi`}
               </button>
