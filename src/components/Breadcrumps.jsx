@@ -11,7 +11,7 @@ const Breadcrumps = () => {
     (path) =>
       path !== "" && path !== "sotib-olish" && path !== "sale" && path !== "car"
   );
-  // console.log(filterArr);
+  console.log(filterArr);
   return (
     <div className="w-full flex items-center justify-center">
       <ul className="flex space-x-5 vercel my-5 w-[96%] xl:w-[1300px]">

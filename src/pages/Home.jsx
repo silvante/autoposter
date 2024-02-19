@@ -83,7 +83,7 @@ const Home = () => {
                 {sortArr.map((car, index) => {
                   return (
                     <Link
-                      to={`sotib-olish/${car.id.toString()}`}
+                      to={`/katalog/${car.id}`}
                       key={car.id}
                       className="rounded space-y-3 relative"
                     >
@@ -157,7 +157,7 @@ const Home = () => {
             {SearchQuery.map((car) => {
               return (
                 <Link
-                  to={`sotib-olish/${car.id.toString()}`}
+                  to={`/katalog/${car.id}`}
                   key={car.id}
                   className="rounded space-y-3 relative"
                 >

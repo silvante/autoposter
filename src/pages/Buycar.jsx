@@ -29,7 +29,14 @@ const Buycar = () => {
           <div className="w-full flex flex-col lg:flex-row justify-between space-y-16 lg:space-y-0 items-start">
             <div className="w-full lg:w-[68%] flex flex-col justify-between items-start space-y-16 lg:flex-row lg:space-y-0 space-x-5">
               <div className="w-full space-y-5">
-                <div className="w-full rounded-md shadow-xl overflow-hidden flex items-center justify-center">
+                <div className="w-full rounded-md shadow-xl overflow-hidden flex items-center justify-center relative">
+                  <a
+                    href={datail.image}
+                    download
+                    className="absolute top-4 left-4 bg-white rounded-full py-1 px-3 fontStyle font-bold hoverd"
+                  >
+                    <i className="bx bxs-download"></i> rasmini yuklab oilish
+                  </a>
                   <img
                     src={datail.image}
                     alt={datail.name}
