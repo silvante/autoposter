@@ -23,11 +23,13 @@ const AksiyaDatails = () => {
             {aksiya.title}
           </h3>
           <div className="rounded-lg shadow-md  p-2 w-full space-y-5">
-            <img
-              src={aksiya.image}
-              alt={aksiya.title}
-              className="rounded-lg transition-all hover:shadow-xl w-full"
-            />
+            <div className="rounded-lg transition-all hover:shadow-xl w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] justify-center items-center flex overflow-hidden">
+              <img
+                src={aksiya.image}
+                alt={aksiya.title}
+                className="w-full"
+              />
+            </div>
             <div className="p-5 space-y-5">
               <p className="fontStyle">{aksiya.info}</p>
               <button

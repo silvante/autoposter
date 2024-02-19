@@ -30,12 +30,9 @@ const Kredit = () => {
         <div className="w-[96%] xl:w-[1300px] flex flex-col justify-between items-start lg:flex-row">
           <div className="w-full space-y-5 lg:w-[68%]">
             <div className="space-y-5">
-                <img
-                  src={bgPng}
-                  alt="bg image"
-                  className={`w-full`}
-                  height={500}
-                />
+              <div className="bg-slate-300 h-[150px] rounded-xl sm:h-[250px] md:h-[300px] lg:h-[345px] md:rounded-3xl flex overflow-hidden">
+                <img src={bgPng} alt="bg image" className="h-full w-full" />
+              </div>
               <p className="fontStyle font-bold text-[18px]">
                 Shuningdek, foydalanuvchi xatti-harakatlarining asosiy
                 stsenariylari marketingning aql ustidan g'alaba qozonishining
