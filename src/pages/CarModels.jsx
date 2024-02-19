@@ -107,8 +107,8 @@ const CarModels = () => {
 
   // siling
 
-  const [min, setMin] = useState("");
-  const [max, setmax] = useState("");
+  const [min, setMin] = useState();
+  const [max, setmax] = useState();
 
   const minPay = (e) => {
     setMin(e.target.value);
@@ -273,7 +273,7 @@ const CarModels = () => {
               onClick={handleClick}
               className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
             >
-              {resulted.length === 0
+              {modelSelect === "" && max === undefined
                 ? "Automabil topish"
                 : `${resulted.length} Auto topildi`}
             </button>
