@@ -4,6 +4,7 @@ import card2 from "../assets/images/card2.avif";
 import card3 from "../assets/images/card3.avif";
 
 import { Link } from "react-router-dom";
+import {carsData} from "../autoPosterData"
 
 const Advises = (clicked) => {
   return (
@@ -20,9 +21,9 @@ const Advises = (clicked) => {
               Automobillarga tanlov juda katta!
             </h3>
             <p
-              className={"text-[#E70A32] inline-block fontStyle text-[16px]"}
+              className={"text-[#E70A32] inline-block fontStyle text-[16px] w-[70%]"}
             >
-              Qatnashish →
+              jami automobillar soni {carsData.length} ga teng
             </p>
           </div>
         </div>
@@ -36,11 +37,11 @@ const Advises = (clicked) => {
             <h3 className="font-bold textStyle text-[23px] w-[70%]">
               Qulay Automobil almashtirish!
             </h3>
-            <Link
-              className={"text-[#E70A32] inline-block fontStyle text-[16px]"}
+            <p
+              className={"text-[#E70A32] inline-block fontStyle text-[16px] w-[70%]"}
             >
-              Qatnashish →
-            </Link>
+              Automobil faqatgina nozoratida almashtiriladi
+            </p>
           </div>
         </div>
         <div className="p-6 relative w-[400px] bg-white rounded-md h-[200px]">
@@ -54,7 +55,7 @@ const Advises = (clicked) => {
               4.9% Ylisga Kredit rasmiylashtirish!
             </h3>
             <p
-              className={"text-[#E70A32] inline-block fontStyle text-[16px] w-[]"}
+              className={"text-[#E70A32] inline-block fontStyle text-[16px] w-[70%]"}
             >
               Kredit faqat hamkor banklar yordamida amalga oshiriladi
             </p>
