@@ -83,8 +83,6 @@ const Katalog = () => {
     setmax(e.target.value);
   };
 
-  const filter4 = result.filter((e) => e.reCost <= max);
-
   // filter my minPay
 
   const [min, setmin] = useState();
@@ -93,11 +91,16 @@ const Katalog = () => {
     setmin(e.target.value);
   };
 
-  const filter5 = filter4.filter((e) => e.reCost >= min);
+  const filter4 = result.filter((e) => e.reCost >= min);
+  const filter5 = filter4.filter((e) => e.reCost <= max);
+  const filter6 = result.filter((e) => e.reCost <= max);
 
   const [index, setindex] = useState([]);
 
-  const result2 = index.concat(filter4.length === 0 && result, filter5);
+  const result2 = index.concat(
+    filter4.length === 0 ? result : filter4,
+    min === undefined ? filter6 : filter5
+  );
 
   const resulted = result2.filter((e) => e !== false);
   // result play
