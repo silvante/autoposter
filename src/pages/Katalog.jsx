@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { carsData } from "../autoPosterData";
 import "../autoPosterData";
 import { marks } from "../autoPosterData";
+import Massange from "../components/Massange";
 import { Result } from "postcss";
 
 const Katalog = () => {
@@ -97,12 +98,10 @@ const Katalog = () => {
 
   const [index, setindex] = useState([]);
 
-  const result2 = index.concat(
-    filter4.length === 0 ? result : filter4,
-    min === undefined ? filter6 : filter5
-  );
+  const result2 = index.concat(filter5.length === 0 && filter4, filter5);
+  const result3 = index.concat(result2.length === 0 ? result : result2);
 
-  const resulted = result2.filter((e) => e !== false);
+  const resulted = result3.filter((e) => e !== false);
   // result play
 
   const [show, setshow] = useState(false);
@@ -214,7 +213,11 @@ const Katalog = () => {
                 onClick={() => setshow(true)}
                 className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
               >
-                {mark === "" && max === undefined
+                {mark === "" &&
+                model === "" &&
+                year === undefined &&
+                min === undefined &&
+                max === undefined
                   ? "Automabil topish"
                   : `${resulted.length} Auto topildi`}
               </button>
@@ -348,67 +351,9 @@ const Katalog = () => {
             )}
           </div>
 
-          <div className="w-full lg:w-[30%] stick">
-            <div className="w-full flex items-center justify-center flex-wrap space-y-5 lg:justify-between">
-              <div className="p-6 relative w-[400px] bg-white rounded-md h-[200px] shadow-md">
-                <img
-                  src={card1}
-                  alt="card1 image"
-                  className="absolute bottom-4 right-0"
-                />
-                <div className="space-y-3">
-                  <h3 className="font-bold textStyle text-[23px] w-[70%]">
-                    Automobillarga tanlov juda katta!
-                  </h3>
-                  <Link
-                    className={
-                      "text-[#E70A32] inline-block fontStyle text-[18px]"
-                    }
-                  >
-                    Qatnashish →
-                  </Link>
-                </div>
-              </div>
-              <div className="p-6 relative w-[400px] bg-white rounded-md h-[200px] shadow-md">
-                <img
-                  src={card2}
-                  alt="card2 image"
-                  className="absolute bottom-4 right-0"
-                />
-                <div className="space-y-3">
-                  <h3 className="font-bold textStyle text-[23px] w-[70%]">
-                    Qulay Automobil almashtirish!
-                  </h3>
-                  <Link
-                    className={
-                      "text-[#E70A32] inline-block fontStyle text-[18px]"
-                    }
-                  >
-                    Qatnashish →
-                  </Link>
-                </div>
-              </div>
-              <div className="p-6 relative w-[400px] bg-white rounded-md h-[200px] shadow-md">
-                <img
-                  src={card3}
-                  alt="card3 image"
-                  className="absolute bottom-4 right-0"
-                />
-                <div className="space-y-3">
-                  <h3 className="font-bold textStyle text-[23px] w-[70%]">
-                    4.9% Ylisga Kredit rasmiylashtirish!
-                  </h3>
-                  <Link
-                    className={
-                      "text-[#E70A32] inline-block fontStyle text-[18px]"
-                    }
-                  >
-                    Qatnashish →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* <div className="w-full lg:w-[30%] stick"> */}
+          <Massange />
+          {/* </div> */}
         </div>
       </div>
     </div>
