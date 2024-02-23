@@ -6,7 +6,6 @@ import Aksiyalar from "./Aksiyalar";
 const SelectedCars = () => {
   const { model } = useParams();
   const modelsArr = carsData.filter((info) => info.name === model);
-  console.log(modelsArr);
 
   return (
     <>

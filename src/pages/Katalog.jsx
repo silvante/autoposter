@@ -127,7 +127,6 @@ const Katalog = () => {
   } else if (first > numberOfPages.length) {
     setfirst(1);
   }
-  console.log(resulted);
 
   return (
     <div className="w-full flex justify-center">
@@ -199,14 +198,14 @@ const Katalog = () => {
               <input
                 type="number"
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-                placeholder="Max Bujet $"
-                onChange={maxPay}
+                placeholder="Minimum $"
+                onChange={minPay}
               />
               <input
                 type="number"
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-                placeholder="Min Bujet $"
-                onChange={minPay}
+                placeholder="Maximum $"
+                onChange={maxPay}
               />
               <button
                 onClick={() => setshow(true)}

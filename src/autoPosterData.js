@@ -1896,7 +1896,6 @@ function setIconsToArray(arr) {
 
 const icons = setIconsToArray(carsData);
 
-// console.log(icons);
 
 // marks array
 
@@ -1914,7 +1913,6 @@ export const marksIcon = marks.map((item, index) => {
   return returned;
 });
 
-// console.log(marksIcon);
 
 export const aksiyalar = [
   {

@@ -19,11 +19,11 @@ const Advises = (clicked) => {
             <h3 className="font-bold textStyle text-[23px] w-[70%]">
               Automobillarga tanlov juda katta!
             </h3>
-            <Link
-              className={"text-[#E70A32] inline-block fontStyle text-[18px]"}
+            <p
+              className={"text-[#E70A32] inline-block fontStyle text-[16px]"}
             >
               Qatnashish →
-            </Link>
+            </p>
           </div>
         </div>
         <div className="p-6 relative w-[400px] bg-white rounded-md h-[200px]">
@@ -37,7 +37,7 @@ const Advises = (clicked) => {
               Qulay Automobil almashtirish!
             </h3>
             <Link
-              className={"text-[#E70A32] inline-block fontStyle text-[18px]"}
+              className={"text-[#E70A32] inline-block fontStyle text-[16px]"}
             >
               Qatnashish →
             </Link>
@@ -53,11 +53,11 @@ const Advises = (clicked) => {
             <h3 className="font-bold textStyle text-[23px] w-[70%]">
               4.9% Ylisga Kredit rasmiylashtirish!
             </h3>
-            <Link
-              className={"text-[#E70A32] inline-block fontStyle text-[18px]"}
+            <p
+              className={"text-[#E70A32] inline-block fontStyle text-[16px] w-[]"}
             >
-              Qatnashish →
-            </Link>
+              Kredit faqat hamkor banklar yordamida amalga oshiriladi
+            </p>
           </div>
         </div>
       </div>

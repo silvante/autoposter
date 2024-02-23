@@ -26,8 +26,6 @@ const Massange = () => {
 
   const models = setModelToArray(modelArr);
 
-  console.log(models);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -53,7 +51,6 @@ const Massange = () => {
           text: telegramMessage,
         })
         .then((response) => {
-          console.log(response.data);
           setName("");
           setEmail("");
           setmark("");

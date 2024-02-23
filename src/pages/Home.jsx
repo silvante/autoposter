@@ -8,8 +8,6 @@ import { Result } from "postcss";
 // import {inpValue}
 
 const Home = () => {
-  // console.log(carsData);
-
   const newArray = carsData.sort((a, b) => b.year - a.year);
 
   const sortArr = newArray.slice(0, 6);
@@ -145,6 +143,7 @@ const Home = () => {
             </div>
           </div>
           <BestOfYear />
+          <Advises />
         </div>
       )}
       {/* target */}
