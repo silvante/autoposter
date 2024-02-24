@@ -118,14 +118,15 @@ const CarModels = () => {
     setmax(e.target.value);
   };
 
-  const filtered4 = result.filter((e) => e.reCost <= max);
-  const filtered5 = filtered4.filter((e) => e.reCost >= min);
+  const filtered4 = result.filter((e) => e.reCost >= min);
+  const filtered5 = filtered4.filter((e) => e.reCost <= max);
 
   const [main2, setmain2] = useState([]);
 
-  const result2 = main2.concat(filtered4.length === 0 && result, filtered5);
+  const result2 = main2.concat(filtered5.length === 0 && filtered4, filtered5);
+  const result3 = main2.concat(result2.length === 0 ? result : result2);
 
-  const resulted = result2.filter((e) => e !== false);
+  const resulted = result3.filter((e) => e !== false);
 
   const navigate = useNavigate();
 
@@ -260,20 +261,24 @@ const CarModels = () => {
             <input
               type="number"
               className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-              placeholder="Max Bujet $"
-              onChange={maxPay}
+              placeholder="Minimal $"
+              onChange={minPay}
             />
             <input
               type="number"
               className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-              placeholder="Min Bujet $"
-              onChange={minPay}
+              placeholder="Maximal $"
+              onChange={maxPay}
             />
             <button
               onClick={handleClick}
               className="bg-[#E70A32] border-none py-3 px-5 rounded-md outline-none text-white text-center"
             >
-              {modelSelect === "" && max === undefined
+              {modelSelect === "" &&
+              yearSelect === "" &&
+              krosSelect === "" &&
+              min === undefined &&
+              max === undefined
                 ? "Automabil topish"
                 : `${resulted.length} Auto topildi`}
             </button>
