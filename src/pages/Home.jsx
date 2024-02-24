@@ -143,7 +143,6 @@ const Home = () => {
             </div>
           </div>
           <BestOfYear />
-          <Advises />
         </div>
       )}
       {/* target */}
