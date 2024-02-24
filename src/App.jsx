@@ -22,6 +22,7 @@ import Kontaktlar from "./pages/Kontaktlar";
 import Filter from "./pages/Filter";
 import Katalog from "./pages/Katalog";
 import NotFound from "./pages/NotFound";
+import Model from "./pages/Model";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -38,7 +39,10 @@ const App = () => {
           <Route path="/sale/:mark/car/:model" element={<SelectedCars />} />
           <Route path="/sale/:mark/filter" element={<Filter />} />
           <Route path="/sale/:mark/sotib-olish/:id" element={<Buycar />} />
-          <Route path="/sale/:mark/car/:model/sotib-olish/:id" element={<Buycar />} />
+          <Route
+            path="/sale/:mark/car/:model/sotib-olish/:id"
+            element={<Buycar />}
+          />
         </Route>
         <Route path="/kredit" element={<Kredit />} />
         <Route path="/sotib-olish" element={<BuyLayOut />}>

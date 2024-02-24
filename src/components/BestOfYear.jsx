@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 import { Pagination, Navigation, EffectFade } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -38,8 +39,7 @@ const BestOfYear = () => {
               setcostom(ev);
             }}
             navigation={false}
-            EffectFade={true}
-            modules={[Pagination, Navigation]}
+            modules={[EffectFade, Pagination, Navigation]}
             className="rounded-lg p-10 space-x-10 flex items-center"
           >
             <button

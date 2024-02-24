@@ -19,7 +19,7 @@ const SelectedCars = () => {
             {modelsArr.map((car) => {
               return (
                 <Link
-                  to={`/sale/${car.mark}/car/${model}/sotib-olish/${car.id}`}
+                  to={`/sale/${car.mark}/sotib-olish/${car.id}`}
                   key={car.id}
                   className="rounded space-y-3 relative"
                 >
