@@ -15,6 +15,14 @@ const AksiyaDatails = () => {
     navigate("/");
   };
 
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div className="w-full flex justify-center mb-10">
@@ -24,11 +32,7 @@ const AksiyaDatails = () => {
           </h3>
           <div className="rounded-lg shadow-md  p-2 w-full space-y-5">
             <div className="rounded-lg transition-all hover:shadow-xl w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] justify-center items-center flex overflow-hidden">
-              <img
-                src={aksiya.image}
-                alt={aksiya.title}
-                className="w-full"
-              />
+              <img src={aksiya.image} alt={aksiya.title} className="w-full" />
             </div>
             <div className="p-5 space-y-5">
               <p className="fontStyle">{aksiya.info}</p>
@@ -66,6 +70,7 @@ const AksiyaDatails = () => {
                     <Link
                       className="text-[20px] text-[#E70A32] transition-all fontStyle hover:text-[blue]"
                       to={`/aksiyalar/${aksiya.id}`}
+                      onClick={STT}
                     >
                       ishtrok etish →
                     </Link>
