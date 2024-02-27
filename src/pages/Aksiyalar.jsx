@@ -3,6 +3,13 @@ import { aksiyalar } from "../autoPosterData";
 import { Link } from "react-router-dom";
 
 const Aksiyalar = () => {
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] mb-16 xl:w-[1300px]">
@@ -28,6 +35,7 @@ const Aksiyalar = () => {
                   <Link
                     className="text-[20px] text-[#E70A32] transition-all fontStyle hover:text-[blue]"
                     to={`/aksiyalar/${aksiya.id}`}
+                    onClick={STT}
                   >
                     ishtrok etish →
                   </Link>
