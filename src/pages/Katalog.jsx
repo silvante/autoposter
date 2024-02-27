@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Advises from "../components/Advises";
 
 import card1 from "../assets/images/card1.avif";
@@ -129,6 +129,19 @@ const Katalog = () => {
   } else if (first > numberOfPages.length) {
     setfirst(1);
   }
+  const Minus = () => setfirst(first - 1);
+  const Plus = () => setfirst(first + 1);
+  const STT = () => {
+    window.scrollTo({
+      top: 400,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    STT();
+  }, [Minus, Plus]);
 
   return (
     <div className="w-full flex justify-center">
@@ -277,7 +290,7 @@ const Katalog = () => {
                 </div>
                 <div className="flex space-x-5 justify-center items-center">
                   <button
-                    onClick={() => setfirst(first - 1)}
+                    onClick={Minus}
                     className="prev h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
                   >
                     prev
@@ -286,7 +299,7 @@ const Katalog = () => {
                     {first} / {numberOfPages.length}
                   </p>
                   <button
-                    onClick={() => setfirst(first + 1)}
+                    onClick={Plus}
                     className="next h-10 bg-[#e70a32] px-5 rounded-full text-white disabled:opacity-80"
                   >
                     next
