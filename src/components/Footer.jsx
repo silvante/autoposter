@@ -3,12 +3,19 @@ import FooterLogo from "../assets/images/footer-logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <footer className="w-full bg-gray-900 flex justify-center text-white py-5">
         <div className="w-[96%] flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-5 xl:w-[1300px]">
           <div>
-            <Link to={"/"}>
+            <Link to={"/"} onClick={STT}>
               <img src={FooterLogo} alt="footer logo" className="w-[180px]" />
             </Link>
             <p className="fontStyle text-gray-300 text-[14px]">
@@ -16,16 +23,32 @@ const Footer = () => {
             </p>
           </div>
           <div className="space-y-3 lg:space-y-0 lg:flex lg:gap-7 xl:gap-16">
-            <Link to={"/katalog"} className="text-[18px] fontStyle flex">
+            <Link
+              onClick={STT}
+              to={"/katalog"}
+              className="text-[18px] fontStyle flex"
+            >
               Katalog
             </Link>
-            <Link to={"/aksiyalar"} className="text-[18px] fontStyle flex">
+            <Link
+              onClick={STT}
+              to={"/aksiyalar"}
+              className="text-[18px] fontStyle flex"
+            >
               Aksiyalar
             </Link>
-            <Link to={"/kredit"} className="text-[18px] fontStyle flex">
+            <Link
+              onClick={STT}
+              to={"/kredit"}
+              className="text-[18px] fontStyle flex"
+            >
               Kredit
             </Link>
-            <Link to={"./kontactlar"} className="text-[18px] fontStyle flex">
+            <Link
+              onClick={STT}
+              to={"./kontactlar"}
+              className="text-[18px] fontStyle flex"
+            >
               Kantaktlar
             </Link>
           </div>
