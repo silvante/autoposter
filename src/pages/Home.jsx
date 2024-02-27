@@ -47,6 +47,7 @@ const Home = () => {
       behavior: "smooth",
     });
   };
+  
   return (
     <Fragment>
       {/* hero */}

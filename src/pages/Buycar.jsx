@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { carsData } from "../autoPosterData";
 import Massange from "../components/Massange";
@@ -7,6 +7,12 @@ import Aksiyalar from "./Aksiyalar";
 const Buycar = () => {
   const { id } = useParams();
   const datail = carsData.find((car) => car.id == id);
+
+  const [loaded, setloaded] = useState(true);
+
+  const handleLoad = () => {
+    setloaded(false);
+  };
   return (
     <>
       <div className="w-full flex justify-center mb-24">
@@ -29,7 +35,11 @@ const Buycar = () => {
           <div className="w-full flex flex-col lg:flex-row justify-between space-y-16 lg:space-y-0 items-start">
             <div className="w-full lg:w-[68%] flex flex-col justify-between items-start space-y-16 lg:flex-row lg:space-y-0 space-x-5">
               <div className="w-full space-y-5">
-                <div className="w-full rounded-md shadow-xl overflow-hidden flex items-center justify-center relative">
+                <div
+                  className={`${
+                    loaded ? "loader h-[200px] md:h-[300px] lg:h-[400px]" : "shadow-xl"
+                  } w-full rounded-md overflow-hidden flex items-center justify-center relative`}
+                >
                   <a
                     href={datail.image}
                     download
@@ -39,6 +49,8 @@ const Buycar = () => {
                   </a>
                   <img
                     src={datail.image}
+                    onLoad={handleLoad}
+                    loading="lazy"
                     alt={datail.name}
                     className="w-full"
                   />
