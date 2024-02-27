@@ -129,20 +129,29 @@ const Katalog = () => {
   } else if (first > numberOfPages.length) {
     setfirst(1);
   }
-  const Minus = () => setfirst(first - 1);
-  const Plus = () => setfirst(first + 1);
-  const STT = () => {
+  const Minus = () => {
+    setfirst(first - 1);
     window.scrollTo({
       top: 400,
       left: 0,
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    STT();
-  }, [Minus, Plus]);
-
+  const Plus = () => {
+    setfirst(first + 1);
+    window.scrollTo({
+      top: 400,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] xl:w-[1300px] mb-20 space-y-5">
@@ -255,6 +264,7 @@ const Katalog = () => {
                       <Link
                         to={`/katalog/${car.id}`}
                         key={car.id}
+                        onClick={STT}
                         className="w-full rounded-lg border p-3 flex flex-col sm:flex-row gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
                       >
                         <div className="overflow-hidden w-full h-48 sm:h-36 sm:w-56 flex items-center justify-center rounded-md">
@@ -327,6 +337,7 @@ const Katalog = () => {
                       <Link
                         to={`/katalog/${car.id}`}
                         key={car.id}
+                        onClick={STT}
                         className="w-full rounded-lg border p-3 flex flex-col sm:flex-row gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
                       >
                         <div className="overflow-hidden w-full h-44 sm:w-56 sm:h-36 flex items-center justify-center rounded-md">

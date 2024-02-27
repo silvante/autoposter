@@ -40,6 +40,13 @@ const Home = () => {
       prevStates.map((state, i) => (i === index ? false : state))
     );
   };
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Fragment>
       {/* hero */}
@@ -84,6 +91,7 @@ const Home = () => {
                       to={`/katalog/${car.id}`}
                       key={car.id}
                       className="rounded space-y-3 relative"
+                      onClick={STT}
                     >
                       <div
                         className={`image_div rounded-lg relative ${
@@ -158,6 +166,7 @@ const Home = () => {
                   to={`/katalog/${car.id}`}
                   key={car.id}
                   className="rounded space-y-3 relative"
+                  onClick={STT}
                 >
                   <div className="image_div relative rounded-lg">
                     <div className="absolute flex space-x-3 top-3 left-3 z-10">

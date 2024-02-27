@@ -152,6 +152,14 @@ const CarModels = () => {
 
   const paginationArr = NumberOfPages.filter((prev) => prev !== 0);
 
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       {/* car model cards */}
@@ -176,6 +184,7 @@ const CarModels = () => {
             {Sliced.map((model) => {
               return (
                 <Link
+                  onClick={STT}
                   key={model.id}
                   className="grey-border flex items-center justify-between p-3 rounded cursor-pointer shrink-0 hoverd"
                   to={`/sale/${modelsArr.mark}/car/${model.model}`}
@@ -301,6 +310,7 @@ const CarModels = () => {
                   to={`/sale/${car.mark}/sotib-olish/${car.id}`}
                   key={car.id}
                   className="rounded space-y-3 relative anime"
+                  onClick={STT}
                 >
                   <div className="image_div relative rounded-lg">
                     <div className="absolute flex space-x-3 top-3 left-3 z-10">

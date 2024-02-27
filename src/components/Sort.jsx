@@ -4,6 +4,13 @@ import "../components/components.css";
 import { Link } from "react-router-dom";
 
 const Sort = () => {
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="flex justify-center py-10">
       <div className="wrab w-[96%] xl:w-[1300px] space-y-8">
@@ -17,6 +24,7 @@ const Sort = () => {
                 key={mark.mark}
                 className="grey-border flex items-center justify-between p-3 rounded cursor-pointer shrink-0 hoverd"
                 to={`/${mark.mark}`}
+                onClick={STT}
               >
                 <div className="flex items-center space-x-3">
                   <img src={mark.icon} alt={mark.mark} className="w-[30px]" />

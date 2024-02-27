@@ -22,6 +22,13 @@ const BestOfYear = () => {
   const prev = () => {
     costom.slidePrev();
   };
+  const STT = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   const carsOfyear = carsData.filter((car) => car.year >= 2024);
   return (
     <div className="w-full bg-gray-200 items-center justify-center py-16 hidden lg:flex">
@@ -99,6 +106,7 @@ const BestOfYear = () => {
                       className={
                         "bg-[#E70A32] py-3 px-7 text-white rounded-full inline-block"
                       }
+                      onClick={STT}
                     >
                       Sotib olish
                     </Link>
