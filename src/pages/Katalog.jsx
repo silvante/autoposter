@@ -267,11 +267,11 @@ const Katalog = () => {
                         onClick={STT}
                         className="w-full rounded-lg border p-3 flex flex-col sm:flex-row gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
                       >
-                        <div className="overflow-hidden w-full h-48 sm:h-36 sm:w-56 flex items-center justify-center rounded-md">
+                        <div className="bg-gray-400 overflow-hidden w-full h-48 sm:h-36 sm:w-56 flex items-center justify-center rounded-md">
                           <img
                             src={car.image}
                             alt={car.name}
-                            className="w-full"
+                            className="w-full h-full"
                           />
                         </div>
                         <div>
@@ -340,7 +340,7 @@ const Katalog = () => {
                         onClick={STT}
                         className="w-full rounded-lg border p-3 flex flex-col sm:flex-row gap-5 myTransition hover:shadow-xl hover:scale-105 anime"
                       >
-                        <div className="overflow-hidden w-full h-44 sm:w-56 sm:h-36 flex items-center justify-center rounded-md">
+                        <div className="bg-gray-400 overflow-hidden w-full h-44 sm:w-56 sm:h-36 flex items-center justify-center rounded-md">
                           <img
                             src={car.image}
                             alt={car.name}
