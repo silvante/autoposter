@@ -17,6 +17,7 @@ const Header = () => {
                 src={HeaderLogo}
                 alt="Logo autoPoster"
                 className="w-[140px] sm:w-[160px]"
+                height={"40px"}
               />
             </Link>
             <div className="space-x-10 hidden lg:flex">
