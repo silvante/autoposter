@@ -5,6 +5,7 @@ import { carsData, marks } from "../autoPosterData";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { comment } from "postcss";
 
 const Massange = () => {
   const [open, setOpen] = React.useState(0);
@@ -17,7 +18,7 @@ const Massange = () => {
   const [error, setError] = useState("");
 
   const faild = () =>
-    toast.error("Malumotnomani toldiring", {
+    toast.error("Malumotnomani toldiring 📌", {
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -30,7 +31,7 @@ const Massange = () => {
     });
 
   const success = () =>
-    toast.success("Malumot yuborildiS", {
+    toast.success("Malumot yuborildi 🚀", {
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -41,6 +42,12 @@ const Massange = () => {
       theme: "light",
       text: "start",
     });
+
+  const [emailError, setemailerror] = useState(false);
+  const [nameerror, setnameerror] = useState(false);
+  const [coerror, setcoerror] = useState(false);
+  const [markError, setmarkError] = useState(false);
+  const [modelerror, setmodelerror] = useState(false);
 
   const modelArr = carsData.filter((e) => e.mark === mark);
 
@@ -66,6 +73,23 @@ const Massange = () => {
       massange === ""
     ) {
       faild();
+      // if (mark == "") {
+      //   setmarkError(true);
+      // }
+      // if (model == "") {
+      //   setmodelerror(true);
+      // }
+      // if (massange == "") {
+      //   setcoerror(true);
+      // }
+      // if (name == "") {
+      //   setnameerror(true);
+      // } else {
+      //   setnameerror(false);
+      // }
+      // if (email == "") {
+      //   setemailerror(true);
+      // }
     } else {
       success();
       const telegram_bot_id = "6385516963:AAFFX6rdrEn75OwlNSCR4Gkus-L3mVX0S5o";
@@ -102,7 +126,9 @@ const Massange = () => {
       <form onSubmit={handleSubmit} className="space-y-4">
         <select
           defaultValue={"marka"}
-          className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
+            markError && "border-red-500"
+          }`}
           onChange={(e) => setmark(e.target.value)}
           value={mark}
         >
@@ -119,7 +145,9 @@ const Massange = () => {
         </select>
         <select
           defaultValue={"model"}
-          className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
+            modelerror && "border-red-500"
+          }`}
           onChange={(e) => setmodel(e.target.value)}
           value={model}
         >
@@ -137,7 +165,9 @@ const Massange = () => {
             })}
         </select>
         <textarea
-          className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 appearance-none resize-none"
+          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 appearance-none resize-none ${
+            coerror && "border-red-500 placeholder:text-red-500"
+          }`}
           placeholder="izoxingiz..."
           onChange={(e) => setmassange(e.target.value)}
           value={massange}
@@ -149,14 +179,18 @@ const Massange = () => {
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
+            nameerror && "border-red-500 placeholder:text-red-500"
+          }`}
           type="text"
           placeholder="toliq ismingizni kiriting"
         />
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100"
+          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
+            emailError && "border-red-500 placeholder:text-red-500"
+          }`}
           type="email"
           placeholder="Email"
         />

@@ -124,3 +124,7 @@ nav .active {
     background-position: 315px 0, 0 0, 15px 140px, 65px 145px;
   }
 }
+
+.o2 {
+  transition: .3s all ease;
+}
