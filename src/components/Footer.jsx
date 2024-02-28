@@ -46,10 +46,10 @@ const Footer = () => {
             </Link>
             <Link
               onClick={STT}
-              to={"./kontactlar"}
+              to={"./bog'lanish"}
               className="text-[18px] fontStyle flex"
             >
-              Kantaktlar
+              Bog'lanish
             </Link>
           </div>
           <div className="">

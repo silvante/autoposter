@@ -93,7 +93,10 @@ const Massange = () => {
           onChange={(e) => setmodel(e.target.value)}
           value={model}
         >
-          {models.length === 0 && <option value={""}>marka tanlang</option>}
+          <option value={""} selected disabled>
+            model
+          </option>
+          {/* {models.length === 0 && <option value={""}>marka tanlang</option>} */}
           {models.length !== 0 &&
             models.map((e) => {
               return (

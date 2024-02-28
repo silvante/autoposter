@@ -30,18 +30,18 @@ const Header = () => {
               <NavLink to={"/kredit"} className={"fontStyle font-bold"}>
                 Kredit
               </NavLink>
-              <NavLink to={"/kontactlar"} className={"fontStyle font-bold"}>
-                Kantaktlar
+              <NavLink to={"/bog'lanish"} className={"fontStyle font-bold"}>
+                Bog'lanish
               </NavLink>
             </div>
           </div>
           <div className="flex items-center justify-center space-x-5">
             <div className="text-end hidden lg:block">
               <Link
-                to={"/kontactlar"}
+                to={"/bog'lanish"}
                 className="fontStyle text-md cursor-pointer px-4 py-3 bg-black rounded-md text-white"
               >
-                <i className="bx bx-phone"></i> boglanish
+                <i className="bx bx-phone"></i> bog'lanish
               </Link>
             </div>
             <button
@@ -94,21 +94,21 @@ const Header = () => {
             </NavLink>
             <NavLink
               onClick={() => setShowAside(false)}
-              to={"/kontactlar"}
+              to={"/bog'lanish"}
               className={
                 "fontStyle font-bold inline-block w-full rounded-md transition-all hover:bg-gray-300 p-3"
               }
             >
-              Kantaktlar
+              Bog'lanish
             </NavLink>
           </div>
-          <Link
-            to={"/kontactlar"}
+          <a
+            href={"tel:+998333038282"}
             onClick={() => setShowAside(false)}
             className="fontStyle text-md cursor-pointer px-4 py-3 bg-black rounded-md text-white inline-block w-full text-center"
           >
-            <i className="bx bx-phone"></i> boglanish
-          </Link>
+            <i className="bx bx-phone"></i> bog'lanish
+          </a>
         </div>
       </div>
     </>
