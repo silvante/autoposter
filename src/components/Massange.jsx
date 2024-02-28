@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { carsData, marks } from "../autoPosterData";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 const Massange = () => {
   const [open, setOpen] = React.useState(0);
   const [link, setlink] = useState("https://auto-poster.netlify.app/");
@@ -11,6 +15,32 @@ const Massange = () => {
   const [model, setmodel] = useState("");
   const [massange, setmassange] = useState("");
   const [error, setError] = useState("");
+
+  const faild = () =>
+    toast.error("Malumotnomani toldiring", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      text: "start",
+    });
+
+  const success = () =>
+    toast.success("Malumot yuborildiS", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      text: "start",
+    });
 
   const modelArr = carsData.filter((e) => e.mark === mark);
 
@@ -35,9 +65,9 @@ const Massange = () => {
       model === "" ||
       massange === ""
     ) {
-      alert("Iltimos malumotni to'ldiring");
+      faild();
     } else {
-      alert("Malumot yuborildi");
+      success();
       const telegram_bot_id = "6385516963:AAFFX6rdrEn75OwlNSCR4Gkus-L3mVX0S5o";
       const chat_id = "6940337371";
 
@@ -145,6 +175,7 @@ const Massange = () => {
         Tugmani bosish orqali siz shaxsiy ma'lumotlarni qayta ishlashga rozilik
         bildirasiz
       </p>
+      <ToastContainer />
     </div>
   );
 };
