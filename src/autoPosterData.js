@@ -1896,23 +1896,21 @@ function setIconsToArray(arr) {
 
 const icons = setIconsToArray(carsData);
 
-
 // marks array
 
 export const marksIcon = marks.map((item, index) => {
   let returned = {
     mark: item,
     id: uuidv4(),
-    elems: carsData.filter((car) => {
-      if (car.mark == item) {
-        return car.icon;
+    homManyCars: carsData.filter((car) => {
+      if (car.mark === item) {
+        return car;
       }
     }),
     icon: icons[index],
   };
   return returned;
 });
-
 
 export const aksiyalar = [
   {

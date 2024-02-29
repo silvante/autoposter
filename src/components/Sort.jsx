@@ -30,7 +30,7 @@ const Sort = () => {
                   <img src={mark.icon} alt={mark.mark} className="w-[30px]" />
                   <p className="text-[18px]">{mark.mark}</p>
                 </div>
-                <p>{mark.elems.length}</p>
+                <p>{mark.homManyCars.length}</p>
               </Link>
             );
           })}

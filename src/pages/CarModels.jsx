@@ -9,8 +9,9 @@ const CarModels = () => {
   // using sparams
 
   const { mark } = useParams();
+  console.log(marksIcon);
   const modelsArr = marksIcon.find((i) => i.mark === mark);
-  const found = modelsArr.elems;
+  const found = modelsArr.homManyCars;
 
   // filtering arr models
   const [modelSelect, setModel] = useState("");
@@ -94,7 +95,7 @@ const CarModels = () => {
   const [number, setNumber] = useState(15);
   const Sliced = modelsArray.slice(0, number);
   const [showbtn, setShowBtn] = useState(true);
-  const another = modelsArr.elems;
+  const another = modelsArr.homManyCars;
 
   const [main, setmain] = useState([]);
 

@@ -37,12 +37,12 @@ const Header = () => {
           </div>
           <div className="flex items-center justify-center space-x-5">
             <div className="text-end hidden lg:block">
-              <Link
-                to={"/bog'lanish"}
+              <a
+                href="tel:+998333038282"
                 className="fontStyle text-md cursor-pointer px-4 py-3 bg-black rounded-md text-white"
               >
                 <i className="bx bx-phone"></i> bog'lanish
-              </Link>
+              </a>
             </div>
             <button
               aria-label="menu"
