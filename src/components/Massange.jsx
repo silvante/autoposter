@@ -7,6 +7,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { comment } from "postcss";
 
+// material ui
+
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import { Select, TextField } from "@mui/material";
+
 const Massange = () => {
   const [open, setOpen] = React.useState(0);
   const [link, setlink] = useState("https://auto-poster.netlify.app/");
@@ -122,77 +130,79 @@ const Massange = () => {
   };
   return (
     <div className=" w-full p-8 shadov rounded-lg text-center stick lg:w-[30%]">
-      <h3 className="textStyle text-[24px]">Automobilga kredit olish</h3>
+      <h3 className="textStyle text-[24px] mb-4">Automobilga kredit olish</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <select
-          defaultValue={"marka"}
-          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
-            markError && "border-red-500"
-          }`}
-          onChange={(e) => setmark(e.target.value)}
-          value={mark}
-        >
-          <option value={""} selected disabled>
-            mark
-          </option>
-          {marks.map((car) => {
-            return (
-              <option key={car} value={car}>
-                {car}
-              </option>
-            );
-          })}
-        </select>
-        <select
-          defaultValue={"model"}
-          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
-            modelerror && "border-red-500"
-          }`}
-          onChange={(e) => setmodel(e.target.value)}
-          value={model}
-        >
-          <option value={""} selected disabled>
-            model
-          </option>
-          {/* {models.length === 0 && <option value={""}>marka tanlang</option>} */}
-          {models.length !== 0 &&
-            models.map((e) => {
+        <FormControl fullWidth>
+          <InputLabel id="mark">Marka</InputLabel>
+          <Select
+            id="mark"
+            labelId="mark"
+            label="Marka"
+            defaultValue={"marka"}
+            className={`rounded-lg bg-gray-100 o2 text-start`}
+            onChange={(e) => setmark(e.target.value)}
+            value={mark}
+          >
+            {marks.map((car) => {
               return (
-                <option key={e} value={e}>
-                  {e}
-                </option>
+                <MenuItem key={car} value={car}>
+                  {car}
+                </MenuItem>
               );
             })}
-        </select>
-        <textarea
-          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 appearance-none resize-none ${
-            coerror && "border-red-500 placeholder:text-red-500"
-          }`}
-          placeholder="izoxingiz..."
+          </Select>
+        </FormControl>
+        <FormControl fullWidth>
+          <InputLabel id="mark">Model</InputLabel>
+          <Select
+            id="model"
+            labelId="model"
+            label="Model"
+            defaultValue={"marka"}
+            className={`rounded-lg bg-gray-100 o2 text-start`}
+            onChange={(e) => setmodel(e.target.value)}
+            value={model}
+          >
+            {models.length === 0 && (
+              <MenuItem disabled value="nothin">
+                Marka Tanlang
+              </MenuItem>
+            )}
+            {models.length !== 0 &&
+              models.map((car) => {
+                return (
+                  <MenuItem key={car} value={car}>
+                    {car}
+                  </MenuItem>
+                );
+              })}
+          </Select>
+        </FormControl>
+        <TextField
+          className="w-full bg-gray-100 o2 text-start"
+          id="outlined-basic"
+          label="Izohingiz"
           onChange={(e) => setmassange(e.target.value)}
           value={massange}
-        ></textarea>
+        />
         <br />
         <h3 className="textStyle text-[18px] text-left mb-4">
           malumotingizni kiriting
         </h3>
-        <input
-          value={name}
+        <TextField
+          className="w-full bg-gray-100 o2 text-start"
+          id="outlined-basic"
+          label="toliq ismingizni kiriting"
           onChange={(e) => setName(e.target.value)}
-          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
-            nameerror && "border-red-500 placeholder:text-red-500"
-          }`}
-          type="text"
-          placeholder="toliq ismingizni kiriting"
+          value={name}
         />
-        <input
-          value={email}
+        <TextField
+          className="w-full bg-gray-100 o2 text-start"
+          id="outlined-basic"
+          label="Email"
           onChange={(e) => setEmail(e.target.value)}
-          className={`w-full border-2 border-gray-300 outline-none p-3 rounded-lg bg-gray-100 o2 ${
-            emailError && "border-red-500 placeholder:text-red-500"
-          }`}
+          value={email}
           type="email"
-          placeholder="Email"
         />
         {error}
 
