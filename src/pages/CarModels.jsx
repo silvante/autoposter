@@ -4,6 +4,13 @@ import { marksIcon } from "../autoPosterData";
 
 import { v4 as uuidv4 } from "uuid";
 import Aksiyalar from "./Aksiyalar";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 
 const CarModels = () => {
   // using sparams
@@ -214,71 +221,74 @@ const CarModels = () => {
       <div className="w-full flex justify-center">
         <div className="w-[96%] mb-10 xl:w-[1300px]">
           <div className="grid grid-cols-1 shadow-xl rounded-lg p-5 border gap-5 md:grid-cols-3">
-            <div className="text-center space-y-2">
-              <p className="fontStyle font-bold">Model</p>
-              <select
-                className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+            <FormControl fullWidth>
+              <InputLabel>Model</InputLabel>
+              <Select
+                id="model"
+                label="model"
+                className="bg-gray-100 rounded-md outline-none w-full"
                 onChange={useModel}
               >
-                <option value="model" disabled selected>
-                  Model
-                </option>
                 {Sliced.map((filter) => {
                   return (
-                    <option key={filter.model} value={filter.model}>
+                    <MenuItem key={filter.model} value={filter.model}>
                       {filter.model}
-                    </option>
+                    </MenuItem>
                   );
                 })}
-              </select>
-            </div>
-            <div className="text-center space-y-2">
-              <p className="fontStyle font-bold">Mashina yili</p>
-              <select
-                className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+              </Select>
+            </FormControl>
+            <FormControl fullWidth>
+              <InputLabel>Auto yili</InputLabel>
+              <Select
+                id="yil"
+                label="Auto yili"
+                className="bg-gray-100 rounded-md outline-none w-full"
                 onChange={useYear}
               >
-                <option value="year" disabled selected>
-                  year
-                </option>
+                {years.length === 0 && (
+                  <MenuItem disabled>Model tanlang</MenuItem>
+                )}
                 {years.map((filter) => {
                   return (
-                    <option key={filter} value={filter}>
+                    <MenuItem key={filter} value={filter}>
                       {filter}
-                    </option>
+                    </MenuItem>
                   );
                 })}
-              </select>
-            </div>
-            <div className="text-center space-y-2">
-              <p className="fontStyle font-bold">Krosoveri</p>
-              <select
-                className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
+              </Select>
+            </FormControl>
+            <FormControl fullWidth>
+              <InputLabel>Krosover</InputLabel>
+              <Select
+                id="krosover"
+                label="Krosover"
+                className="bg-gray-100 rounded-md outline-none w-full"
                 onChange={useKros}
               >
-                <option value="krosover" disabled selected>
-                  krosover
-                </option>
+                {krosovers.length === 0 && (
+                  <MenuItem disabled>Yilini tanlang</MenuItem>
+                )}
                 {krosovers.map((filter) => {
                   return (
-                    <option key={filter} value={filter}>
+                    <MenuItem key={filter} value={filter}>
                       {filter}
-                    </option>
+                    </MenuItem>
                   );
                 })}
-              </select>
-            </div>
-            <input
+              </Select>
+            </FormControl>
+            <TextField
               type="number"
               className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-              placeholder="Minimal $"
               onChange={minPay}
+              label="Minimum $"
             />
-            <input
+            <TextField
               type="number"
               className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-              placeholder="Maximal $"
               onChange={maxPay}
+              label="Maximum $"
             />
             <button
               onClick={handleClick}
