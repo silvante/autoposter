@@ -11,6 +11,13 @@ import "../autoPosterData";
 import { marks } from "../autoPosterData";
 import Massange from "../components/Massange";
 import { Result } from "postcss";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 
 const Katalog = () => {
   // filter by mark
@@ -166,69 +173,75 @@ const Katalog = () => {
 
             <div className="grid grid-cols-1 shadow-xl rounded-lg p-5 border gap-5 md:grid-cols-3">
               <div className="text-center space-y-2">
-                <p className="fontStyle font-bold">marka</p>
-                <select
-                  className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
-                  onChange={useMark}
-                >
-                  <option disabled selected value={"marka"}>
-                    marka
-                  </option>
-                  {marks.map((filter) => {
-                    return (
-                      <option key={filter} value={filter}>
-                        {filter}
-                      </option>
-                    );
-                  })}
-                </select>
+                <FormControl fullWidth>
+                  <InputLabel id="mark">Marka</InputLabel>
+                  <Select
+                    className="bg-gray-100 rounded-md outline-none w-full text-start"
+                    onChange={useMark}
+                    label="Marka"
+                  >
+                    {marks.map((filter) => {
+                      return (
+                        <MenuItem key={filter} value={filter}>
+                          {filter}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
               </div>
               <div className="text-center space-y-2">
-                <p className="fontStyle font-bold">Model</p>
-                <select
-                  className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
-                  onChange={useModel}
-                >
-                  <option value="year" disabled selected>
-                    model
-                  </option>
-                  {models.map((filter) => {
-                    return (
-                      <option key={filter} value={filter}>
-                        {filter}
-                      </option>
-                    );
-                  })}
-                </select>
+                <FormControl fullWidth>
+                  <InputLabel id="model">Model</InputLabel>
+                  <Select
+                    className="bg-gray-100 rounded-md outline-none w-full text-start"
+                    onChange={useModel}
+                    label="Model"
+                  >
+                    {models.length === 0 && (
+                      <MenuItem disabled>Marka tanlang</MenuItem>
+                    )}
+                    {models.map((filter) => {
+                      return (
+                        <MenuItem key={filter} value={filter}>
+                          {filter}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
               </div>
               <div className="text-center space-y-2">
-                <p className="fontStyle font-bold">Auto yili</p>
-                <select
-                  className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none w-full"
-                  onChange={useYear}
-                >
-                  <option value="krosover" disabled selected>
-                    yil
-                  </option>
-                  {years.map((filter) => {
-                    return (
-                      <option key={filter} value={filter}>
-                        {filter}
-                      </option>
-                    );
-                  })}
-                </select>
+                <FormControl fullWidth>
+                  <InputLabel id="model">Model</InputLabel>
+                  <Select
+                    className="bg-gray-100 rounded-md outline-none w-full text-start"
+                    onChange={useYear}
+                    label="Auto yili"
+                  >
+                    {years.length === 0 && (
+                      <MenuItem disabled>Model tanlang</MenuItem>
+                    )}
+                    {years.map((filter) => {
+                      return (
+                        <MenuItem key={filter} value={filter}>
+                          {filter}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
               </div>
-              <input
+              <TextField
+                label="Minimum $"
                 type="number"
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-                placeholder="Minimum $"
                 onChange={minPay}
               />
-              <input
+              <TextField
+                label="Maximum $"
                 type="number"
                 className="border-2 bg-gray-100 py-3 px-5 rounded-md outline-none"
-                placeholder="Maximum $"
                 onChange={maxPay}
               />
               <button
