@@ -105,8 +105,16 @@ const Katalog = () => {
 
   const [index, setindex] = useState([]);
 
-  const result2 = index.concat(filter5.length === 0 && filter4, filter5);
-  const result3 = index.concat(result2.length === 0 ? result : result2);
+  const result2 = index.concat(
+    filter5.length === 0 && filter4,
+    filter4.length === 0 && filter6,
+    filter5
+  );
+  const result3 = index.concat(
+    result2.length === 0 && max === undefined && min === undefined
+      ? result
+      : result2
+  );
 
   const resulted = result3.filter((e) => e !== false);
   // result play
@@ -159,6 +167,14 @@ const Katalog = () => {
       behavior: "smooth",
     });
   };
+  console.log(filter);
+  console.log(filter2);
+  console.log(filter3);
+  console.log(filter4);
+  console.log(filter5);
+  console.log(result);
+  console.log(result2);
+  console.log(result3);
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] xl:w-[1300px] mb-20 space-y-5">
