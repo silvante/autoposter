@@ -128,11 +128,20 @@ const CarModels = () => {
 
   const filtered4 = result.filter((e) => e.reCost >= min);
   const filtered5 = filtered4.filter((e) => e.reCost <= max);
+  const filtered6 = result.filter((e) => e.reCost <= max);
 
   const [main2, setmain2] = useState([]);
 
-  const result2 = main2.concat(filtered5.length === 0 && filtered4, filtered5);
-  const result3 = main2.concat(result2.length === 0 ? result : result2);
+  const result2 = main2.concat(
+    filtered5.length === 0 && filtered4,
+    filtered4.length === 0 && filtered6,
+    filtered5
+  );
+  const result3 = main2.concat(
+    result2.length === 0 && max === undefined && min === undefined
+      ? result
+      : result2
+  );
 
   const resulted = result3.filter((e) => e !== false);
 

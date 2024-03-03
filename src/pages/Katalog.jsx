@@ -167,14 +167,14 @@ const Katalog = () => {
       behavior: "smooth",
     });
   };
-  console.log(filter);
-  console.log(filter2);
-  console.log(filter3);
-  console.log(filter4);
-  console.log(filter5);
-  console.log(result);
-  console.log(result2);
-  console.log(result3);
+  // console.log(filter);
+  // console.log(filter2);
+  // console.log(filter3);
+  // console.log(filter4);
+  // console.log(filter5);
+  // console.log(result);
+  // console.log(result2);
+  // console.log(result3);
   return (
     <div className="w-full flex justify-center">
       <div className="w-[96%] xl:w-[1300px] mb-20 space-y-5">
