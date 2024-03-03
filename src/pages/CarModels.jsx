@@ -99,7 +99,7 @@ const CarModels = () => {
 
   // slicing the array
 
-  const [number, setNumber] = useState(15);
+  const [number, setNumber] = useState(Infinity);
   const Sliced = modelsArray.slice(0, number);
   const [showbtn, setShowBtn] = useState(true);
   const another = modelsArr.homManyCars;
@@ -203,16 +203,18 @@ const CarModels = () => {
               );
             })}
           </div>
-          {showbtn ? (
+          {/* {showbtn ? (
             <button
               className="text-[#E70A32]"
-              onClick={() => setNumber() + 999 || setShowBtn(false)}
+              onClick={() => setNumber(Infinity) || setShowBtn(false)}
             >
               Barcha modellarni korsatish →
             </button>
           ) : (
-            <p className="text-[#E70A32]">Boshqa modellar yoq</p>
-          )}
+            <p className="text-[#E70A32]" onClick={() => setNumber(15)}>
+              Barcha modellarni yopish ←
+            </p>
+          )} */}
         </div>
       </div>
 
