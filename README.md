@@ -9,3 +9,4 @@ Currently, two official plugins are available:
 # auto-poster
 # auto-poster
 # auto-poster
+# autoposter
